@@ -1,0 +1,39 @@
+.borderGrey {
+  border: 1px solid var(--greyColor) !important;
+}
+.borderBottomGrey {
+  border-bottom: 0.5px solid var(--greyColor) !important;
+}
+.borderGrey:hover:not(.cardItem) {
+  cursor: pointer;
+  background-color: #1f1e1f;
+}
+
+/* !Searchbar */
+.input-group,
+.input-group-text,
+.form-control {
+  border-color: var(--greyColor) !important;
+  color: white !important;
+  background-color: transparent !important;
+}
+.form-control::placeholder {
+  color: var(--greyColor) !important;
+}
+.form-control:focus {
+  border: 1px var(--focusedColor) solid !important;
+  background-color: #1f1e1f !important;
+  box-shadow: 0 0 0 0 var(--focusedColor) !important;
+}
+/* !Recommended */
+.recommended .recItem {
+  cursor: pointer;
+}
+
+/* !cards */
+.projects .cardItem {
+  cursor: pointer;
+}
+
+/* 
+*/

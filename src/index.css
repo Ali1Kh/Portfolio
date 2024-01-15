@@ -1,0 +1,17 @@
+:root {
+  --greyColor: #696869;
+  --focusedColor:#808081;
+}
+
+.fs-7{
+font-size: 14px !important;
+}
+
+@font-face {
+  font-family: "MyFont";
+  src: local("MyFont"),
+    url(../public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf)
+      format("woff");
+}
+
+

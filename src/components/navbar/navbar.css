@@ -1,0 +1,16 @@
+.navbar {
+  top: 25px;
+}
+.navbar .container {
+  background-color: #0d0d0d;
+  width: 60% !important;
+}
+.nav-item .nav-link {
+  color: white !important;
+  font-size: 14px;
+}
+.nav-item .nav-link.active,
+.nav-item .nav-link:hover {
+  color: #09c !important;
+  transition: color 1s;
+}
