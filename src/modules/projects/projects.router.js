@@ -9,5 +9,6 @@ router.post("/",
     asyncHandler(projectsController.addProject));
 
 router.get("/", asyncHandler(projectsController.getProjects));
+router.get("/:projectId", asyncHandler(projectsController.getProjectDetails));
 
 export default router;

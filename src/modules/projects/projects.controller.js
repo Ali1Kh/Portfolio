@@ -2,7 +2,12 @@ import { Projects } from "../../../DB/models/projects.model.js";
 import cloudinary from "../../utils/cloudinary.js";
 
 export const getProjects = async (req, res, next) => {
-  let projects = await Projects.find();
+  let projects = await Projects.find().select("-images");
+  return res.json({ success: true, results: projects });
+};
+export const getProjectDetails = async (req, res, next) => {
+  let {projectId} = req.params;  
+  let projects = await Projects.findById(projectId);
   return res.json({ success: true, results: projects });
 };
 
