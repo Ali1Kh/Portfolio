@@ -2,7 +2,6 @@ import { Schema, model } from "mongoose";
 
 const projectSchema = new Schema(
   {
-    logo: String,
     name: String,
     link: String,
     category: String,
@@ -11,7 +10,8 @@ const projectSchema = new Schema(
     date: String,
     technologies: Array,
     shortDescreption: String,
-    images: String,
+    logo: { secure_url: String, public_id: String },
+    images: [{ secure_url: String, public_id: String }],
   },
   {
     timestamps: true,
