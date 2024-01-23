@@ -11,7 +11,7 @@ const projectSchema = new Schema(
     technologies: Array,
     shortDescreption: String,
     logo: { secure_url: String, public_id: String },
-    images: [{ secure_url: String, public_id: String }],
+    images: [{ secure_url: String, public_id: String , imageTitle:String }],
   },
   {
     timestamps: true,
