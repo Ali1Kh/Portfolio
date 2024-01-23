@@ -1,14 +1,13 @@
 import { Projects } from "../../../DB/models/projects.model.js";
-import { asyncHandler } from "../../utils/asyncHandler.js";
+import cloudinary from "../../utils/cloudinary.js";
 
 export const getProjects = async (req, res, next) => {
   let projects = await Projects.find();
   return res.json({ success: true, results: projects });
 };
 
-export const addProject = asyncHandler(async (req, res, next) => {
+export const addProject = async (req, res, next) => {
   const {
-    logo,
     name,
     link,
     category,
@@ -17,11 +16,19 @@ export const addProject = asyncHandler(async (req, res, next) => {
     date,
     technologies,
     shortDescreption,
-    images,
   } = req.body;
-  console.log(req.body);
+  let logoUpload = await cloudinary.uploader.upload(req.files.logo[0].path,
+    { folder: `portfolio/projects/${name}/logo/` })
+
+  let coverImagesArr = [];
+  for (let index = 0; index < req.files.coverImages.length; index++) {
+    let coverImages = await cloudinary.uploader.upload(req.files.coverImages[index].path,
+      { folder: `portfolio/projects/${name}/coverImages/` })
+    coverImagesArr.push({ secure_url: coverImages.secure_url, public_id: coverImages.public_id })
+  }
+
+
   let project = await Projects.create({
-    logo,
     name,
     link,
     category,
@@ -30,11 +37,13 @@ export const addProject = asyncHandler(async (req, res, next) => {
     date,
     technologies,
     shortDescreption,
-    images,
+    images:coverImagesArr,
+    logo : { secure_url: logoUpload.secure_url, public_id: logoUpload.public_id },
   });
   return res.json({
     success: true,
     message: "Project Added Successfully",
-    project,
+    project
   });
-});
+};
+
