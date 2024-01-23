@@ -8,10 +8,10 @@ const projectSchema = new Schema(
     descreption: String,
     daysAgo: String,
     date: String,
-    technologies: Array,
+    technologies: [{ name: String, slug: String }],
     shortDescreption: String,
     logo: { secure_url: String, public_id: String },
-    images: [{ secure_url: String, public_id: String , imageTitle:String }],
+    images: [{ secure_url: String, public_id: String, imageTitle: String }],
   },
   {
     timestamps: true,

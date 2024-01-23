@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 await dbConnect();
 app.use("/projects", projectsRouter);
-app.use((error,req,res,next)=>{
-    return res.json({success:false,error})
+app.use((error, req, res, next) => {
+    return res.json({ success: false, error: { message: error.message, stack: error.stack } })
 })
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

@@ -1,6 +1,6 @@
 import { Projects } from "../../../DB/models/projects.model.js";
 import cloudinary from "../../utils/cloudinary.js";
-
+import slugify from "slugify";
 export const getProjects = async (req, res, next) => {
   let projects = await Projects.find().select("-images");
   return res.json({ success: true, results: projects });
@@ -22,6 +22,10 @@ export const addProject = async (req, res, next) => {
     technologies,
     shortDescreption,
   } = req.body;
+  technologies.map((tech) => {
+    tech.slug=slugify(tech.name).toLowerCase();
+    })
+
   let logoUpload = await cloudinary.uploader.upload(req.files.logo[0].path,
     { folder: `portfolio/projects/${name}/logo/` })
 
@@ -31,7 +35,6 @@ export const addProject = async (req, res, next) => {
       { folder: `portfolio/projects/${name}/coverImages/` })
     coverImagesArr.push({ secure_url: coverImages.secure_url, public_id: coverImages.public_id, imageTitle: req.files.coverImages[index].originalname })
   }
-
 
   let project = await Projects.create({
     name,
