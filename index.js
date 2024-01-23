@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import projectsRouter from "./src/modules/projects/projects.router.js";
 dotenv.config();
 const app = express();
-const port = process.env.port;
+const port = process.env.PORT;
 app.use(express.json());
 await dbConnect();
 app.use("/projects", projectsRouter);
