@@ -3,7 +3,7 @@
 }
 .navbar .container {
   background-color: #0d0d0d;
-  width: 60% !important;
+  width: 55% !important;
 }
 .nav-item .nav-link {
   color: white !important;
@@ -11,6 +11,12 @@
 }
 .nav-item .nav-link.active,
 .nav-item .nav-link:hover {
-  color: #09c !important;
+  color: var(--mainColor) !important;
   transition: color 1s;
+}
+
+@media screen and (width <= 550px) {
+  .navbar .container {
+    width: 90% !important;
+  }
 }

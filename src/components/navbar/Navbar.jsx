@@ -14,7 +14,7 @@ export default function Navbar() {
     <>
       <nav className="navbar navbar-expand-lg position-sticky z-2 mb-5 ">
         <div className="container rounded-4 px-3 py-2 border shadow">
-          <a className="navbar-brand fs-4 d-flex align-items-center gap-2 text-white">
+          <Link to={"/"} style={{cursor:"grabbing",userSelect:"none"}} className="navbar-brand fs-4 d-flex align-items-center gap-2 text-white">
             <img
               src={require("../../imgs/logo.png")}
               alt="Logo"
@@ -22,7 +22,7 @@ export default function Navbar() {
               className="d-inline-block align-text-top"
             />
             Ali Elsaadany
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -32,7 +32,7 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+         <i className="fa-solid fa-bars text-white"></i>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">

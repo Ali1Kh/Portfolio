@@ -1,30 +1,36 @@
 :root {
   --greyColor: #696869;
-  --focusedColor:#808081;
-  --mainColor:#cc8d04;
+  --focusedColor: #808081;
+  --mainColor: #cc8d04;
 }
 
-.primaryBg{
-background-color: #181918 !important;  
+.primaryBg {
+  background-color: #181918 !important;
 }
-.secBg{
+.secBg {
   background-color: #1e1e1f !important;
 }
-
-.primaryText{
+.opensansFont,
+.title {
+  font-family: "Open Sans", sans-serif;
+}
+.mutedText {
+  color: #737173 !important;
+}
+.primaryText {
   font-family: "Open Sans", sans-serif;
   color: var(--mainColor);
 }
 
-.cursorPointer{
+.cursorPointer {
   cursor: pointer;
 }
-.cursorGrab{
-  cursor: grab
+.cursorGrab {
+  cursor: grab;
 }
 
-.fs-7{
-font-size: 14px !important;
+.fs-7 {
+  font-size: 14px !important;
 }
 
 @font-face {
@@ -33,7 +39,6 @@ font-size: 14px !important;
     url(../public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf)
       format("woff");
 }
-
 
 /* Scroll */
 /* !Scroll Design */

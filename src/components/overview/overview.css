@@ -4,3 +4,10 @@
 .social i:hover {
   color: var(--mainColor);
 }
+
+.sectionFooter button ,button.contactBtn{
+  transition: all 800ms;
+}
+.sectionFooter button:hover , .contactBtn:hover{
+  background-color: var(--mainColor) !important;
+}

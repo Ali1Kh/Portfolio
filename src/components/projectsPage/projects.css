@@ -34,6 +34,12 @@
 .projects .cardItem {
   cursor: pointer;
 }
+.projects .projLink i {
+  transition: 400ms;
+}
+.projects .projLink:hover i {
+  color: var(--mainColor) !important;
+}
 
 /* 
 */

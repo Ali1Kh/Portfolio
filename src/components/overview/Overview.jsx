@@ -5,6 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "./overview.css";
 import Projects from "../projects/Projects";
 import { useNavigate } from "react-router-dom";
+import Contact from "../contact/Contact";
+import ParticlesComponent from "../Particles/ParticlesComponent";
 export default function Overview() {
   const settings = {
     dots: false,
@@ -29,137 +31,143 @@ export default function Overview() {
   const navigate = useNavigate();
   return (
     <>
-      <section className="about mb-5 py-5 mt-3">
-        <div className="container py-5">
+      <section className="about mb-md-5 py-md-5 mt-3">
+        <div className="container py-md-5">
           {/* <div className="sectionTitle primaryText">
             <h2>About</h2>
           </div> */}
           <div className="aboutInner  d-flex gap-5 justify-content-center  align-items-center">
             <div className="overview mt-5">
-              <div className="title primaryText">
-                <h1>Ali Elsaadany,</h1>
-              </div>
-              <div className="summary mb-3" style={{ maxWidth: "700px" }}>
-                I'm Full Stack Web Developer building seamless web experiences
-                with proficiency in the MERN stack. Proficient in front-end
-                technologies like HTML, CSS, JavaScript, React.js, and back-end
-                development with Node.js, Express.js and MongoDB. Passionate
-                about creating user friendly and visually appealing and
-                functional web applications.
-                <b>Available for remote and freelance work.</b>
-              </div>
-              <div className="social d-flex gap-2 ">
-                <a
-                  className="text-white"
-                  href="https://www.linkedin.com/in/ali1kh/"
-                  target="_blank"
-                >
-                  <i className="fa fs-5 fa-brands fa-linkedin-in"></i>
-                </a>
-                <a
-                  className="text-white"
-                  href="https://www.github.com/ali1kh"
-                  target="_blank"
-                  s
-                >
-                  <i className="fa fs-5 fa-brands fa-github"></i>
-                </a>
-                <a
-                  href="mailto:alielsaadany94@gmail.com"
-                  className="text-white"
-                >
-                  <i className="fa fs-5 fa-at"></i>
-                </a>
-              </div>
-            </div>
-            <div className="tech  mt-5">
-              {/* <h5>Technologies</h5> */}
-              <div
-                className="slidesContainer text-center"
-                style={{ width: "110px" }}
-              >
-                <Slider {...settings}>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/javascript.png")}
-                      alt="JavaScript"
-                    />
-                    <h6>JavaScript</h6>
+              <div className="row">
+                <div className="col-md-11">
+                  <div className="title primaryText">
+                    <h1>Ali Elsaadany,</h1>
                   </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/react.png")}
-                      alt="React"
-                    />
-                    <h6 className="">React</h6>
+                  <div className="summary mb-3" style={{ maxWidth: "700px" }}>
+                    I'm Full Stack Web Developer building seamless web
+                    experiences with proficiency in the MERN stack. Proficient
+                    in front-end technologies like HTML, CSS, JavaScript,
+                    React.js, and back-end development with Node.js, Express.js
+                    and MongoDB. Passionate about creating user friendly and
+                    visually appealing and functional web applications.
+                    <b>Available for remote and freelance work.</b>
                   </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/typescript.png")}
-                      alt="TypeScript"
-                    />
-                    <h6 className="">TypeScript</h6>
+                  <div className="social d-flex gap-2 ">
+                    <a
+                      className="text-white"
+                      href="https://www.linkedin.com/in/ali1kh/"
+                      target="_blank"
+                    >
+                      <i className="fa fs-5 fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a
+                      className="text-white"
+                      href="https://www.github.com/ali1kh"
+                      target="_blank"
+                      s
+                    >
+                      <i className="fa fs-5 fa-brands fa-github"></i>
+                    </a>
+                    <a
+                      href="mailto:alielsaadany94@gmail.com"
+                      className="text-white"
+                    >
+                      <i className="fa fs-5 fa-at"></i>
+                    </a>
                   </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/nextjs.png")}
-                      alt="NextJS"
-                    />
-                    <h6 className="">Next.JS</h6>
+                </div>
+                <div className="col-md-1 ">
+                  <div className="tech mt-5">
+                    {/* <h5>Technologies</h5> */}
+                    <div
+                      className="slidesContainer mx-auto text-center"
+                      style={{ width: "110px" }}
+                    >
+                      <Slider {...settings}>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/javascript.png")}
+                            alt="JavaScript"
+                          />
+                          <h6>JavaScript</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/react.png")}
+                            alt="React"
+                          />
+                          <h6 className="">React</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/typescript.png")}
+                            alt="TypeScript"
+                          />
+                          <h6 className="">TypeScript</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/nextjs.png")}
+                            alt="NextJS"
+                          />
+                          <h6 className="">Next.JS</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/redux.png")}
+                            alt="Redux"
+                          />
+                          <h6 className="">Redux</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/html.png")}
+                            alt="html"
+                          />
+                          <h6 className="">HTML</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/css.png")}
+                            alt="css"
+                          />
+                          <h6 className="">CSS</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/sass.png")}
+                            alt="sass"
+                          />
+                          <h6 className="">Sass</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/bootstrap.png")}
+                            alt="bootstrap"
+                          />
+                          <h6 className="">BootStrap</h6>
+                        </div>
+                        <div className="p-2 cursorGrab">
+                          <img
+                            className="w-100 mb-2"
+                            src={require("../../imgs/tech/jquery.png")}
+                            alt="jquery"
+                          />
+                          <h6 className="">JQuery</h6>
+                        </div>
+                      </Slider>
+                    </div>
                   </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/redux.png")}
-                      alt="Redux"
-                    />
-                    <h6 className="">Redux</h6>
-                  </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/html.png")}
-                      alt="html"
-                    />
-                    <h6 className="">HTML</h6>
-                  </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/css.png")}
-                      alt="css"
-                    />
-                    <h6 className="">CSS</h6>
-                  </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/sass.png")}
-                      alt="sass"
-                    />
-                    <h6 className="">Sass</h6>
-                  </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/bootstrap.png")}
-                      alt="bootstrap"
-                    />
-                    <h6 className="">BootStrap</h6>
-                  </div>
-                  <div className="p-2 cursorGrab">
-                    <img
-                      className="w-100 mb-2"
-                      src={require("../../imgs/tech/jquery.png")}
-                      alt="jquery"
-                    />
-                    <h6 className="">JQuery</h6>
-                  </div>
-                </Slider>
+                </div>
               </div>
             </div>
           </div>
@@ -168,7 +176,7 @@ export default function Overview() {
       <section className="projects py-2 my-5 mt-3">
         <div className="container ">
           <div className="sectionTitle text-center primaryText my-5 pt-5">
-            <h2>Projects</h2>
+            <h2>Latest Projects</h2>
           </div>
           <div className="projectsCards">
             <Projects test="?" />
@@ -260,16 +268,32 @@ export default function Overview() {
               </Slider>
             </div>
             <div className="sectionFooter mt-4 mb-0 text-center">
-            <button
-              onClick={() => navigate("/certificates")}
-              className="btn text-white borderGrey"
-            >
-              Show Certificates
-            </button>
-          </div>
+              <button
+                onClick={() => navigate("/certificates")}
+                className="btn text-white borderGrey"
+              >
+                Show Certificates
+              </button>
+            </div>
           </div>
         </div>
       </section>
+      <section className="contact my-5 mt-3">
+        <div className="container">
+          <div className="sectionTitle text-center primaryText pt-4">
+            <h2>
+              Have Any Project in Mind?
+              <span className="text-white fs-6">Contact Us</span>
+            </h2>
+          </div>
+          <div className="contactContainer">
+            <Contact/>
+          </div>
+        </div>
+      </section>
+      <footer className="py-05 secBg overflow-hidden" >
+        {/* <ParticlesComponent /> */}
+      </footer>
     </>
   );
 }

@@ -1,5 +1,4 @@
 import { RouterProvider, createHashRouter } from "react-router-dom";
-import "./App.css";
 import Layout from "./components/layout/Layout";
 import Overview from "./components/overview/Overview";
 import Skills from "./components/skills/Skills";
@@ -8,6 +7,7 @@ import ProjectDetails from "./components/projectDetails/ProjectDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import ProjectsPage from "./components/projectsPage/ProjectsPage";
 import Certificates from "./components/certificates/Certificates";
+import ContactPage from "./components/contact/ContactPage";
 const router = createHashRouter([
   {
     path: "",
@@ -45,7 +45,7 @@ const router = createHashRouter([
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: <ContactPage />,
       },
       {
         path: "*",
