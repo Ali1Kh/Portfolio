@@ -8,6 +8,7 @@ export const addCertificate = async (req, res, next) => {
     await Certificates.create({
         name: req.body.name,
         company: req.body.company,
+        link: req.body.link,
         images: { secure_url: certificatesImages.secure_url, public_id: certificatesImages.public_id },
     });
     return res.json({

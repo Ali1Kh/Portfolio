@@ -4,6 +4,7 @@ const certificatesSchema = new Schema(
     {
         name: String,
         company: String,
+        link: String,
         images: { secure_url: String, public_id: String },
     },
     {
