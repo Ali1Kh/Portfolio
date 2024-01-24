@@ -50,7 +50,7 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  data-category="mmorpg"
+                  id="projectsNavItem"
                   role="button"
                   aria-current="page"
                   to={"/projects"}
@@ -61,7 +61,7 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  data-category="mmorpg"
+
                   role="button"
                   aria-current="page"
                   to={"/skills"}
@@ -72,7 +72,7 @@ export default function Navbar() {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  data-category="mmorpg"
+
                   role="button"
                   aria-current="page"
                   to={"/contact"}

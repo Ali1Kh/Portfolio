@@ -4,9 +4,10 @@ import Layout from "./components/layout/Layout";
 import Overview from "./components/overview/Overview";
 import Skills from "./components/skills/Skills";
 import Contact from "./components/contact/Contact";
-import Projects from "./components/projects/Projects";
 import ProjectDetails from "./components/projectDetails/ProjectDetails";
-
+import { QueryClient, QueryClientProvider } from "react-query";
+import ProjectsPage from "./components/projectsPage/ProjectsPage";
+import Certificates from "./components/certificates/Certificates";
 const router = createHashRouter([
   {
     path: "",
@@ -27,11 +28,20 @@ const router = createHashRouter([
       },
       {
         path: "/projects",
-        element: <Projects />,
+        children: [
+          {
+            path: "",
+            element: <ProjectsPage />,
+          },
+          {
+          path: "projectDetails/:id",
+          element: <ProjectDetails />,
+        }
+      ]
       },
       {
-        path: "/projectDetails/:id",
-        element: <ProjectDetails />,
+        path: "/certificates",
+        element: <Certificates />,
       },
       {
         path: "/contact",
@@ -46,8 +56,7 @@ const router = createHashRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router}></RouterProvider>;
+  const client = new QueryClient();
+  return  <QueryClientProvider client={client}><RouterProvider router={router}></RouterProvider></QueryClientProvider>;
 }
-
-
 export default App;

@@ -1,6 +1,26 @@
 :root {
   --greyColor: #696869;
   --focusedColor:#808081;
+  --mainColor:#cc8d04;
+}
+
+.primaryBg{
+background-color: #181918 !important;  
+}
+.secBg{
+  background-color: #1e1e1f !important;
+}
+
+.primaryText{
+  font-family: "Open Sans", sans-serif;
+  color: var(--mainColor);
+}
+
+.cursorPointer{
+  cursor: pointer;
+}
+.cursorGrab{
+  cursor: grab
 }
 
 .fs-7{
@@ -15,3 +35,19 @@ font-size: 14px !important;
 }
 
 
+/* Scroll */
+/* !Scroll Design */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #15181d;
+}
+*::-webkit-scrollbar {
+  width: 7px;
+}
+*::-webkit-scrollbar-track {
+  background: #343a41;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 10px;
+}
