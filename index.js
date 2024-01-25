@@ -13,7 +13,10 @@ app.use(express.json());
 await dbConnect();
 app.use("/projects", projectsRouter);
 app.use("/certificates", certificatesRouter);
-
+app.all("/uptime", (req, res) => {
+    console.log("Up Time Requested");
+    res.status(200).send("success");
+  });
 app.use((error, req, res, next) => {
     return res.json({ success: false, error: { message: error.message, stack: error.stack } })
 })
