@@ -39,7 +39,6 @@
   transition: color 1s;
 }
 
-
 @media screen and (width <= 560px) {
   .navbar .container {
     width: 80% !important;
@@ -49,6 +48,12 @@
 @media screen and (width <= 400px) {
   .navbar .container {
     width: 90% !important;
+  }
+}
+
+@media screen and (width < 992px) {
+  .socialmedia {
+    display: none;
   }
 }
 

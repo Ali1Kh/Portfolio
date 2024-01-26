@@ -1,9 +1,4 @@
-.social i {
-  transition: color 500ms;
-}
-.social i:hover {
-  color: var(--mainColor);
-}
+
 
 .sectionFooter button ,button.contactBtn{
   transition: all 800ms;

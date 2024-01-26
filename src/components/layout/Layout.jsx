@@ -17,7 +17,29 @@ export default function Layout() {
     <>
       <Navbar />
       <Outlet />
-      {/* <div id="follow"></div> */}
+      <div className="socialmedia my-2 animate__animated animate__flipInX animate__fast">
+        <p className="followMe sunFont m-0 animate__animated /animate__rollIn ">Follow Me</p>
+        <div className="socialItems pb-3 d-flex flex-column gap-2">
+          <a
+            className="text-white"
+            href="https://www.linkedin.com/in/ali1kh/"
+            target="_blank"
+          >
+            <i className="fa fs-5 fa-brands fa-linkedin-in"></i>
+          </a>
+          <a
+            className="text-white"
+            href="https://www.github.com/ali1kh"
+            target="_blank"
+            s
+          >
+            <i className="fa fs-5 fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:alielsaadany94@gmail.com" className="text-white">
+            <i className="fa fs-5 fa-at"></i>
+          </a>
+        </div>
+      </div>
     </>
   );
 }

@@ -52,28 +52,10 @@ export default function Overview() {
                     visually appealing and functional web applications.
                     <b>Available for remote and freelance work.</b>
                   </div>
-                  <div className="social d-flex gap-2 ">
-                    <a
-                      className="text-white"
-                      href="https://www.linkedin.com/in/ali1kh/"
-                      target="_blank"
-                    >
-                      <i className="fa fs-5 fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a
-                      className="text-white"
-                      href="https://www.github.com/ali1kh"
-                      target="_blank"
-                      s
-                    >
-                      <i className="fa fs-5 fa-brands fa-github"></i>
-                    </a>
-                    <a
-                      href="mailto:alielsaadany94@gmail.com"
-                      className="text-white"
-                    >
-                      <i className="fa fs-5 fa-at"></i>
-                    </a>
+                  
+                  <div class="sectionFooter d-flex align-items-center gap-4 my-4 ">
+                  <button class="btn text-white borderGrey">View Resume</button>
+                 
                   </div>
                 </div>
                 <div className="col-md-1 ">
@@ -287,11 +269,11 @@ export default function Overview() {
             </h2>
           </div>
           <div className="contactContainer">
-            <Contact/>
+            <Contact />
           </div>
         </div>
       </section>
-      <footer className="py-05 secBg overflow-hidden" >
+      <footer className="py-05 secBg overflow-hidden">
         {/* <ParticlesComponent /> */}
       </footer>
     </>
