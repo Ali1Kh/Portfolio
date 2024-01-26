@@ -3,7 +3,7 @@ import { dbConnect } from "./DB/connection.js";
 import dotenv from "dotenv";
 import projectsRouter from "./src/modules/projects/projects.router.js";
 import certificatesRouter from "./src/modules/certificates/certificates.router.js";
-
+import mailsRouter from "./src/modules/mails/mails.router.js";
 import cors from "cors";
 dotenv.config();
 const app = express();
@@ -13,6 +13,7 @@ app.use(express.json());
 await dbConnect();
 app.use("/projects", projectsRouter);
 app.use("/certificates", certificatesRouter);
+app.use("/mails", mailsRouter)
 app.all("/uptime", (req, res) => {
     console.log("Up Time Requested");
     res.status(200).send("success");
