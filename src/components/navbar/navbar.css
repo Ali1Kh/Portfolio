@@ -1,9 +1,9 @@
 .navbar {
-  top: 25px;
+  top: 18px;
 }
 .navbar .container {
   background-color: #0d0d0d;
-  width: 35% !important;
+  width: 50% !important;
   position: relative !important;
   z-index: 59999 !important;
 }
@@ -11,7 +11,7 @@
   content: "";
   position: absolute;
   bottom: 101%;
-  right: 95%;
+  right: 90%;
   width: 2px;
   height: 55px;
   border-radius: 15px;
@@ -22,7 +22,7 @@
   content: "";
   position: absolute;
   bottom: 101%;
-  left: 95%;
+  left: 90%;
   width: 2px;
   height: 55px;
   border-radius: 15px;
@@ -39,8 +39,14 @@
   transition: color 1s;
 }
 
-@media screen and (width <= 550px) {
+@media screen and (width > 1200px) {
   .navbar .container {
-    width: 90% !important;
+    width: 40% !important;
+  }
+}
+
+@media screen and (width >= 1400px) {
+  .navbar .container {
+    width: 35% !important;
   }
 }
