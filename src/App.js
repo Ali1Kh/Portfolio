@@ -2,7 +2,7 @@ import { RouterProvider, createHashRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Overview from "./components/overview/Overview";
 import Skills from "./components/skills/Skills";
-import Contact from "./components/contact/Contact";
+import 'animate.css';
 import ProjectDetails from "./components/projectDetails/ProjectDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import ProjectsPage from "./components/projectsPage/ProjectsPage";

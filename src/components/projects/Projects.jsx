@@ -70,7 +70,7 @@ export default function Projects(count) {
 
   return (
     <div className="projects">
-      <div className="row">
+      <div className="row gy-3">
         {data?.data.results.map((project) => (
           <div key={project._id} className="col-md-4">
             <Tilt className="h-100" options={options}>

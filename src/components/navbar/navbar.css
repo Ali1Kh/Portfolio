@@ -3,7 +3,31 @@
 }
 .navbar .container {
   background-color: #0d0d0d;
-  width: 55% !important;
+  width: 35% !important;
+  position: relative !important;
+  z-index: 59999 !important;
+}
+.navbar .container::before {
+  content: "";
+  position: absolute;
+  bottom: 101%;
+  right: 95%;
+  width: 2px;
+  height: 55px;
+  border-radius: 15px;
+  z-index: -4 !important;
+  background-color: var(--mainColor);
+}
+.navbar .container::after {
+  content: "";
+  position: absolute;
+  bottom: 101%;
+  left: 95%;
+  width: 2px;
+  height: 55px;
+  border-radius: 15px;
+  z-index: -4;
+  background-color: var(--mainColor);
 }
 .nav-item .nav-link {
   color: white !important;
