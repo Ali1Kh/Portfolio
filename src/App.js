@@ -8,6 +8,8 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import ProjectsPage from "./components/projectsPage/ProjectsPage";
 import Certificates from "./components/certificates/Certificates";
 import ContactPage from "./components/contact/ContactPage";
+import toast, { Toaster } from 'react-hot-toast';
+
 const router = createHashRouter([
   {
     path: "",
@@ -34,10 +36,10 @@ const router = createHashRouter([
             element: <ProjectsPage />,
           },
           {
-          path: "projectDetails/:id",
-          element: <ProjectDetails />,
-        }
-      ]
+            path: "projectDetails/:id",
+            element: <ProjectDetails />,
+          }
+        ]
       },
       {
         path: "/certificates",
@@ -57,6 +59,6 @@ const router = createHashRouter([
 
 function App() {
   const client = new QueryClient();
-  return  <QueryClientProvider client={client}><RouterProvider router={router}></RouterProvider></QueryClientProvider>;
+  return <QueryClientProvider client={client}><RouterProvider router={router}></RouterProvider><Toaster /></QueryClientProvider>;
 }
 export default App;

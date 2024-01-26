@@ -33,12 +33,23 @@
   font-size: 14px !important;
 }
 
+button:disabled {
+  cursor: not-allowed !important;
+}
+
+/* Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
 @font-face {
   font-family: "MyFont";
   src: local("MyFont"),
     url(../public/fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Black.otf)
       format("woff");
 }
+
+.sunFont {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
 
 /* Scroll */
 /* !Scroll Design */
