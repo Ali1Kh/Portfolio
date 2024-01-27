@@ -35,8 +35,8 @@ export default function Layout() {
           >
             <i className="fa fs-5 fa-brands fa-github"></i>
           </a>
-          <a href="mailto:alielsaadany94@gmail.com" className="text-white">
-            <i className="fa fs-5 fa-at"></i>
+          <a href="https://twitter.com/aly1kh" target="_blank" className="text-white">
+            <i className="fa-brands fs-5 fa-x-twitter"></i>
           </a>
         </div>
       </div>

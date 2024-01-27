@@ -16,12 +16,12 @@ export default function Navbar() {
         <div className="container rounded-4 px-3 py-2 border shadow  animate__animated   animate__bounceInDown animate__fast" >
           <Link to={"/"} style={{cursor:"grabbing",userSelect:"none"}} className="navbar-brand fs-4 d-flex align-items-center gap-2 text-white">
             <img
-              src={require("../../imgs/logo.png")}
+              src={require("../../imgs/fav.png")}
               alt="Logo"
-              width="50"
-              className="d-inline-block align-text-top"
+              width="32"
+              className="d-inline-block align-text-top me-s2 m-0 p-0 "
             />
-            Ali Elsaadany
+            <span className="m-0 p-0">Ali Elsaadany</span>
           </Link>
           <button
             className="navbar-toggler"
