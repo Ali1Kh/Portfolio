@@ -262,7 +262,7 @@ export default function Overview() {
                     className="w-100 rounded-circle cursorGrab"
                     src={require("../../imgs/certificatedFrom/mica.jpg")}
                     alt=""
-                    title="SoloLearn"
+                    title="Mica Egypt"
                     style={{ maxWidth: "80px" }}
                   />
                 </div>
