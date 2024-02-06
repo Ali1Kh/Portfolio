@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,14 +28,32 @@ export default function Overview() {
     autoplaySpeed: 2000,
     arrows: false,
   };
+
+  const fetchSVG = async () => {
+    try {
+      const response = await fetch(
+        "https://cors-anywhere.herokuapp.com/https://wakatime.com/badge/user/018b51c2-85fb-4d4b-93c2-2e41856c88f8.svg?style=social"
+      );
+      const svgText = await response.text();
+      const parser = new DOMParser();
+      const svgDocument = parser.parseFromString(svgText, "image/svg+xml");
+      const extractedAriaLabel =
+        svgDocument.documentElement.getAttribute("aria-label");
+      console.log(extractedAriaLabel);
+    } catch (error) {
+      console.log("Error fetching or parsing SVG:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchSVG();
+  }, []);
+
   const navigate = useNavigate();
   return (
     <>
       <section className="about mb-md-5 py-md-5 mt-3">
         <div className="container py-md-5">
-          {/* <div className="sectionTitle primaryText">
-            <h2>About</h2>
-          </div> */}
           <div className="aboutInner  d-flex gap-5 justify-content-center  align-items-center">
             <div className="overview mt-5">
               <div className="row">
@@ -52,10 +70,11 @@ export default function Overview() {
                     visually appealing and functional web applications.
                     <b>Available for remote and freelance work.</b>
                   </div>
-                  
+
                   <div class="sectionFooter d-flex align-items-center gap-4 my-4 ">
-                  <button class="btn text-white borderGrey">View Resume</button>
-                 
+                    <button class="btn text-white borderGrey">
+                      View Resume
+                    </button>
                   </div>
                 </div>
                 <div className="col-md-1 ">
