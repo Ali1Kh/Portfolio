@@ -36,9 +36,9 @@ export default function Overview() {
   const getHours = async () => {
     try {
       const { data } = await axios.get(
-        "https://api.wakatime.com/api/v1/users/ali1kh/all_time_since_today?api_key=waka_28d6bcc1-d4f6-4d60-b823-cc0e8d114d8a",
+        "https://ali1kh.onrender.com/wakatime/getHours"
       );
-
+      console.log(data);
       setHours(data.data.text.split("hrs")[0]);
     } catch (error) {
       console.log("Error fetching", error);
@@ -49,19 +49,19 @@ export default function Overview() {
   const getProjects = async () => {
     try {
       const { data } = await axios.get(
-        "https://api.github.com/user/repos?per_page=100",
+        "https://api.github.com/user/repos?per_page=50&visibility=all",
         {
           headers: {
-            Authorization:
-              "token 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",
+            Authorization: process.env.REACT_APP_git_token,
             Accept: "application/vnd.github.v3+json",
             "X-GitHub-Api-Version": "2022-11-28",
           },
         }
       );
+      console.log(data);
       setProjects(data.length);
     } catch (error) {
-      console.log("Error fetching", error.response);
+      console.log("Error fetching projects", error.response);
     }
   };
 
