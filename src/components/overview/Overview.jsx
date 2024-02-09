@@ -38,7 +38,6 @@ export default function Overview() {
       const { data } = await axios.get(
         "https://ali1kh.onrender.com/wakatime/getHours"
       );
-      console.log(data);
       setHours(data.data.text.split("hrs")[0]);
     } catch (error) {
       console.log("Error fetching", error);
