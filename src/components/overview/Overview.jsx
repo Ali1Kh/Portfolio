@@ -192,6 +192,86 @@ export default function Overview() {
           </div>
         </div>
       </section>
+      <section className="d-none info secBg my-5 mt-3">
+        <div className="container py-5">
+          <div className="info">
+            <div className="row ">
+              <div className="col-md-3">
+                <div className="infoItem d-flex align-items-center flex-column">
+                  <div
+                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      backgroundColor: "var(--mainColor)",
+                    }}
+                  >
+                    <i className="fa fa-diagram-project fs-4"></i>
+                  </div>
+                  <h2>35</h2>
+                  <small>Projects Completed</small>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="infoItem d-flex align-items-center flex-column">
+                  <div
+                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      backgroundColor: "var(--mainColor)",
+                    }}
+                  >
+                    <i className="fa fa-code fs-4"></i>
+                  </div>
+                  <h2>350000</h2>
+                  <small>Lines Of Codes</small>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="infoItem d-flex align-items-center flex-column">
+                  <div
+                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      backgroundColor: "var(--mainColor)",
+                    }}
+                  >
+                    <i className="fa fa-hourglass-half fs-4"></i>
+                  </div>
+                  <h2>265</h2>
+                  <small>Coding Hours</small>
+                </div>
+              </div>
+              <div className="col-md-3">
+                <div className="infoItem d-flex align-items-center flex-column">
+                  <div
+                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                    style={{
+                      width: "50px",
+                      height: "50px",
+                      backgroundColor: "var(--mainColor)",
+                    }}
+                  >
+                    <i className="fa fa-award fs-4"></i>
+                  </div>
+                  <h2>22</h2>
+                  <small>Awards</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="d-none py-2 my-5 mt-3">
+        <div className="container ">
+          <div className="sectionTitle text-center primaryText my-5 pt-5">
+            <h2>Services</h2>
+          </div>
+       
+        </div>
+      </section>
       <section className="certificates secBg my-5 mt-3">
         <div className="container py-5">
           <div className="sectionTitle text-center primaryText mb-5 my-3">
@@ -292,6 +372,7 @@ export default function Overview() {
           </div>
         </div>
       </section>
+
       <footer className="py-05 secBg overflow-hidden">
         {/* <ParticlesComponent /> */}
       </footer>
