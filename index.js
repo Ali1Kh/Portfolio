@@ -20,6 +20,17 @@ app.all("/uptime", (req, res) => {
   res.status(200).send("success");
 });
 
+app.get("/wakatime/getHours", async (req, res) => {
+  try {
+    const response = await axios.get(
+    proccess.env.WAKATIMELINK,
+    );
+    res.json(response.data);
+  } catch (error) {
+    res.status(error.response.status).json(error.response.data);
+  }
+});
+
 app.use((error, req, res, next) => {
   return res.json({
     success: false,
