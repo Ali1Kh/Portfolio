@@ -5,7 +5,7 @@ import projectsRouter from "./src/modules/projects/projects.router.js";
 import certificatesRouter from "./src/modules/certificates/certificates.router.js";
 import mailsRouter from "./src/modules/mails/mails.router.js";
 import cors from "cors";
-import axios from 'axios'
+import axios from "axios";
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
@@ -22,12 +22,10 @@ app.all("/uptime", (req, res) => {
 
 app.get("/wakatime/getHours", async (req, res) => {
   try {
-    const response = await axios.get(
-    proccess.env.WAKATIMELINK,
-    );
+    const response = await axios.get(proccess.env.WAKATIMELINK);
     res.json(response.data);
   } catch (error) {
-    res.status(error.response.status).json(error.response.data);
+    res.json({ success: false });
   }
 });
 
