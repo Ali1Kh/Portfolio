@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +6,10 @@ import "./overview.css";
 import Projects from "../projects/Projects";
 import { useNavigate } from "react-router-dom";
 import Contact from "../contact/Contact";
-import ParticlesComponent from "../Particles/ParticlesComponent";
+import axios from "axios";
+import ScrollTrigger from "react-scroll-trigger";
+import CountUp from "react-countup";
+
 export default function Overview() {
   const settings = {
     dots: false,
@@ -29,27 +32,46 @@ export default function Overview() {
     arrows: false,
   };
 
-  const fetchSVG = async () => {
+  let [hours, setHours] = useState(1000);
+  const getHours = async () => {
     try {
-      const response = await fetch(
-        "https://cors-anywhere.herokuapp.com/https://wakatime.com/badge/user/018b51c2-85fb-4d4b-93c2-2e41856c88f8.svg?style=social"
+      const { data } = await axios.get(
+        "https://api.wakatime.com/api/v1/users/ali1kh/all_time_since_today?api_key=waka_28d6bcc1-d4f6-4d60-b823-cc0e8d114d8a",
       );
-      const svgText = await response.text();
-      const parser = new DOMParser();
-      const svgDocument = parser.parseFromString(svgText, "image/svg+xml");
-      const extractedAriaLabel =
-        svgDocument.documentElement.getAttribute("aria-label");
-      console.log(extractedAriaLabel);
+
+      setHours(data.data.text.split("hrs")[0]);
     } catch (error) {
-      console.log("Error fetching or parsing SVG:", error);
+      console.log("Error fetching", error);
+    }
+  };
+
+  let [projects, setProjects] = useState(50);
+  const getProjects = async () => {
+    try {
+      const { data } = await axios.get(
+        "https://api.github.com/user/repos?per_page=100",
+        {
+          headers: {
+            Authorization:
+              "token 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",
+            Accept: "application/vnd.github.v3+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        }
+      );
+      setProjects(data.length);
+    } catch (error) {
+      console.log("Error fetching", error.response);
     }
   };
 
   useEffect(() => {
-    fetchSVG();
+    getHours();
+    getProjects();
   }, []);
 
   const navigate = useNavigate();
+  let [counterOn, setCounterOn] = useState(false);
   return (
     <>
       <section className="about mb-md-5 py-md-5 mt-3">
@@ -192,84 +214,92 @@ export default function Overview() {
           </div>
         </div>
       </section>
-      <section className="d-none info secBg my-5 mt-3">
+      <section className="info secBg my-5 mt-3">
         <div className="container py-5">
-          <div className="info">
-            <div className="row ">
-              <div className="col-md-3">
-                <div className="infoItem d-flex align-items-center flex-column">
-                  <div
-                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      backgroundColor: "var(--mainColor)",
-                    }}
-                  >
-                    <i className="fa fa-diagram-project fs-4"></i>
+          <ScrollTrigger
+            onEnter={() => {
+              setCounterOn(true);
+            }}
+            onExit={() => {
+              setCounterOn(false);
+            }}
+          >
+            <div className="info">
+              <div className="row justify-content-center">
+                <div className="col-md-3">
+                  <div className="infoItem d-flex align-items-center flex-column">
+                    <div
+                      className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        backgroundColor: "var(--mainColor)",
+                      }}
+                    >
+                      <i className="fa fa-diagram-project fs-4"></i>
+                    </div>
+                    <h2>{counterOn && <CountUp start={0} end={projects} />}</h2>
+                    <small>Projects Completed</small>
                   </div>
-                  <h2>35</h2>
-                  <small>Projects Completed</small>
                 </div>
-              </div>
-              <div className="col-md-3">
-                <div className="infoItem d-flex align-items-center flex-column">
-                  <div
-                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      backgroundColor: "var(--mainColor)",
-                    }}
-                  >
-                    <i className="fa fa-code fs-4"></i>
+                <div className="col-md-3 d-none">
+                  <div className="infoItem d-flex align-items-center flex-column">
+                    <div
+                      className="infoIcon  mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        backgroundColor: "var(--mainColor)",
+                      }}
+                    >
+                      <i className="fa fa-code fs-4"></i>
+                    </div>
+                    <h2> {counterOn && <CountUp start={0} end={350000} />}</h2>
+                    <small>Lines Of Codes</small>
                   </div>
-                  <h2>350000</h2>
-                  <small>Lines Of Codes</small>
                 </div>
-              </div>
-              <div className="col-md-3">
-                <div className="infoItem d-flex align-items-center flex-column">
-                  <div
-                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      backgroundColor: "var(--mainColor)",
-                    }}
-                  >
-                    <i className="fa fa-hourglass-half fs-4"></i>
+                <div className="col-md-3">
+                  <div className="infoItem d-flex align-items-center flex-column">
+                    <div
+                      className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        backgroundColor: "var(--mainColor)",
+                      }}
+                    >
+                      <i className="fa fa-hourglass-half fs-4"></i>
+                    </div>
+                    <h2>{counterOn && <CountUp start={0} end={hours} />}</h2>
+                    <small>Coding Hours</small>
                   </div>
-                  <h2>265</h2>
-                  <small>Coding Hours</small>
                 </div>
-              </div>
-              <div className="col-md-3">
-                <div className="infoItem d-flex align-items-center flex-column">
-                  <div
-                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      backgroundColor: "var(--mainColor)",
-                    }}
-                  >
-                    <i className="fa fa-award fs-4"></i>
+                <div className="col-md-3">
+                  <div className="infoItem d-flex align-items-center flex-column">
+                    <div
+                      className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        backgroundColor: "var(--mainColor)",
+                      }}
+                    >
+                      <i className="fa fa-award fs-4"></i>
+                    </div>
+                    <h2>{counterOn && <CountUp start={0} end={22} />}</h2>
+                    <small>Awards</small>
                   </div>
-                  <h2>22</h2>
-                  <small>Awards</small>
                 </div>
               </div>
             </div>
-          </div>
+          </ScrollTrigger>
         </div>
       </section>
-      <section className="d-none py-2 my-5 mt-3">
+      <section className="services d-none py-2 my-5 mt-3">
         <div className="container ">
           <div className="sectionTitle text-center primaryText my-5 pt-5">
             <h2>Services</h2>
           </div>
-       
         </div>
       </section>
       <section className="certificates secBg my-5 mt-3">
