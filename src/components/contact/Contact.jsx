@@ -24,7 +24,7 @@ export default function Contact() {
         errors.email = "Email Is Required";
       } else if (
         !values.email.match(
-          /^[a-zA-Z]{1,}[a-zA-Z0-9]{2,15}@[a-z]{3,15}\.[a-z]{3,9}$/
+          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
         )
       ) {
         errors.email = "Email Is Invaild";
