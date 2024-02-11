@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./projects.css";
 import Projects from "../projects/Projects";
 import Tabs from "@mui/material/Tabs";
@@ -6,6 +6,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import PropTypes from "prop-types";
+import { projectsContext } from "../context/projectsContext";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -36,7 +37,18 @@ CustomTabPanel.propTypes = {
 export default function ProjectsPage() {
   const [tab, setTab] = React.useState(0);
 
+  let { projects, getProjects } = useContext(projectsContext);
+
   const handleTabChange = (event, newValue) => {
+    if (newValue == 1) {
+      getProjects({ type: "fullstack" });
+    } else if (newValue == 2) {
+      getProjects({ type: "frontend" });
+    } else if (newValue == 3) {
+      getProjects({ type: "backend" });
+    } else {
+      getProjects();
+    }
     setTab(newValue);
   };
 
@@ -81,16 +93,16 @@ export default function ProjectsPage() {
           </Box>
         </div>
         <CustomTabPanel value={tab} index={0}>
-          <Projects />
+          <Projects projects={projects} />
         </CustomTabPanel>
         <CustomTabPanel value={tab} index={1}>
           Fullstack
         </CustomTabPanel>
         <CustomTabPanel value={tab} index={2}>
-          <Projects />
+          <Projects projects={projects} />
         </CustomTabPanel>
         <CustomTabPanel value={tab} index={3}>
-          Backend
+          <Projects projects={projects} />
         </CustomTabPanel>
       </div>
     </main>

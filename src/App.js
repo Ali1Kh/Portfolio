@@ -2,13 +2,14 @@ import { RouterProvider, createHashRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Overview from "./components/overview/Overview";
 import Skills from "./components/skills/Skills";
-import 'animate.css';
+import "animate.css";
 import ProjectDetails from "./components/projectDetails/ProjectDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
 import ProjectsPage from "./components/projectsPage/ProjectsPage";
 import Certificates from "./components/certificates/Certificates";
 import ContactPage from "./components/contact/ContactPage";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
+import ProjectsProvider from "./components/context/projectsContext";
 
 const router = createHashRouter([
   {
@@ -38,8 +39,8 @@ const router = createHashRouter([
           {
             path: "projectDetails/:id",
             element: <ProjectDetails />,
-          }
-        ]
+          },
+        ],
       },
       {
         path: "/certificates",
@@ -59,6 +60,13 @@ const router = createHashRouter([
 
 function App() {
   const client = new QueryClient();
-  return <QueryClientProvider client={client}><RouterProvider router={router}></RouterProvider><Toaster /></QueryClientProvider>;
+  return (
+    <QueryClientProvider client={client}>
+      <ProjectsProvider>
+        <RouterProvider router={router}></RouterProvider>
+      </ProjectsProvider>
+      <Toaster />
+    </QueryClientProvider>
+  );
 }
 export default App;

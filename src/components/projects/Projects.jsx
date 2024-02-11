@@ -1,9 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import VanillaTilt from "vanilla-tilt";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useQuery } from "react-query";
 import "../projectsPage/projects.css";
-import axios from "axios";
 import $ from "jquery";
 
 function Tilt(props) {
@@ -20,7 +18,7 @@ const options = {
   perspective: 3000, // Transform perspective, the lower the more extreme the tilt gets.
   scale: 1, // 2 = 200%, 1.5 = 150%, etc..
 };
-export default function Projects(count) {
+export default function Projects({ projects }) {
   function convertDate(date) {
     let dateObj = new Date(date);
     const currentYear = new Date().getFullYear();
@@ -47,14 +45,7 @@ export default function Projects(count) {
     return output;
   }
   const navigate = useNavigate();
-  let { data, isLoading } = useQuery("projects", getProjects);
-  function getProjects() {
-    try {
-      return axios.get("https://ali1kh.onrender.com/projects");
-    } catch (ex) {
-      console.log(ex);
-    }
-  }
+
   let location = useLocation();
 
   useEffect(() => {
@@ -64,14 +55,14 @@ export default function Projects(count) {
     }
   });
 
-  function applinkClicked(e){
-    e.stopPropagation()
+  function applinkClicked(e) {
+    e.stopPropagation();
   }
 
   return (
     <div className="projects">
       <div className="row gy-3">
-        {data?.data.results.map((project) => (
+        {projects?projects.map((project) => (
           <div key={project._id} className="col-md-4">
             <Tilt className="h-100" options={options}>
               <div
@@ -91,7 +82,7 @@ export default function Projects(count) {
                   <div className="projName">
                     <h3>{project.name}</h3>
                   </div>
-                  <div onClick={(e)=>applinkClicked(e)} className="projLink">
+                  <div onClick={(e) => applinkClicked(e)} className="projLink">
                     <Link to={project.link} target="_blank">
                       <i className="fa fa-link text-white borderGrey rounded-4 fs-7 p-2"></i>
                     </Link>
@@ -139,7 +130,7 @@ export default function Projects(count) {
               </div>
             </Tilt>
           </div>
-        ))}
+        )):""}
       </div>
     </div>
   );

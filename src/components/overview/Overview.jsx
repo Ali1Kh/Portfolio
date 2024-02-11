@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -11,6 +11,7 @@ import ScrollTrigger from "react-scroll-trigger";
 import CountUp from "react-countup";
 import PDFViewer from "../pdf/PDFViewer";
 import $ from "jquery";
+import { projectsContext } from "../context/projectsContext";
 
 export default function Overview() {
   const settings = {
@@ -78,6 +79,9 @@ export default function Overview() {
 
   const navigate = useNavigate();
   let [counterOn, setCounterOn] = useState(false);
+
+  let { projects: latestProjects } = useContext(projectsContext);
+
   return (
     <>
       <section className="about mb-md-5 py-md-5 mt-3">
@@ -212,7 +216,7 @@ export default function Overview() {
             <h2>Latest Projects</h2>
           </div>
           <div className="projectsCards">
-            <Projects test="?" />
+            <Projects projects={latestProjects} />
           </div>
           <div className="sectionFooter my-4 text-center">
             <button
