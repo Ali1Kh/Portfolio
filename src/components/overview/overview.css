@@ -1,8 +1,23 @@
-
-
-.sectionFooter button ,button.contactBtn{
+.sectionFooter button,
+button.contactBtn {
   transition: all 800ms;
 }
-.sectionFooter button:hover , .contactBtn:hover{
+.sectionFooter button:hover,
+.contactBtn:hover {
   background-color: var(--mainColor) !important;
+}
+
+.serviceIcon {
+  transition: all 500ms;
+}
+
+.serviceItem {
+  transition: all 500ms;
+}
+.serviceItem:hover {
+  scale: 1.03;
+}
+.serviceItem:hover .serviceIcon {
+  background-color: var(--mainColor) !important;
+  border-color: var(--mainColor) !important;
 }

@@ -9,6 +9,7 @@ import Contact from "../contact/Contact";
 import axios from "axios";
 import ScrollTrigger from "react-scroll-trigger";
 import CountUp from "react-countup";
+import PDFViewer from "../pdf/PDFViewer";
 
 export default function Overview() {
   const settings = {
@@ -75,7 +76,7 @@ export default function Overview() {
     <>
       <section className="about mb-md-5 py-md-5 mt-3">
         <div className="container py-md-5">
-          <div className="aboutInner  d-flex gap-5 justify-content-center  align-items-center">
+          <div className="aboutInner  d-flex  gap-5 justify-content-center  align-items-center">
             <div className="overview mt-5">
               <div className="row">
                 <div className="col-md-11">
@@ -98,6 +99,7 @@ export default function Overview() {
                     </button>
                   </div>
                 </div>
+
                 <div className="col-md-1 ">
                   <div className="tech mt-5">
                     {/* <h5>Technologies</h5> */}
@@ -294,10 +296,68 @@ export default function Overview() {
           </ScrollTrigger>
         </div>
       </section>
-      <section className="services d-none py-2 my-5 mt-3">
+      <section className="services pb-5 py-2 my-5 mt-3">
         <div className="container ">
-          <div className="sectionTitle text-center primaryText my-5 pt-5">
+          <div className="sectionTitle text-center primaryText mb-5 my-2 pt-3">
             <h2>Services</h2>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <div className="serviceItem h-100 d-flex align-items-center flex-column secBg shadow p-5 px-4 rounded-3">
+                <div
+                  className="serviceIcon mb-3 border rounded-circle text-white d-flex justify-content-center align-items-center"
+                  style={{
+                    width: "55px",
+                    height: "55px",
+                  }}
+                >
+                  <i className="fa fa-laptop-code fs-4"></i>
+                </div>
+                <h5 className="serviceTitle">Web Development</h5>
+                <p className="serviceInfo fst-normal fw-light text-center px-1">
+                  From front-end design to back-end architecture,
+                  <br />I build it all. Custom Web Applications Made to Perform.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="serviceItem h-100 d-flex align-items-center flex-column secBg shadow p-5 px-3 rounded-3">
+                <div
+                  className="serviceIcon mb-3 border rounded-circle text-white d-flex justify-content-center align-items-center"
+                  style={{
+                    width: "55px",
+                    height: "55px",
+                  }}
+                >
+                  <i className="fa fa-display fs-4"></i>
+                </div>
+                <h5 className="serviceTitle">Responsive Web Design</h5>
+                <p className="serviceInfo fst-normal fw-light text-center px-1">
+                  Build websites that seamlessly adjust to any screen size,
+                  ensuring a flawless user experience across desktops, tablets,
+                  and mobiles.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="serviceItem h-100 d-flex align-items-center flex-column secBg shadow p-5 px-3 rounded-3">
+                <div
+                  className="serviceIcon mb-3 border rounded-circle text-white d-flex justify-content-center align-items-center"
+                  style={{
+                    width: "55px",
+                    height: "55px",
+                  }}
+                >
+                  <i className="fa fa-database fs-4"></i>
+                </div>
+                <h5 className="serviceTitle">Database Design and Management</h5>
+                <p className="serviceInfo fst-normal fw-light text-center px-1">
+                  Design and manage databases that organize your information
+                  beautifully, making it easy to access, analyze, and unlock
+                  hidden insights.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -401,10 +461,15 @@ export default function Overview() {
           </div>
         </div>
       </section>
-
       <footer className="py-05 secBg overflow-hidden">
         {/* <ParticlesComponent /> */}
       </footer>
+
+      <div className="pdfContainer container p-5 d-none position-fixed container top-50 start-50 translate-middle end-50 z-3 w-100">
+        <div className="pdfView ">
+          <PDFViewer pdfUrl={require("../../pdf/Ali-Elsaadany.CV.pdf")} />
+        </div>
+      </div>
     </>
   );
 }
