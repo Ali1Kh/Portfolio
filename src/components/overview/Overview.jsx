@@ -476,10 +476,13 @@ export default function Overview() {
       </footer>
 
       <div
-        className="pdfContainer rounded-3 overflow-auto container position-fixed start-50 z-3 translate-middle-x p-2"
+        className="pdfContainer rounded-3 pt-5 overflow-auto container position-fixed start-50 z-3 translate-middle-x p-2"
         style={{ width: "100%", height: "95vh", top: "25px" }}
       >
-        {/* <i className="fa fa-xmark position-absolute top-0 end-0 p-3 fs-4 z-3 cursorPointer"></i> */}
+        <i
+          style={{ backgroundColor: "#323639" }}
+          className="fa fa-xmark rounded-3 me-3 position-absolute top-0 end-0 mb-5 p-2 fs-5 z-3 cursorPointer"
+        ></i>
         <div className="pdfView h-100 w-100">
           <PDFViewer pdfUrl={require("../../pdf/Ali-Elsaadany.CV.pdf")} />
         </div>
