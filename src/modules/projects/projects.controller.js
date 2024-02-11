@@ -3,8 +3,9 @@ import cloudinary from "../../utils/cloudinary.js";
 import slugify from "slugify";
 
 export const getProjects = async (req, res, next) => {
-
-  let projects = await Projects.find({ ...req.query }).select("-images");
+  let projects = await Projects.find({ ...req.query })
+    .select("-images")
+    .limit(req.query.limit);
   return res.json({ success: true, results: projects });
 };
 export const getProjectDetails = async (req, res, next) => {

@@ -15,6 +15,7 @@ const projectSchema = new Schema(
   },
   {
     timestamps: true,
+    strictQuery:true
   }
 );
 
