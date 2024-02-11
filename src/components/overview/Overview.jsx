@@ -10,6 +10,7 @@ import axios from "axios";
 import ScrollTrigger from "react-scroll-trigger";
 import CountUp from "react-countup";
 import PDFViewer from "../pdf/PDFViewer";
+import $ from "jquery";
 
 export default function Overview() {
   const settings = {
@@ -58,7 +59,6 @@ export default function Overview() {
           },
         }
       );
-      console.log(data);
       setProjects(data.length);
     } catch (error) {
       console.log("Error fetching projects", error.response);
@@ -69,6 +69,12 @@ export default function Overview() {
     getHours();
     getProjects();
   }, []);
+
+  function viewCv(e) {
+    e.stopPropagation();
+    $(".pdfContainer").css("display", "block");
+    $("body").css("overflow", "hidden");
+  }
 
   const navigate = useNavigate();
   let [counterOn, setCounterOn] = useState(false);
@@ -94,7 +100,10 @@ export default function Overview() {
                   </div>
 
                   <div class="sectionFooter d-flex align-items-center gap-4 my-4 ">
-                    <button class="btn text-white borderGrey">
+                    <button
+                      onClick={(e) => viewCv(e)}
+                      class="btn text-white borderGrey"
+                    >
                       View Resume
                     </button>
                   </div>
@@ -314,9 +323,10 @@ export default function Overview() {
                   <i className="fa fa-laptop-code fs-4"></i>
                 </div>
                 <h5 className="serviceTitle">Web Development</h5>
-                <p className="serviceInfo fst-normal fw-light text-center px-1">
+                <p className=" serviceInfo fst-normal fw-light text-center px-2">
                   From front-end design to back-end architecture,
-                  <br />I build it all. Custom Web Applications Made to Perform.
+                  {/* <br />*/}I build it all. Custom Web Applications Made to
+                  Perform.
                 </p>
               </div>
             </div>
@@ -451,7 +461,7 @@ export default function Overview() {
       <section className="contact my-5 mt-3">
         <div className="container">
           <div className="sectionTitle text-center primaryText pt-4">
-            <h2>
+            <h2 className="mb-5">
               Have Any Project in Mind?
               <span className="text-white fs-6">Contact Us</span>
             </h2>
@@ -465,8 +475,12 @@ export default function Overview() {
         {/* <ParticlesComponent /> */}
       </footer>
 
-      <div className="pdfContainer container p-5 d-none position-fixed container top-50 start-50 translate-middle end-50 z-3 w-100">
-        <div className="pdfView ">
+      <div
+        className="pdfContainer rounded-3 overflow-auto container position-fixed start-50 z-3 translate-middle-x p-2"
+        style={{ width: "100%", height: "95vh", top: "25px" }}
+      >
+        {/* <i className="fa fa-xmark position-absolute top-0 end-0 p-3 fs-4 z-3 cursorPointer"></i> */}
+        <div className="pdfView h-100 w-100">
           <PDFViewer pdfUrl={require("../../pdf/Ali-Elsaadany.CV.pdf")} />
         </div>
       </div>

@@ -21,3 +21,8 @@ button.contactBtn {
   background-color: var(--mainColor) !important;
   border-color: var(--mainColor) !important;
 }
+
+.pdfContainer{
+  display: none;
+}
+
