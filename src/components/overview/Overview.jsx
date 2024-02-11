@@ -69,6 +69,7 @@ export default function Overview() {
   useEffect(() => {
     getHours();
     getProjects();
+    getLatestProjects();
   }, []);
 
   function viewCv(e) {
@@ -80,7 +81,7 @@ export default function Overview() {
   const navigate = useNavigate();
   let [counterOn, setCounterOn] = useState(false);
 
-  let { projects: latestProjects } = useContext(projectsContext);
+  let { projects: latestProjects , getProjects:getLatestProjects} = useContext(projectsContext);
 
   return (
     <>
