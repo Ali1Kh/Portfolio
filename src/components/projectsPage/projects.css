@@ -45,9 +45,9 @@
    color: white !important; 
 } 
 
-.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected , .css-1q2h7u5.Mui-selected{
   color: var(--mainColor) !important;
 }
-.css-1aquho2-MuiTabs-indicator{
+.css-1aquho2-MuiTabs-indicator, .css-ttwr4n{
   background-color: var(--mainColor) !important;
 }
