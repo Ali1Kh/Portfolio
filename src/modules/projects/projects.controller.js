@@ -35,16 +35,12 @@ export const addProject = async (req, res, next) => {
 
   let coverImages = [];
   let coverImagesArr = [];
-  let logoUpload;
-
+  let logoUpload = await cloudinary.uploader.upload(req.files.logo[0].path, {
+    folder: `portfolio/projects/${name}/logo/`,
+  });
   if (req.body.type != "backend") {
-     logoUpload = await cloudinary.uploader.upload(req.files.logo[0].path, {
-      folder: `portfolio/projects/${name}/logo/`,
-    });
-
-   
     for (let index = 0; index < req.files.coverImages.length; index++) {
-       coverImages = await cloudinary.uploader.upload(
+      coverImages = await cloudinary.uploader.upload(
         req.files.coverImages[index].path,
         { folder: `portfolio/projects/${name}/coverImages/` }
       );
