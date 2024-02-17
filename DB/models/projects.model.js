@@ -12,10 +12,11 @@ const projectSchema = new Schema(
     shortDescreption: String,
     logo: { secure_url: String, public_id: String },
     images: [{ secure_url: String, public_id: String, imageTitle: String }],
+    type:String
   },
   {
     timestamps: true,
-    // strictQuery:true
+    strictQuery: true,
   }
 );
 
