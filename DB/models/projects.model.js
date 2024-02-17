@@ -4,6 +4,7 @@ const projectSchema = new Schema(
   {
     name: String,
     link: String,
+    repo: String,
     category: String,
     descreption: String,
     daysAgo: String,

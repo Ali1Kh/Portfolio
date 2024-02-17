@@ -20,6 +20,7 @@ export const addProject = async (req, res, next) => {
   const {
     name,
     link,
+    repo,
     category,
     descreption,
     daysAgo,
@@ -52,6 +53,7 @@ export const addProject = async (req, res, next) => {
   let project = await Projects.create({
     name,
     link,
+    repo,
     category,
     descreption,
     daysAgo,
