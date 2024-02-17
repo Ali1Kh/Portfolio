@@ -72,10 +72,13 @@ export default function Projects({ projects }) {
                     }}
                     className="cardItem h-100 d-flex flex-column borderGrey rounded-4 p-4"
                   >
-                    <div className="logo rounded-3 overflow-hidden mb-3 h-100" style={{ width: "70px" }}>
+                    <div
+                      className="logo rounded-3 overflow-hidden mb-3 h-100"
+                      style={{ width: "70px" }}
+                    >
                       <img
                         className="w-100 img-fluid"
-                        src={project.logo.secure_url}
+                        src={project.logo?.secure_url}
                         alt=""
                       />
                     </div>
