@@ -33,21 +33,27 @@ export const addProject = async (req, res, next) => {
     tech.slug = slugify(tech.name).toLowerCase();
   });
 
-  let logoUpload = await cloudinary.uploader.upload(req.files.logo[0].path, {
-    folder: `portfolio/projects/${name}/logo/`,
-  });
-
+  let coverImages = [];
   let coverImagesArr = [];
-  for (let index = 0; index < req.files.coverImages.length; index++) {
-    let coverImages = await cloudinary.uploader.upload(
-      req.files.coverImages[index].path,
-      { folder: `portfolio/projects/${name}/coverImages/` }
-    );
-    coverImagesArr.push({
-      secure_url: coverImages.secure_url,
-      public_id: coverImages.public_id,
-      imageTitle: req.files.coverImages[index].originalname,
+  let logoUpload;
+
+  if (req.body.type != "backend") {
+     logoUpload = await cloudinary.uploader.upload(req.files.logo[0].path, {
+      folder: `portfolio/projects/${name}/logo/`,
     });
+
+   
+    for (let index = 0; index < req.files.coverImages.length; index++) {
+       coverImages = await cloudinary.uploader.upload(
+        req.files.coverImages[index].path,
+        { folder: `portfolio/projects/${name}/coverImages/` }
+      );
+      coverImagesArr.push({
+        secure_url: coverImages.secure_url,
+        public_id: coverImages.public_id,
+        imageTitle: req.files.coverImages[index].originalname,
+      });
+    }
   }
 
   let project = await Projects.create({
@@ -63,8 +69,8 @@ export const addProject = async (req, res, next) => {
     type,
     images: coverImagesArr,
     logo: {
-      secure_url: logoUpload.secure_url,
-      public_id: logoUpload.public_id,
+      secure_url: logoUpload?.secure_url,
+      public_id: logoUpload?.public_id,
     },
   });
   return res.json({
