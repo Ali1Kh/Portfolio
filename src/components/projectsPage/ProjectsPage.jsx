@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./projects.css";
 import Projects from "../projects/Projects";
 import Tabs from "@mui/material/Tabs";
@@ -51,6 +51,9 @@ export default function ProjectsPage() {
     }
     setTab(newValue);
   };
+  useEffect(() => {
+    getProjects();
+  }, []);
 
   return (
     <main className="pb-5">
