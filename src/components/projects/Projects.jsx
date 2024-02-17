@@ -64,7 +64,7 @@ export default function Projects({ projects }) {
       <div className="row gy-3">
         {projects
           ? projects.map((project) => (
-              <div key={project._id} className="col-md-4">
+              <div key={project._id} className="col-xl-4 col-md-6">
                 <Tilt className="h-100" options={options}>
                   <div
                     onClick={() => {
@@ -97,7 +97,7 @@ export default function Projects({ projects }) {
                         <div className="projCategory">
                           <h5 className="fst-italic">{project.category}</h5>
                         </div>
-                        <div className="createdFrom">
+                        <div className="createdFrom text-end">
                           <span className="fs-7 borderGrey rounded-4 px-2 py-1">
                             {convertDate(project.date)}
                           </span>

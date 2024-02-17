@@ -29,6 +29,9 @@
   cursor: grab;
 }
 
+.w-fit{
+  width: fit-content !important;
+}
 .fs-7 {
   font-size: 14px !important;
 }

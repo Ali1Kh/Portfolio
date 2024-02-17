@@ -50,7 +50,7 @@ export default function ProjectDetails() {
                     </a>
                   </div>
                   <div className="demo text-white mb-3 borderGrey rounded-4 fs-7 p-2">
-                  <i className="fa-regular fa-file-code me-2"></i>
+                    <i className="fa-regular fa-file-code me-2"></i>
                     <a
                       className="text-decoration-none text-white"
                       href={projectDetails.repo}
@@ -63,20 +63,20 @@ export default function ProjectDetails() {
 
                 <div className="techs row gy-3">
                   {projectDetails.technologies.map((tech) => (
-                   <div className="col-md-4 w-auto">
-                     <div className="techItem d-flex gap-2 align-items-center borderGrey rounded-5 px-2 py-1">
-                      <div className="techImg" style={{ width: "25px" }}>
-                        {
-                          <img
-                            className="w-100 mb-0"
-                            src={require(`../../imgs/tech/${tech.slug}.png`)}
-                            alt=""
-                          />
-                        }
+                    <div className="col-md-4 w-auto">
+                      <div className="techItem d-flex gap-2 align-items-center borderGrey rounded-5 px-2 py-1">
+                        <div className="techImg" style={{ width: "25px" }}>
+                          {
+                            <img
+                              className="w-100 mb-0"
+                              src={require(`../../imgs/tech/${tech.slug}.png`)}
+                              alt=""
+                            />
+                          }
+                        </div>
+                        <span className="mb-0 fs-7">{tech.name}</span>
                       </div>
-                      <span className="mb-0 fs-7">{tech.name}</span>
                     </div>
-                   </div>
                   ))}
                 </div>
               </div>
