@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 export const projectsContext = createContext();
 export default function ProjectsProvider({ children }) {
-  let { isLoading } = useQuery("projects", getProjects);
+  let { isLoading } = useQuery("projects");
 
   let [projects, setProjects] = useState([]);
 

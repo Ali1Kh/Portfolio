@@ -126,7 +126,7 @@ export default function Projects({ projects }) {
                             style={{ width: "40px" }}
                           >
                             <img
-                              className="w-100"
+                              className="w-100 rounded-1"
                               src={require(`../../imgs/tech/${tech.slug}.png`)}
                               alt=""
                             />
