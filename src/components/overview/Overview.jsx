@@ -243,7 +243,7 @@ export default function Overview() {
             }}
           >
             <div className="info">
-              <div className="row justify-content-center">
+              <div className="row justify-content-center gy-4">
                 <div className="col-md-3">
                   <div className="infoItem d-flex align-items-center flex-column">
                     <div
@@ -318,7 +318,7 @@ export default function Overview() {
           <div className="sectionTitle text-center primaryText mb-5 my-2 pt-3">
             <h2>Services</h2>
           </div>
-          <div className="row">
+          <div className="row gy-3">
             <div className="col-md-4">
               <div className="serviceItem h-100 d-flex align-items-center flex-column secBg shadow p-5 px-4 rounded-3">
                 <div
