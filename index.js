@@ -6,6 +6,7 @@ import certificatesRouter from "./src/modules/certificates/certificates.router.j
 import mailsRouter from "./src/modules/mails/mails.router.js";
 import cors from "cors";
 import axios from "axios";
+import requestIp  from "request-ip"
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
@@ -27,6 +28,13 @@ app.get("/wakatime/getHours", async (req, res) => {
   } catch (error) {
     res.json({ success: false });
   }
+});
+
+app.enable('trust proxy'); // Enable trusting the X-Forwarded-For header
+
+app.get('/visit', (req, res) => {
+  const ipAddress = req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  res.send (`Your IP address is: ${ipAddress}`);
 });
 
 app.use((error, req, res, next) => {
