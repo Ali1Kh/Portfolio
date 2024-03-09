@@ -6,7 +6,8 @@ import certificatesRouter from "./src/modules/certificates/certificates.router.j
 import mailsRouter from "./src/modules/mails/mails.router.js";
 import cors from "cors";
 import axios from "axios";
-import requestIp  from "request-ip"
+import { asyncHandler } from "./src/utils/asyncHandler.js";
+import { Visitors } from "./DB/models/visitors.model.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT;
@@ -30,12 +31,28 @@ app.get("/wakatime/getHours", async (req, res) => {
   }
 });
 
-app.enable('trust proxy'); // Enable trusting the X-Forwarded-For header
+app.enable("trust proxy"); // Enable trusting the X-Forwarded-For header
 
-app.get('/visit', (req, res) => {
-  const ipAddress = req.ip || req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  res.send (`Your IP address is: ${ipAddress}`);
-});
+app.get(
+  "/visit",
+  asyncHandler(async (req, res) => {
+    const ipAddress =
+      req.ip || req.headers["x-forwarded-for"] || req.connection.remoteAddress;
+    let { data } = await axios.get(`https://ipinfo.io/${ipAddress}/json`);
+    let isVisitor = await Visitors.findOne({ ip: data.ip });
+    if (isVisitor) {
+      isVisitor.count += 1;
+      await isVisitor.save();
+      return res.json({
+        success: true,
+      });
+    }
+    await Visitors.create({ ...data, count: 1 });
+    return res.json({
+      success: true,
+    });
+  })
+);
 
 app.use((error, req, res, next) => {
   return res.json({
