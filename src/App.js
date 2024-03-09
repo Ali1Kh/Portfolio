@@ -10,6 +10,8 @@ import Certificates from "./components/certificates/Certificates";
 import ContactPage from "./components/contact/ContactPage";
 import toast, { Toaster } from "react-hot-toast";
 import ProjectsProvider from "./components/context/projectsContext";
+import { useEffect } from "react";
+import axios from "axios";
 
 const router = createHashRouter([
   {
@@ -59,6 +61,12 @@ const router = createHashRouter([
 ]);
 
 function App() {
+  async function visitor(){
+    await axios.get("https://ali1kh.onrender.com/visit");
+  }
+  useEffect(()=>{
+    visitor();
+  })
   const client = new QueryClient();
   return (
     <QueryClientProvider client={client}>

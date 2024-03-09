@@ -72,6 +72,8 @@ export default function Overview() {
     getLatestProjects({ limit: 3 });
   }, []);
 
+
+
   function viewCv(e) {
     e.stopPropagation();
     $(".pdfContainer").css("display", "block");

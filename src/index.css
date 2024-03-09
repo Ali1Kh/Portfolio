@@ -67,6 +67,6 @@ button:disabled {
   background: #343a41;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: white;
+  background-color: var(--mainColor);
   border-radius: 10px;
 }
