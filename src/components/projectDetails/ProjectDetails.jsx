@@ -34,7 +34,7 @@ export default function ProjectDetails() {
                   <h1 className="fs-1">{projectDetails.name}</h1>
                 </div>
                 <div className="projCategory">
-                  <span>E-Commerce</span>
+                  <span>{projectDetails.category}</span>
                 </div>
               </div>
               <div className="projInfo  d-flex flex-column align-items-md-center">
