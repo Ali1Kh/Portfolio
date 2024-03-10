@@ -1,7 +1,7 @@
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Overview from "./components/overview/Overview";
-import Skills from "./components/skills/Skills";
+import Resume from "./components/Resume/Resume";
 import "animate.css";
 import ProjectDetails from "./components/projectDetails/ProjectDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -28,8 +28,8 @@ const router = createHashRouter([
         element: <Overview />,
       },
       {
-        path: "/skills",
-        element: <Skills />,
+        path: "/Resume",
+        element: <Resume />,
       },
       {
         path: "/projects",

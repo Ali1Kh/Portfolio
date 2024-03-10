@@ -64,9 +64,9 @@ export default function Navbar() {
 
                   role="button"
                   aria-current="page"
-                  to={"/skills"}
+                  to={"/Resume"}
                 >
-                  Skills
+                  Resume
                 </Link>
               </li>
               <li className="nav-item">
