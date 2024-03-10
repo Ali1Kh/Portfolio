@@ -3,7 +3,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 export const projectsContext = createContext();
 export default function ProjectsProvider({ children }) {
-  let { isLoading } = useQuery("projects", getProjects);
+  let { isLoading } = useQuery("projects");
 
   let [projects, setProjects] = useState([]);
 
@@ -11,8 +11,10 @@ export default function ProjectsProvider({ children }) {
     try {
       let { data } = await axios.get(
         `https://ali1kh.onrender.com/projects?${
-          filter?.type ? "type=" + filter?.type : ""
-        }&${filter?.limit ? "limit=" + filter?.limit : ""}`
+          filter?.search ? "search=" + filter?.search : ""
+        }&${filter?.type ? "type=" + filter?.type : ""}&${
+          filter?.limit ? "limit=" + filter?.limit : ""
+        }`
       );
       setProjects(data.results);
     } catch (ex) {

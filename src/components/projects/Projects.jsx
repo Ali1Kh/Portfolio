@@ -62,14 +62,26 @@ export default function Projects({ projects }) {
   return (
     <div className="projects">
       <div className="row gy-3">
-        {projects
-          ? projects.map((project) => (
+        {projects ? (
+          projects.length <= 0 ? (
+            <div className="d-flex gap-3 flex-column align-items-center justify-content-center">
+              <img
+                width={120}
+                src={require("../../imgs/no-data.png")}
+                alt=""
+                srcset=""
+              />
+              <h6>No Projects Found !</h6>
+            </div>
+          ) : (
+            projects.map((project) => (
               <div key={project._id} className="col-xl-4 col-md-6">
                 <Tilt className="h-100" options={options}>
                   <div
                     onClick={() => {
                       navigate(`/projects/projectDetails/${project._id}`);
                     }}
+                    style={{ cursor: "grab" }}
                     className="cardItem h-100 d-flex flex-column borderGrey rounded-4 p-4"
                   >
                     <div
@@ -126,7 +138,7 @@ export default function Projects({ projects }) {
                             style={{ width: "40px" }}
                           >
                             <img
-                              className="w-100"
+                              className="w-100 rounded-1"
                               src={require(`../../imgs/tech/${tech.slug}.png`)}
                               alt=""
                             />
@@ -138,7 +150,10 @@ export default function Projects({ projects }) {
                 </Tilt>
               </div>
             ))
-          : ""}
+          )
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

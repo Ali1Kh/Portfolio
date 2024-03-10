@@ -2,20 +2,6 @@ body {
   background-color: #191919 !important;
   color: white !important;
 }
-/* #follow {
-  position: absolute;
-  text-align: center;
-  transition: all 25ms;
-}
-#follow::after {
-  position: absolute;
-  content: ".";
-  color: #09c;
-  width: 35px;
-  height: 35px;
-  border: 1px solid #09c;
-  border-radius: 100vh;
-} */
 
 .socialmedia {
   background-color: #0d0d0d;
@@ -27,7 +13,7 @@ body {
   border: 1px solid white;
   border-radius: 15px;
 }
-.socialmedia::before{
+.socialmedia::before {
   content: "";
   position: absolute;
   bottom: 101%;
@@ -39,11 +25,11 @@ body {
   z-index: -4;
   background-color: var(--mainColor);
 }
-.socialmedia .socialItems i {
+ .socialItems i {
   transition: color 500ms !important;
   cursor: pointer !important;
 }
-.socialmedia .socialItems i:hover {
+ .socialItems i:hover {
   color: var(--mainColor) !important;
 }
 .followMe {
@@ -58,4 +44,9 @@ body {
   font-size: 11px;
   background-color: var(--mainColor);
   user-select: none;
+}
+
+.css-ptiqhd-MuiSvgIcon-root,
+.css-1k33q06 {
+  color: rgb(102, 60, 0);
 }

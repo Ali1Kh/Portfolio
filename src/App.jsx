@@ -1,7 +1,7 @@
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Overview from "./components/overview/Overview";
-import Skills from "./components/skills/Skills";
+import Resume from "./components/Resume/Resume";
 import "animate.css";
 import ProjectDetails from "./components/projectDetails/ProjectDetails";
 import { QueryClient, QueryClientProvider } from "react-query";
@@ -10,6 +10,8 @@ import Certificates from "./components/certificates/Certificates";
 import ContactPage from "./components/contact/ContactPage";
 import toast, { Toaster } from "react-hot-toast";
 import ProjectsProvider from "./components/context/projectsContext";
+import { useEffect } from "react";
+import axios from "axios";
 
 const router = createHashRouter([
   {
@@ -26,8 +28,8 @@ const router = createHashRouter([
         element: <Overview />,
       },
       {
-        path: "/skills",
-        element: <Skills />,
+        path: "/Resume",
+        element: <Resume />,
       },
       {
         path: "/projects",
@@ -59,6 +61,12 @@ const router = createHashRouter([
 ]);
 
 function App() {
+  async function visitor(){
+    await axios.get("https://ali1kh.onrender.com/visit");
+  }
+  useEffect(()=>{
+    visitor();
+  })
   const client = new QueryClient();
   return (
     <QueryClientProvider client={client}>

@@ -13,6 +13,7 @@ button.contactBtn {
 
 .serviceItem {
   transition: all 500ms;
+  cursor: grab;
 }
 .serviceItem:hover {
   scale: 1.03;
@@ -22,7 +23,116 @@ button.contactBtn {
   border-color: var(--mainColor) !important;
 }
 
-.pdfContainer{
+.pdfContainer {
   display: none;
 }
 
+.about {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='*560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1083%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(25%2c 25%2c 25%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c482.545C89.679%2c465.312%2c109.066%2c338.61%2c185.345%2c288.403C260.253%2c239.098%2c397.09%2c279.915%2c432.82%2c197.662C468.806%2c114.822%2c350.746%2c40.568%2c331.32%2c-47.637C314.075%2c-125.939%2c376.765%2c-220.475%2c326.901%2c-283.262C277.372%2c-345.626%2c177.48%2c-322.509%2c99.643%2c-339.354C28.428%2c-354.766%2c-38.184%2c-380.664%2c-111%2c-378.03C-201.725%2c-374.749%2c-309.425%2c-388.117%2c-371.951%2c-322.297C-434.307%2c-256.656%2c-407.547%2c-149.802%2c-413.619%2c-59.469C-419.211%2c23.711%2c-437.724%2c108.322%2c-406.083%2c185.452C-373.845%2c264.039%2c-306.129%2c319.518%2c-237.575%2c369.673C-165.353%2c422.511%2c-87.879%2c499.432%2c0%2c482.545' fill='%23131313'%3e%3c/path%3e%3cpath d='M1440 937.923C1515.162 943.432 1593.327 937.89 1658.144 899.438 1724.065 860.331 1786.665 799.8720000000001 1799.953 724.385 1812.846 651.142 1754.312 587.404 1725.113 519.007 1703.714 468.881 1676.967 424.911 1651.529 376.709 1617.272 311.796 1619.019 210.54500000000002 1549.657 186.54199999999997 1481.321 162.894 1418.807 238.36599999999999 1356.169 274.498 1307.708 302.452 1265.546 335.14 1225.079 373.77 1180.344 416.473 1128.44 454.065 1107.21 512.152 1083.49 577.05 1075.976 650.461 1100.316 715.129 1125.333 781.596 1182.096 829.951 1241.481 868.9010000000001 1301.274 908.119 1368.684 932.696 1440 937.923' fill='%231f1f1f'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1083'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-repeat: no-repeat !important;
+  background-size: 100% !important;
+  background-position: top !important;
+  height: 100vh;
+}
+
+.laptop {
+  position: relative;
+  margin: auto;
+  width: min-content;
+}
+
+.laptop__screen {
+  position: relative;
+  z-index: 1;
+  padding: 3% 60px;
+  border-radius: 10px;
+  background: #1f1f1f;
+  /* background-image: linear-gradient(to bottom, #333, #111); */
+  box-shadow: 0 1.6px 0 #cfcfcf;
+  border: 2px solid #ccc;
+}
+
+.laptop__screen img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+  background: #000;
+}
+
+.laptop__bottom {
+  position: relative;
+  z-index: 1;
+  margin-right: -7%;
+  margin-left: -7%;
+  height: 1px;
+  background: #e9eff5;
+  background-image: linear-gradient(
+    to right,
+    #d2dde9 0%,
+    #f9fcff 15%,
+    #e5ebf2 40%,
+    #e5ebf2 60%,
+    #f9fcff 85%,
+    #d2dde9 100%
+  );
+}
+
+.laptop__bottom::before {
+  display: block;
+  margin: 0 auto;
+  width: 20%;
+  height: 1px;
+  border-radius: 0 0 3px 3px;
+  background: #f6f9fc;
+  background-image: linear-gradient(
+    to right,
+    #c3cfdb 0%,
+    #f6f9fc 10%,
+    #f6f9fc 90%,
+    #c3cfdb 100%
+  );
+  content: " ";
+}
+
+.laptop__under {
+  position: absolute;
+  top: 100%;
+  left: 25%;
+  display: block;
+  width: 50%;
+  height: 8px;
+  background: #e2e8f0;
+  background-image: linear-gradient(to bottom, #e2e8f0, #bec7d1);
+}
+
+.laptop__under::after,
+.laptop__under::before {
+  position: absolute;
+  top: 0%;
+  right: 100%;
+  bottom: 0;
+  display: block;
+  width: 50%;
+  border-bottom-left-radius: 100%;
+  background: inherit;
+  content: " ";
+}
+
+.laptop__under::after {
+  right: auto;
+  left: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 0;
+}
+
+.laptop__shadow {
+  position: absolute;
+  right: -10%;
+  bottom: 40px;
+  left: -10%;
+  z-index: 0;
+  height: 32px;
+  background: radial-gradient(ellipse closest-side, #000, transparent);
+  opacity: 0.5;
+}

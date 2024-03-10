@@ -12,16 +12,17 @@ import CountUp from "react-countup";
 import PDFViewer from "../pdf/PDFViewer";
 import $ from "jquery";
 import { projectsContext } from "../context/projectsContext";
+import Footer from "../Footer/Footer";
 
 export default function Overview() {
-  const settings = {
+  const techSlider = {
     dots: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 600,
-    autoplaySpeed: 2000,
+    speed: 500,
+    autoplaySpeed: 900,
     arrows: false,
   };
   const companiesSlider = {
@@ -86,12 +87,12 @@ export default function Overview() {
 
   return (
     <>
-      <section className="about mb-md-5 py-md-5 mt-3">
+      <section className="about d-flex justify-content-center align-items-center mb-md-5 py-md-5 mt-0 pt-0">
         <div className="container py-md-5">
           <div className="aboutInner  d-flex  gap-5 justify-content-center  align-items-center">
             <div className="overview mt-5">
               <div className="row">
-                <div className="col-md-11">
+                <div className="col-lg-9">
                   <div className="title primaryText">
                     <h1>Ali Elsaadany,</h1>
                   </div>
@@ -115,95 +116,189 @@ export default function Overview() {
                   </div>
                 </div>
 
-                <div className="col-md-1 ">
-                  <div className="tech mt-5">
-                    {/* <h5>Technologies</h5> */}
-                    <div
-                      className="slidesContainer mx-auto text-center"
-                      style={{ width: "110px" }}
-                    >
-                      <Slider {...settings}>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/javascript.png")}
-                            alt="JavaScript"
-                          />
-                          <h6>JavaScript</h6>
+                <div className="col-lg-2 ">
+                  <div class="container">
+                    <div class="laptop">
+                      <div class="laptop__screen">
+                        <div id="techsContainer" className="tech text-center">
+                          {/* <span className="sunFont">Technologies</span> */}
+                          <div
+                            className="mt-1 slidesContainer mx-auto text-center"
+                            style={{
+                              width: "110px",
+                            }}
+                          >
+                            <Slider {...techSlider}>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/react.png")}
+                                  alt="React"
+                                />
+                                <h6 className="">React</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/nodejs.png")}
+                                  alt="Nodejs"
+                                />
+                                <h6 className="">Node.js</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/express.png")}
+                                  alt="Express.js"
+                                />
+                                <h6 className="">Express.js</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent rounded-1"
+                                  src={require("../../imgs/tech/mongo.png")}
+                                  alt="Mongo"
+                                />
+                                <h6 className="">MongoDB</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent rounded-1"
+                                  src={require("../../imgs/tech/nest.png")}
+                                  alt="Mongo"
+                                />
+                                <h6 className="">NestJs</h6>
+                              </div>
+
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent rounded-1"
+                                  src={require("../../imgs/tech/graphql.png")}
+                                  alt="GraphQL
+                                  "
+                                />
+                                <h6 className="mt-auto">GraphQL</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent rounded-1"
+                                  src={require("../../imgs/tech/socket.png")}
+                                  alt="Socket"
+                                />
+                                <h6 className="">Socket IO</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent rounded-1"
+                                  src={require("../../imgs/tech/docker.png")}
+                                  alt="Docker"
+                                />
+                                <h6 className="mt-auto">Docker</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/nextjs.png")}
+                                  alt="NextJS"
+                                />
+                                <h6 className="">Next.JS</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/redux.png")}
+                                  alt="Redux"
+                                />
+                                <h6 className="">Redux</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/javascript.png")}
+                                  alt="JavaScript"
+                                />
+                                <h6>JavaScript</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/typescript.png")}
+                                  alt="TypeScript"
+                                />
+                                <h6 className="">TypeScript</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/html.png")}
+                                  alt="html"
+                                />
+                                <h6 className="">HTML</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/css.png")}
+                                  alt="css"
+                                />
+                                <h6 className="">CSS</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/sass.png")}
+                                  alt="sass"
+                                />
+                                <h6 className="">Sass</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/bootstrap.png")}
+                                  alt="bootstrap"
+                                />
+                                <h6 className="">BootStrap</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/jquery.png")}
+                                  alt="jquery"
+                                />
+                                <h6 className="">JQuery</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/java.png")}
+                                  alt="java"
+                                />
+                                <h6 className="">JAVA</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/plsql.png")}
+                                  alt="plsql"
+                                />
+                                <h6 className="small">Oracle Pl/SQL</h6>
+                              </div>
+                              <div className="p-2 cursorGrab">
+                                <img
+                                  className="w-100 mb-2 bg-transparent"
+                                  src={require("../../imgs/tech/mysql.png")}
+                                  alt="jquery"
+                                />
+                                <h6 className="">My SQL</h6>
+                              </div>
+                            </Slider>
+                          </div>
                         </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/react.png")}
-                            alt="React"
-                          />
-                          <h6 className="">React</h6>
-                        </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/typescript.png")}
-                            alt="TypeScript"
-                          />
-                          <h6 className="">TypeScript</h6>
-                        </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/nextjs.png")}
-                            alt="NextJS"
-                          />
-                          <h6 className="">Next.JS</h6>
-                        </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/redux.png")}
-                            alt="Redux"
-                          />
-                          <h6 className="">Redux</h6>
-                        </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/html.png")}
-                            alt="html"
-                          />
-                          <h6 className="">HTML</h6>
-                        </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/css.png")}
-                            alt="css"
-                          />
-                          <h6 className="">CSS</h6>
-                        </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/sass.png")}
-                            alt="sass"
-                          />
-                          <h6 className="">Sass</h6>
-                        </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/bootstrap.png")}
-                            alt="bootstrap"
-                          />
-                          <h6 className="">BootStrap</h6>
-                        </div>
-                        <div className="p-2 cursorGrab">
-                          <img
-                            className="w-100 mb-2"
-                            src={require("../../imgs/tech/jquery.png")}
-                            alt="jquery"
-                          />
-                          <h6 className="">JQuery</h6>
-                        </div>
-                      </Slider>
+                      </div>
+                      <div class="laptop__bottom">
+                        <div class="laptop__under"></div>
+                      </div>
+                      <div class="laptop__shadow"></div>
                     </div>
                   </div>
                 </div>
@@ -241,9 +336,12 @@ export default function Overview() {
             }}
           >
             <div className="info">
-              <div className="row justify-content-center">
+              <div className="row justify-content-center gy-4">
                 <div className="col-md-3">
-                  <div className="infoItem d-flex align-items-center flex-column">
+                  <div
+                    title="Github Repositories"
+                    className="infoItem d-flex align-items-center flex-column cursorGrab"
+                  >
                     <div
                       className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
                       style={{
@@ -259,7 +357,7 @@ export default function Overview() {
                   </div>
                 </div>
                 <div className="col-md-3 d-none">
-                  <div className="infoItem d-flex align-items-center flex-column">
+                  <div className="infoItem d-flex align-items-center flex-column cursorGrab">
                     <div
                       className="infoIcon  mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
                       style={{
@@ -275,7 +373,10 @@ export default function Overview() {
                   </div>
                 </div>
                 <div className="col-md-3">
-                  <div className="infoItem d-flex align-items-center flex-column">
+                  <div
+                    title="Calculated By Wakatime"
+                    className="infoItem d-flex align-items-center flex-column cursorGrab"
+                  >
                     <div
                       className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
                       style={{
@@ -291,7 +392,10 @@ export default function Overview() {
                   </div>
                 </div>
                 <div className="col-md-3">
-                  <div className="infoItem d-flex align-items-center flex-column">
+                  <div
+                    title="Take A Look At Certificates"
+                    className="infoItem d-flex align-items-center flex-column cursorGrab"
+                  >
                     <div
                       className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
                       style={{
@@ -316,7 +420,7 @@ export default function Overview() {
           <div className="sectionTitle text-center primaryText mb-5 my-2 pt-3">
             <h2>Services</h2>
           </div>
-          <div className="row">
+          <div className="row gy-3">
             <div className="col-md-4">
               <div className="serviceItem h-100 d-flex align-items-center flex-column secBg shadow p-5 px-4 rounded-3">
                 <div
@@ -477,8 +581,8 @@ export default function Overview() {
           </div>
         </div>
       </section>
-      <footer className="py-05 secBg overflow-hidden">
-        {/* <ParticlesComponent /> */}
+      <footer className=" overflow-hidden">
+        {/* <Footer /> */}
       </footer>
 
       <div

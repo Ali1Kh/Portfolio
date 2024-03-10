@@ -25,7 +25,7 @@ export default function ProjectDetails() {
   let projectDetails = data?.data.results;
   return (
     <>
-      <div className="container d-flex flex-column p-md-5">
+      <div className="container d-flex flex-column p-md-5  mt-5 pt-5">
         {projectDetails ? (
           <>
             <header className="banner p-5 borderBottomGrey mb-2">
