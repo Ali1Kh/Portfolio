@@ -3,10 +3,27 @@ import cloudinary from "../../utils/cloudinary.js";
 import slugify from "slugify";
 
 export const getProjects = async (req, res, next) => {
-  let projects = await Projects.find({ ...req.query })
+  let searchConditions = [];
+
+  if (req.query.search) {
+    searchConditions.push(
+      { name: { $regex: req.query.search, $options: "i" } },
+      { category: { $regex: req.query.search, $options: "i" } },
+      { descreption: { $regex: req.query.search, $options: "i" } },
+      { shortDescreption: { $regex: req.query.search, $options: "i" } },
+      {
+        "technologies.name": { $regex: req.query.search, $options: "i" },
+      }
+    );
+  }
+  console.log(searchConditions);
+  let projects = await Projects.find({
+    ...req.query,
+    $or: searchConditions,
+  })
     .select("-images")
     .limit(req.query.limit);
-  return res.json({ success: true, results: projects });
+  return res.json({ success: true, count: projects.length, results: projects });
 };
 export const getProjectDetails = async (req, res, next) => {
   let { projectId } = req.params;
