@@ -16,11 +16,14 @@ export const getProjects = async (req, res, next) => {
       }
     );
   }
-  console.log(searchConditions);
-  let projects = await Projects.find({
+  let query = {
     ...req.query,
     $or: searchConditions,
-  })
+  };
+  if (searchConditions.length == 0) {
+   delete query.$or 
+  }
+  let projects = await Projects.find(query)
     .select("-images")
     .limit(req.query.limit);
   return res.json({ success: true, count: projects.length, results: projects });
