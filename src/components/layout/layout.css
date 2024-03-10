@@ -25,11 +25,11 @@ body {
   z-index: -4;
   background-color: var(--mainColor);
 }
-.socialmedia .socialItems i {
+ .socialItems i {
   transition: color 500ms !important;
   cursor: pointer !important;
 }
-.socialmedia .socialItems i:hover {
+ .socialItems i:hover {
   color: var(--mainColor) !important;
 }
 .followMe {

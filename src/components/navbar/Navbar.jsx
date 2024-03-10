@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg position-sticky z-2 mb-5">
+      <nav className="navbar navbar-expand-lg position-fixed start-0 end-0 z-2 ">
         <div className="container rounded-4 px-3 py-2 border shadow  animate__animated   animate__bounceInDown animate__fast" >
           <Link to={"/"} style={{cursor:"grabbing",userSelect:"none"}} className="navbar-brand fs-4 d-flex align-items-center gap-2 text-white">
             <img

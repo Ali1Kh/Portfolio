@@ -30,6 +30,7 @@ export default function Layout() {
         </Alert>
       </Stack>
       <Navbar />
+      
       <Outlet />
       <div className="socialmedia my-2 animate__animated animate__flipInX animate__fast">
         <p className="followMe sunFont m-0 animate__animated /animate__rollIn ">
