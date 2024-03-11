@@ -10,6 +10,7 @@ const visitorSchema = new Schema(
     loc: String,
     timezone: String,
     count: Number,
+    device: String,
   },
   {
     timestamps: true,

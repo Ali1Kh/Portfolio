@@ -47,7 +47,7 @@ app.get(
         success: true,
       });
     }
-    await Visitors.create({ ...data, count: 1 });
+    await Visitors.create({ ...data, count: 1 , device: req.headers["user-agent"] });
     return res.json({
       success: true,
     });
