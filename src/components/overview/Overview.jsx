@@ -422,7 +422,7 @@ export default function Overview() {
           </div>
           <div className="row gy-3">
             <div className="col-md-4">
-              <div className="serviceItem h-100 d-flex align-items-center flex-column secBg shadow p-5 px-4 rounded-3">
+              <div className="serviceItem h-100 d-flex align-items-center flex-column borderGrey shadow p-5 px-4 rounded-3">
                 <div
                   className="serviceIcon mb-3 border rounded-circle text-white d-flex justify-content-center align-items-center"
                   style={{
@@ -441,7 +441,7 @@ export default function Overview() {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="serviceItem h-100 d-flex align-items-center flex-column secBg shadow p-5 px-3 rounded-3">
+              <div className="serviceItem h-100 d-flex align-items-center flex-column borderGrey shadow p-5 px-3 rounded-3">
                 <div
                   className="serviceIcon mb-3 border rounded-circle text-white d-flex justify-content-center align-items-center"
                   style={{
@@ -460,7 +460,7 @@ export default function Overview() {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="serviceItem h-100 d-flex align-items-center flex-column secBg shadow p-5 px-3 rounded-3">
+              <div className="serviceItem h-100 d-flex align-items-center flex-column borderGrey shadow p-5 px-3 rounded-3">
                 <div
                   className="serviceIcon mb-3 border rounded-circle text-white d-flex justify-content-center align-items-center"
                   style={{

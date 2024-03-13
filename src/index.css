@@ -2,20 +2,23 @@
   --greyColor: #696869;
   --focusedColor: #808081;
   --mainColor: #dd6f08;
+  --secBgColor: #1f1f1f;
+  /* --mainColor: rgb(255, 162, 115); */
 }
 
 .primaryBg {
   background-color: #181918 !important;
 }
 .secBg {
-  background-color: #1e1e1f !important;
+  /* background-color: #282828 !important; */
+  background-color: #262626 !important;
 }
 .opensansFont,
 .title {
   font-family: "Open Sans", sans-serif;
 }
 .mutedText {
-  color: #737173 !important;
+  color: #737179 !important;
 }
 .primaryText {
   font-family: "Open Sans", sans-serif;
@@ -29,7 +32,7 @@
   cursor: grab;
 }
 
-.w-fit{
+.w-fit {
   width: fit-content !important;
 }
 .fs-7 {
@@ -41,7 +44,7 @@ button:disabled {
 }
 
 /* Fonts */
-  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&display=swap");
 @font-face {
   font-family: "MyFont";
   src: local("MyFont"),
@@ -50,9 +53,8 @@ button:disabled {
 }
 
 .sunFont {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
-
 
 /* Scroll */
 /* !Scroll Design */

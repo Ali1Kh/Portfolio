@@ -1,5 +1,6 @@
 body {
-  background-color: #191919 !important;
+  /* background-color: #191919 !important; */
+  background-image: url("../../imgs/bg.png");
   color: white !important;
 }
 

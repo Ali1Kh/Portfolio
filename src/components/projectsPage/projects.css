@@ -33,6 +33,7 @@
 /* !cards */
 .projects .cardItem {
   cursor: pointer;
+  background-color: var(--secBgColor);
 }
 .projects .projLink i {
   transition: 400ms;
