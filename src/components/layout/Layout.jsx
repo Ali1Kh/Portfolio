@@ -8,7 +8,7 @@ import $ from "jquery";
 export default function Layout() {
   return (
     <>
-      <Stack
+{/*       <Stack
         className="overflow-hidden alertContainer  "
         sx={{
           width: "100%",
@@ -28,7 +28,7 @@ export default function Layout() {
           This Portfolio Is Under Development. Some features and content may not
           be finalized yet. But we're excited to share our progress with you.
         </Alert>
-      </Stack>
+      </Stack> */}
       <Navbar />
       
       <Outlet />
