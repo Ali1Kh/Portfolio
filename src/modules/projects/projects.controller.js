@@ -31,7 +31,7 @@ export const getProjects = async (req, res, next) => {
 export const getProjectDetails = async (req, res, next) => {
   let { projectId } = req.params;
   let projects = await Projects.findById(projectId).select("-watchers");
-  res.json({ success: true, results: { projects } });
+  res.json({ success: true, results: projects  });
   if (projects) {
     await Projects.findByIdAndUpdate(projects._id, {
       $inc: { watchers: 1 },
