@@ -25,13 +25,17 @@ export const getProjects = async (req, res, next) => {
   }
   let projects = await Projects.find(query)
     .select("-images -watchers")
-    .limit(req.query.limit).sort({createdAt:-1});
+    .limit(req.query.limit)
+    .sort({ createdAt: -1 });
   return res.json({ success: true, count: projects.length, results: projects });
 };
 export const getProjectDetails = async (req, res, next) => {
-  let { projectId } = req.params;
-  let projects = await Projects.findById(projectId).select("-watchers");
-  res.json({ success: true, results: projects  });
+  let { slug } = req.params;
+  if (!slug) {
+    return next(new Error("Slug Is Required"));
+  }
+  let projects = await Projects.findOne({ slug }).select("-watchers");
+  res.json({ success: true, results: projects });
   if (projects) {
     await Projects.findByIdAndUpdate(projects._id, {
       $inc: { watchers: 1 },
@@ -77,6 +81,7 @@ export const addProject = async (req, res, next) => {
 
   let project = await Projects.create({
     name,
+    slug: slugify(name).toLowerCase(),
     link,
     repo,
     category,
