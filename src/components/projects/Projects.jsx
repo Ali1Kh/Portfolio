@@ -79,7 +79,7 @@ export default function Projects({ projects }) {
                 <Tilt className="h-100" options={options}>
                   <div
                     onClick={() => {
-                      navigate(`/projects/projectDetails/${project._id}`);
+                      navigate(`/projects/${project.slug}`);
                     }}
                     style={{ cursor: "grab" }}
                     className="cardItem h-100 d-flex flex-column borderGrey rounded-4 p-4"

@@ -11,13 +11,13 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 export default function ProjectDetails() {
   const onInit = () => {};
-  const { id } = useParams();
+  const { slug } = useParams();
   let { data, isLoading } = useQuery("projectDetails", getProjectDetails, {
     cacheTime: 0,
   });
   function getProjectDetails() {
     try {
-      return axios.get(`https://ali1kh.onrender.com/projects/${id}`);
+      return axios.get(`https://ali1kh.onrender.com/projects/${slug}`);
     } catch (ex) {
       console.log(ex);
     }
