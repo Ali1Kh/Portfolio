@@ -4,9 +4,9 @@ import * as certificatesController from "./certificates.controller.js";
 import { Router } from "express";
 const router = Router();
 
-// router.post("/",
-//     uploadFiles().single("certificates"),
-//     asyncHandler(certificatesController.addCertificate));
+router.post("/",
+    uploadFiles().single("certificates"),
+    asyncHandler(certificatesController.addCertificate));
 
 router.get("/", asyncHandler(certificatesController.getCertificates));
 

@@ -21,19 +21,22 @@ export const getProjects = async (req, res, next) => {
     $or: searchConditions,
   };
   if (searchConditions.length == 0) {
-   delete query.$or 
+    delete query.$or;
   }
   let projects = await Projects.find(query)
-    .select("-images")
+    .select("-images -watchers")
     .limit(req.query.limit).sort({createdAt:-1});
   return res.json({ success: true, count: projects.length, results: projects });
 };
 export const getProjectDetails = async (req, res, next) => {
   let { projectId } = req.params;
-
-  let projects = await Projects.findById(projectId);
-
-  return res.json({ success: true, results: projects });
+  let projects = await Projects.findById(projectId).select("-watchers");
+  res.json({ success: true, results: projects  });
+  if (projects) {
+    await Projects.findByIdAndUpdate(projects._id, {
+      $inc: { watchers: 1 },
+    });
+  }
 };
 
 export const addProject = async (req, res, next) => {
