@@ -594,7 +594,7 @@ export default function Overview() {
           className="fa fa-xmark rounded-3 me-3 position-absolute top-0 end-0 mb-5 p-2 fs-5 z-3 cursorPointer"
         ></i>
         <div className="pdfView h-100 w-100">
-          <PDFViewer pdfUrl={require("../../pdf/Ali-Elsaadany.CV.pdf")} />
+          <PDFViewer pdfUrl={require("../../pdf/Ali Elsaadany(MERN STACK).pdf")} />
         </div>
       </div>
     </>
