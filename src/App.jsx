@@ -1,4 +1,4 @@
-import { RouterProvider, createHashRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./components/layout/Layout";
 import Overview from "./components/overview/Overview";
 import Resume from "./components/Resume/Resume";
@@ -13,7 +13,7 @@ import ProjectsProvider from "./components/context/projectsContext";
 import { useEffect } from "react";
 import axios from "axios";
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {
     path: "",
     element: <Layout />,
