@@ -13,6 +13,7 @@ import PDFViewer from "../pdf/PDFViewer";
 import $ from "jquery";
 import { projectsContext } from "../context/projectsContext";
 import Footer from "../Footer/Footer";
+import { Helmet } from "react-helmet";
 
 export default function Overview() {
   const techSlider = {
@@ -87,6 +88,20 @@ export default function Overview() {
 
   return (
     <>
+      <Helmet>
+        <title>Ali Elsaadany</title>
+        <meta
+          name="description"
+          content="Overview of Ali K. Elsaadany : Full Stack Web Developer building seamless web experiences with proficiency in the MERN stack. Proficient in front-end technologies like HTML, CSS, JavaScript, React.js, and back-end development with Node.js, Express.js and MongoDB. Passionate about creating user friendly and visually appealing and functional web applications."
+        />
+        <link rel="canonical" href="https://ali1kh.vercel.app" />
+        <meta property="og:title" content="Ali K. Elsaadany Portfolio" />
+        <meta
+          property="og:description"
+          content="A Full Stack Web Developer building seamless web experiences with proficiency in the MERN stack. Proficient in front-end technologies like HTML, CSS, JavaScript, React.js, and back-end development with Node.js, Express.js and MongoDB. Passionate about creating user friendly and visually appealing and functional web applications."
+        />
+        
+      </Helmet>
       <section className="about d-flex justify-content-center align-items-center mb-md-5 py-md-5 mt-0 pt-0">
         <div className="container py-md-5">
           <div className="aboutInner  d-flex  gap-5 justify-content-center  align-items-center">
@@ -581,9 +596,7 @@ export default function Overview() {
           </div>
         </div>
       </section>
-      <footer className=" overflow-hidden">
-        {/* <Footer /> */}
-      </footer>
+      <footer className=" overflow-hidden">{/* <Footer /> */}</footer>
 
       <div
         className="pdfContainer rounded-3 pt-5 overflow-auto container position-fixed start-50 z-3 translate-middle-x p-2"
@@ -594,7 +607,9 @@ export default function Overview() {
           className="fa fa-xmark rounded-3 me-3 position-absolute top-0 end-0 mb-5 p-2 fs-5 z-3 cursorPointer"
         ></i>
         <div className="pdfView h-100 w-100">
-          <PDFViewer pdfUrl={require("../../pdf/Ali Elsaadany(MERN STACK).pdf")} />
+          <PDFViewer
+            pdfUrl={require("../../pdf/Ali Elsaadany(MERN STACK).pdf")}
+          />
         </div>
       </div>
     </>
