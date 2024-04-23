@@ -9,15 +9,16 @@ import LightGallery from "lightgallery/react";
 import { useQuery } from "react-query";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 export default function ProjectDetails() {
   const onInit = () => {};
-  const { id } = useParams();
+  const { slug } = useParams();
   let { data, isLoading } = useQuery("projectDetails", getProjectDetails, {
     cacheTime: 0,
   });
   function getProjectDetails() {
     try {
-      return axios.get(`https://ali1kh.onrender.com/projects/${id}`);
+      return axios.get(`https://ali1kh.onrender.com/projects/${slug}`);
     } catch (ex) {
       console.log(ex);
     }
@@ -25,6 +26,32 @@ export default function ProjectDetails() {
   let projectDetails = data?.data.results;
   return (
     <>
+      <Helmet>
+        <title>{projectDetails?.name}</title>
+        <meta
+          name="description"
+          content={`Ali K. Elsaadany Project ${
+            projectDetails?.name + ":" + projectDetails?.descreption
+          }`}
+        />
+        <link rel="canonical" href={`https://ali1kh.com/projects/${projectDetails?.slug}`} />
+        <meta
+          name="keywords"
+          content={`projects,${
+            projectDetails?.technologies.map((skill) => skill.name).join(",") +
+            "," +
+            projectDetails?.name +
+            "," +
+            projectDetails?.slug +
+            "," +
+            projectDetails?.category +
+            "," +
+            projectDetails?.descreption +
+            "," +
+            projectDetails?.shortDescreption
+          }`}
+        />
+      </Helmet>
       <div className="container d-flex flex-column p-md-5  mt-5 pt-5">
         {projectDetails ? (
           <>
