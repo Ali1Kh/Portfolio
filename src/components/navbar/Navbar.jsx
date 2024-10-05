@@ -58,7 +58,7 @@ export default function Navbar() {
                   Projects
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   className="nav-link"
 
@@ -67,6 +67,17 @@ export default function Navbar() {
                   to={"/Resume"}
                 >
                   Resume
+                </Link>
+              </li> */}
+              <li className="nav-item">
+                <Link
+                  className="nav-link"
+
+                  role="button"
+                  aria-current="page"
+                  to={"/certificates"}
+                >
+                  Certificates
                 </Link>
               </li>
               <li className="nav-item">

@@ -96,8 +96,15 @@ export default function Projects({ projects }) {
                         />
                       </div>
                       <div className="cardTitle d-flex align-items-center justify-content-between borderBottomGrey mb-3 pb-3">
-                        <div className="projName">
-                          <h3>{project.name}</h3>
+                        <div className="projName"
+                          style={{
+                            overflow: "hidden",
+                            whiteSpace: "nowrap",
+                            textOverflow: "ellipsis",
+                            maxWidth: "85%",
+                          }}
+                        >
+                          <h4>{project.name}</h4>
                         </div>
                         <div
                           onClick={(e) => applinkClicked(e)}
@@ -111,15 +118,27 @@ export default function Projects({ projects }) {
                       <div className="cardInfo h-100 d-flex flex-column  borderBottomGrey mb-3 pb-3">
                         <div className="projInfo d-flex justify-content-between align-items-center mb-3">
                           <div className="projCategory">
-                            <h5 className="fst-italic">{project.category}</h5>
+                            <h6 className="fst-italic">{project.category}</h6>
                           </div>
                           <div className="createdFrom text-end">
-                            <span className="fs-7 borderGrey rounded-4 px-2 py-1">
+                            <span 
+                            style={{
+                              whiteSpace: "nowrap",
+                            }}
+                            className="fs-7 borderGrey rounded-4 px-2 py-1">
                               {convertDate(project.date)}
                             </span>
                           </div>
                         </div>
-                        <div className="projDescreption text-grey fs-7 mb-3 my-auto">
+                        <div
+                          style={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            display: "-webkit-box",
+                            WebkitLineClamp: "3",
+                            WebkitBoxOrient: "vertical",
+                          }}
+                          className="projDescreption text-grey fs-7 mb-3 my-auto">
                           {project.shortDescreption}
                         </div>
                         <div className="projDate mt-auto">
