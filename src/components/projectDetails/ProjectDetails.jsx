@@ -34,7 +34,7 @@ export default function ProjectDetails() {
             projectDetails?.name + ":" + projectDetails?.descreption
           }`}
         />
-        <link rel="canonical" href={`https://ali1kh.com/projects/${projectDetails?.slug}`} />
+        <link rel="canonical" href={`https://ali1kh.tech/projects/${projectDetails?.slug}`} />
         <meta
           name="keywords"
           content={`projects,${
