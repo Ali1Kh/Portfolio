@@ -106,6 +106,7 @@ export default function Projects({ projects }) {
                         >
                           <h4>{project.name}</h4>
                         </div>
+                        {project.link && 
                         <div
                           onClick={(e) => applinkClicked(e)}
                           className="projLink"
@@ -114,6 +115,8 @@ export default function Projects({ projects }) {
                             <i className="fa fa-link text-white borderGrey rounded-4 fs-7 p-2"></i>
                           </Link>
                         </div>
+                        }
+
                       </div>
                       <div className="cardInfo h-100 d-flex flex-column  borderBottomGrey mb-3 pb-3">
                         <div className="projInfo d-flex justify-content-between align-items-center mb-3">
@@ -121,11 +124,11 @@ export default function Projects({ projects }) {
                             <h6 className="fst-italic">{project.category}</h6>
                           </div>
                           <div className="createdFrom text-end">
-                            <span 
-                            style={{
-                              whiteSpace: "nowrap",
-                            }}
-                            className="fs-7 borderGrey rounded-4 px-2 py-1">
+                            <span
+                              style={{
+                                whiteSpace: "nowrap",
+                              }}
+                              className="fs-7 borderGrey rounded-4 px-2 py-1">
                               {convertDate(project.date)}
                             </span>
                           </div>

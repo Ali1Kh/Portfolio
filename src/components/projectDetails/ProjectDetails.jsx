@@ -11,7 +11,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 export default function ProjectDetails() {
-  const onInit = () => {};
+  const onInit = () => { };
   const { slug } = useParams();
   let { data, isLoading } = useQuery("projectDetails", getProjectDetails, {
     cacheTime: 0,
@@ -30,15 +30,13 @@ export default function ProjectDetails() {
         <title>{projectDetails?.name}</title>
         <meta
           name="description"
-          content={`Ali K. Elsaadany Project ${
-            projectDetails?.name + ":" + projectDetails?.descreption
-          }`}
+          content={`Ali K. Elsaadany Project ${projectDetails?.name + ":" + projectDetails?.descreption
+            }`}
         />
         <link rel="canonical" href={`https://ali1kh.tech/projects/${projectDetails?.slug}`} />
         <meta
           name="keywords"
-          content={`projects,${
-            projectDetails?.technologies.map((skill) => skill.name).join(",") +
+          content={`projects,${projectDetails?.technologies.map((skill) => skill.name).join(",") +
             "," +
             projectDetails?.name +
             "," +
@@ -49,7 +47,7 @@ export default function ProjectDetails() {
             projectDetails?.descreption +
             "," +
             projectDetails?.shortDescreption
-          }`}
+            }`}
         />
       </Helmet>
       <div className="container d-flex flex-column p-md-5  mt-5 pt-5">
@@ -66,26 +64,32 @@ export default function ProjectDetails() {
               </div>
               <div className="projInfo  d-flex flex-column align-items-md-center">
                 <div className="links d-flex flex-column flex-md-row justify-content-md-center  align-items-md-center align-items-start gap-md-3">
-                  <div className="demo text-white mb-3 borderGrey rounded-4 fs-7 p-2">
-                    <i className="fa fa-link "></i>{" "}
-                    <a
-                      className="text-decoration-none text-white"
-                      href={projectDetails.link}
-                      target="blank"
-                    >
-                      Demo
-                    </a>
-                  </div>
-                  <div className="demo text-white mb-3 borderGrey rounded-4 fs-7 p-2">
-                    <i className="fa-regular fa-file-code me-2"></i>
-                    <a
-                      className="text-decoration-none text-white"
-                      href={projectDetails.repo}
-                      target="blank"
-                    >
-                      Source Code
-                    </a>
-                  </div>
+                  {
+                    projectDetails.link &&
+                    <div className="demo text-white mb-3 borderGrey rounded-4 fs-7 p-2">
+                      <i className="fa fa-link "></i>{" "}
+                      <a
+                        className="text-decoration-none text-white"
+                        href={projectDetails.link}
+                        target="blank"
+                      >
+                        Demo
+                      </a>
+                    </div>
+                  }
+                  {
+                    projectDetails.repo &&
+                    <div className="demo text-white mb-3 borderGrey rounded-4 fs-7 p-2">
+                      <i className="fa-regular fa-file-code me-2"></i>
+                      <a
+                        className="text-decoration-none text-white"
+                        href={projectDetails.repo}
+                        target="blank"
+                      >
+                        Source Code
+                      </a>
+                    </div>
+                  }
                 </div>
 
                 <div className="techs row gy-3">
