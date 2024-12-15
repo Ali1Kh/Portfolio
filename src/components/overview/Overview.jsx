@@ -43,7 +43,7 @@ export default function Overview() {
       const { data } = await axios.get(
         "https://ali1kh.onrender.com/wakatime/getHours"
       );
-      setHours(data.data.text.split("hrs")[0]);
+      setHours(data.data.decimal);
     } catch (error) {
       console.log("Error fetching", error);
     }
