@@ -75,6 +75,7 @@ function App() {
         <RouterProvider router={router}></RouterProvider>
       </ProjectsProvider>
       <Toaster />
+      <Analytics />
     </QueryClientProvider>
   );
 }
