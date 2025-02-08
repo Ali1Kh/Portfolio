@@ -12,6 +12,7 @@ import toast, { Toaster } from "react-hot-toast";
 import ProjectsProvider from "./components/context/projectsContext";
 import { useEffect } from "react";
 import axios from "axios";
+import { Analytics } from "@vercel/analytics/react"
 
 const router = createBrowserRouter([
   {
