@@ -82,10 +82,10 @@ export default function Contact() {
                 <div className="infoItem d-flex align-items-center">
                   <i className="primaryText cursorPointer fa-solid fa-envelope me-3"></i>
                   <a
-                    href="mailto:alielsaadany94@gmail.com"
+                    href="mailto:info@ali1kh.tech"
                     className="cursorPointer text-decoration-none mutedText"
                   >
-                    alielsaadany94@gmail.com
+                    info@ali1kh.tech
                   </a>
                 </div>
               </div>
