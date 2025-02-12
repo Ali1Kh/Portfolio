@@ -10,7 +10,7 @@ export const sendEmail = async ({ name,email, subject, text }) => {
 
     const sendMail = await mailTransporter.sendMail({
         from: `"Portfolio Contact Message" ${email}`,
-        to:"alielsaadany94@gmail.com",
+        to:"info@ali1kh.tech",
         subject,
         text:`
         Email From :  ${email}, 
