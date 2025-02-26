@@ -111,15 +111,15 @@ export default function Overview() {
                   <div className="title primaryText">
                     <h1>Ali Elsaadany,</h1>
                   </div>
-                  <div className="summary mb-3" style={{ maxWidth: "700px" }}>
+                  <p className="summary mb-3" style={{ maxWidth: "700px" }}>
                     I'm Full Stack Web Developer building seamless web
                     experiences with proficiency in the MERN stack. Proficient
                     in front-end technologies like HTML, CSS, JavaScript,
                     React.js, and back-end development with Node.js, Express.js
                     and MongoDB. Passionate about creating user friendly and
-                    visually appealing and functional web applications.
+                    visually appealing and functional web applications. 
                     <b>Available for remote and freelance work.</b>
-                  </div>
+                  </p>
 
                   <div class="sectionFooter d-flex align-items-center gap-4 my-4 ">
                     <button
