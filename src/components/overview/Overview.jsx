@@ -118,7 +118,7 @@ export default function Overview() {
                     React.js, and back-end development with Node.js, Express.js
                     and MongoDB. Passionate about creating user friendly and
                     visually appealing and functional web applications. 
-                    <b>Available for remote and freelance work.</b>
+                    <b> Available for remote and freelance work.</b>
                   </p>
 
                   <div class="sectionFooter d-flex align-items-center gap-4 my-4 ">
