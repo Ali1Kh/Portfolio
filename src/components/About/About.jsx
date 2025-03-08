@@ -23,7 +23,7 @@ export default function About() {
   }
   return (
     <>
-      <section className="about d-flex justify-content-center align-items-center mb-md-5 py-md-5 mt-0 pt-0">
+      <section className="about overflow-hidden d-flex justify-content-center align-items-center mb-md-5 py-md-5 mt-0 pt-0">
         <div className="container py-md-5">
           <div className="aboutInner  d-flex  gap-5 justify-content-center  align-items-center">
             <div className="overview mt-5">
@@ -39,7 +39,7 @@ export default function About() {
                     React.js, and back-end development with Node.js, Express.js
                     and MongoDB. Passionate about creating user friendly and
                     visually appealing and functional web applications.
-                    <b>Available for remote and freelance work.</b>
+                    <b> Available for remote and freelance work.</b>
                   </div>
 
                   <div class="sectionFooter d-flex align-items-center gap-4 my-4 ">
