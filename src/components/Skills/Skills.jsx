@@ -26,8 +26,8 @@ export default function Skills() {
   return (
     <div className="secBg pb-5 py-2 my-5 mt-3">
       <div className="container">
-        <div className="sectionTitle text-center primaryText my-5 pt-5">
-          <h2>Skills</h2>
+        <div className="sectionTitle text-center primaryText my-4">
+          <h2>Technical Skills</h2>
         </div>
         <div className="row gy-3">
           {skills.map((skill, idx) => (
