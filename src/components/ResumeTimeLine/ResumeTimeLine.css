@@ -1,0 +1,84 @@
+.progressIcon {
+  position: relative;
+  --barHeight: 0%;
+  animation: incBarHeight 0.5s ease-in-out forwards alternate;
+}
+.progressIcon::after {
+  position: absolute;
+  content: "";
+  top: 32px;
+  left: 50%;
+  translate: -50% 0;
+  width: 1px;
+  height: var(--barHeight);
+  background: white;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+@keyframes incBarHeight {
+  0% {
+    --barHeight: 0%;
+  }
+  5% {
+    --barHeight: 5%;
+  }
+  10% {
+    --barHeight: 10%;
+  }
+  15% {
+    --barHeight: 15%;
+  }
+  20% {
+    --barHeight: 20%;
+  }
+  25% {
+    --barHeight: 25%;
+  }
+  30% {
+    --barHeight: 30%;
+  }
+  35% {
+    --barHeight: 35%;
+  }
+  40% {
+    --barHeight: 40%;
+  }
+  45% {
+    --barHeight: 45%;
+  }
+  50% {
+    --barHeight: 50%;
+  }
+  55% {
+    --barHeight: 55%;
+  }
+  60% {
+    --barHeight: 60%;
+  }
+  65% {
+    --barHeight: 65%;
+  }
+  70% {
+    --barHeight: 70%;
+  }
+  75% {
+    --barHeight: 75%;
+  }
+  80% {
+    --barHeight: 80%;
+  }
+  85% {
+    --barHeight: 85%;
+  }
+  90% {
+    --barHeight: 90%;
+  }
+  95% {
+    --barHeight: 95%;
+  }
+  100% {
+    --barHeight: 98%;
+  }
+
+}
