@@ -78,7 +78,7 @@ export default function ProjectsPage() {
       </Helmet>
       <main className="pb-5 mt-5 pt-5">
         <div className="container py-4 d-flex flex-column">
-          <div className="title mb-5 text-center">
+          <div className="title mb-5 text-center animate__animated animate__zoomIn">
             <h1 style={{ fontSize: "55px" }}>Projects</h1>
           </div>
           <div className="search w-75 mb-5 align-self-center">

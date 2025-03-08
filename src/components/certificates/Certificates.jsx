@@ -17,7 +17,7 @@ export default function Certificates() {
   return (
     <div className=" mt-5 pt-5">
       <div className="container py-5 d-flex flex-column">
-        <div className="title mb-5 text-center">
+        <div className="title mb-5 text-center animate__animated animate__zoomIn">
           <h1 style={{ fontSize: "50px" }}>Certificates</h1>
         </div>
         <div className="row gy-5">

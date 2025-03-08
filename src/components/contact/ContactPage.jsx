@@ -5,7 +5,7 @@ export default function ContactPage() {
   return (
     <div className="">
       <div className="container py-xxl-5 py-4 d-flex flex-column  mt-5 pt-5">
-        <div className="title mb-5 mt-5 text-center">
+        <div className="title mb-5 mt-5 text-center animate__animated animate__zoomIn">
           <h1 style={{ fontSize: "3.125rem" }}>Get In Touch</h1>
           <small className="sunFont">Start Your Project With us Today</small>
         </div>
