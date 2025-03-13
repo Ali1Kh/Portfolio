@@ -85,7 +85,7 @@ export default function Contact() {
                     href="mailto:info@ali1kh.tech"
                     className="cursorPointer text-decoration-none mutedText"
                   >
-                    info@ali1kh.tech
+                    alielsaadany94@gmail.com
                   </a>
                 </div>
               </div>
