@@ -18,7 +18,7 @@
   left: 50%;
   translate: -50% 0;
   width: 2px;
-  height: calc(var(--socialTop) + 10px);
+  height: calc(var(--socialTop) + 30px);
   border-radius: 15px;
   z-index: -4;
   background-color: var(--mainColor);
@@ -47,4 +47,35 @@
 .css-ptiqhd-MuiSvgIcon-root,
 .css-1k33q06 {
   color: rgb(102, 60, 0);
+}
+
+.ownAnimate{
+  animation: shake 0.04s ease-in-out forwards alternate;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateY(0);
+  }
+  15% {
+    transform: translateY(6px);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+  45% {
+    transform: translateY(4px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+  75% {
+    transform: translateY(2px);
+  }
+  90% {
+    transform: translateY(-1px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

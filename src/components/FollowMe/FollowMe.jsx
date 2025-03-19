@@ -5,7 +5,7 @@ export default function FollowMe() {
   let itemHeight = 140;
   function dragEnd() {
     document.documentElement.style.setProperty("--socialTop", `18px`);
-    $(".socialmedia").addClass("animate__flipInX");
+    $(".socialmedia").addClass("ownAnimate");
   }
   return (
     <div className="socialmedia my-2 animate__animated animate__flipInX animate__fast">
@@ -25,13 +25,14 @@ export default function FollowMe() {
             dragEnd();
           }
           $(".socialmedia").removeClass("animate__flipInX");
+          $(".socialmedia").removeClass("ownAnimate");
         }}
         onDragEnd={dragEnd}
         className="followMe sunFont m-0 "
       >
         Follow Me
       </p>
-      <div className="socialItems pb-3 d-flex flex-column gap-2">
+      <div className="socialItems animate__animated  animate__fast pb-3 d-flex flex-column gap-2">
         <a
           className="text-white"
           href="https://www.linkedin.com/in/ali1kh/"
