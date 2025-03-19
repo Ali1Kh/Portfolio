@@ -35,7 +35,7 @@ export default function Analytics() {
                 className="innerGraph h-100 "
               >
                 <img
-                  height={215}
+                  //   height={215}
                   className="w-100"
                   src="https://camo.githubusercontent.com/e6e2057b8ea4a314797842bfe7d9b7f9ea2272f7eb2d55d14b6601ccb481c04b/68747470733a2f2f64656e766572636f646572312d6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170693f757365726e616d653d616c69316b682673686f775f69636f6e733d7472756526636f756e745f707269766174653d74727565267468656d653d726561637426626f726465725f636f6c6f723d3746334642462662675f636f6c6f723d304431313137267469746c655f636f6c6f723d4638354437462669636f6e5f636f6c6f723d463844383636"
                 />
@@ -44,13 +44,12 @@ export default function Analytics() {
             <div className="col-md-5 d-flex justify-content-start">
               <div
                 style={{
-                  maxHeight: "280px",
+                  minHeight: "220px",
                 }}
-                className="innerGraph  overflow-hidden"
+                className="innerGraph overflow-hidden"
               >
                 <img
-                  height={265}
-                  className="w-100"
+                  className="w-100 h-100"
                   src="https://camo.githubusercontent.com/ff72935a815e04befc154ae449f52fbbdb5b60a2a5d3f2639859af3197bfbd5b/68747470733a2f2f64656e766572636f646572312d6769746875622d726561646d652d73746174732e76657263656c2e6170702f6170692f746f702d6c616e67732f3f757365726e616d653d616c69316b68266c616e67735f636f756e743d38266c61796f75743d636f6d70616374267468656d653d726561637426626f726465725f636f6c6f723d3746334642462662675f636f6c6f723d304431313137267469746c655f636f6c6f723d4638354437462669636f6e5f636f6c6f723d463844383636"
                 />
               </div>
@@ -58,7 +57,7 @@ export default function Analytics() {
             <div className="col-md-7">
               <div
                 style={{
-                  maxHeight: "280px",
+                    minHeight: "220px",
                 }}
                 className="innerGraph rounded-1 overflow-hidden"
               >
@@ -67,7 +66,6 @@ export default function Analytics() {
                     objectFit: "cover",
                     border: "1px solid #7f3fbf",
                   }}
-                  height={265}
                   className="w-100 h-100 rounded-1"
                   src="https://camo.githubusercontent.com/7b52da7a94404445c271e86d1a7087866816025b99e3745cab9e3d1bed97b24c/68747470733a2f2f6769746875622d726561646d652d61637469766974792d67726170682e76657263656c2e6170702f67726170683f757365726e616d653d616c69316b6826637573746f6d5f7469746c653d416c69253230456c73616164616e792773253230476974487562253230416374697669747925323047726170682662675f636f6c6f723d30443131313726636f6c6f723d374633464246266c696e653d37463346424626706f696e743d37463346424626617265615f636f6c6f723d464646464646267469746c655f636f6c6f723d46464646464626617265613d74727565"
                 />
