@@ -9,6 +9,7 @@ import About from "../About/About";
 import ContactOverView from "../contact/ContactOverView";
 import ResumeTimeLine from "../ResumeTimeLine/ResumeTimeLine";
 import Skills from "../Skills/Skills";
+import Analytics from "../Analytics/Analytics";
 
 export default function Overview() {
   return (
@@ -28,10 +29,11 @@ export default function Overview() {
       </Helmet>
       <About />
       <ResumeTimeLine />
-      <Skills/>
+      <Skills />
       <LatestProjects />
       <Info />
       <Services />
+      <Analytics />
       <CertificatedIn />
       <ContactOverView />
     </>
