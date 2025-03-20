@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Analytics() {
   return (
-    <section className="stats secBg my-5 mt-3">
+    <section className="stats secBg my-5 mt-3 d-none">
       <div className="container py-5">
         <div className="sectionTitle text-center primaryText mb-5 my-3">
           <h2>Github Stats</h2>
