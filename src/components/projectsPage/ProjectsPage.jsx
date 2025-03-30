@@ -55,7 +55,7 @@ export default function ProjectsPage() {
       <Helmet>
         <title>Projects</title>
         <meta name="description" content="Ali K. Elsaadany Projects" />
-        <link rel="canonical" href="https://ali1kh.tech/projects" />
+        <link rel="canonical" href="https://ali1kh.com/projects" />
         <meta
           name="keywords"
           content={`projects,${projects

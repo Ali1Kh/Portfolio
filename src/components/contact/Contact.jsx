@@ -23,9 +23,7 @@ export default function Contact() {
       if (values.email == "") {
         errors.email = "Email Is Required";
       } else if (
-        !values.email.match(
-          /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
-        )
+        !values.email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
       ) {
         errors.email = "Email Is Invaild";
       }
@@ -82,7 +80,7 @@ export default function Contact() {
                 <div className="infoItem d-flex align-items-center">
                   <i className="primaryText cursorPointer fa-solid fa-envelope me-3"></i>
                   <a
-                    href="mailto:info@ali1kh.tech"
+                    href="mailto:info@ali1kh.com"
                     className="cursorPointer text-decoration-none mutedText"
                   >
                     alielsaadany94@gmail.com
