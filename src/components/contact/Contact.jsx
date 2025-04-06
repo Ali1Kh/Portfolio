@@ -92,7 +92,7 @@ export default function Contact() {
                 <div className="infoItem d-flex align-items-center">
                   <i className="primaryText cursorPointer fa fa-phone me-3"></i>
                   <span className="mutedText" style={{ cursor: "grabbing" }}>
-                    +201551068849
+                    +201044466031
                   </span>
                 </div>
               </div>
