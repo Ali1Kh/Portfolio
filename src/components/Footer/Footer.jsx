@@ -18,7 +18,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="footerEnd d-flex gap-3">
-            <span>+201551068849</span>
+            <span>+201044466031</span>
             <span>alielsaadany94@gmail.com</span>
 
             <div className="socialItems pb-3 d-flex gap-2">
