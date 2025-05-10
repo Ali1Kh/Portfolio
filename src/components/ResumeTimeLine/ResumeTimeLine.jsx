@@ -92,6 +92,7 @@ export default function ResumeTimeLine() {
                         backgroundColor: "white",
                         borderRadius: "50%",
                       }}
+                      className="progressDot"
                     ></div>
                   )}
 

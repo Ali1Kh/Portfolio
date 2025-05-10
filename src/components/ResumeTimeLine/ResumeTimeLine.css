@@ -16,6 +16,20 @@
   z-index: -1;
 }
 
+.progressDot{
+  scale: 1;
+  animation: progressDotScale 0.6s ease-in-out forwards alternate infinite;
+}
+
+@keyframes progressDotScale {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 1.5;
+  }
+}
+
 @keyframes incBarHeight {
   0% {
     --barHeight: 0%;
