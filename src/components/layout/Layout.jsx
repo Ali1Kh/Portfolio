@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import "./layout.css";
 import FollowMe from "../FollowMe/FollowMe";
+import Footer from "../Footer/Footer";
 export default function Layout() {
   return (
     <>
@@ -31,6 +32,7 @@ export default function Layout() {
 
       <Outlet />
       <FollowMe />
+      <Footer />
     </>
   );
 }
