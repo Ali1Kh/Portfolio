@@ -16,7 +16,7 @@ export default function LatestProjects() {
     <section className="projects py-2 my-5 mt-3">
       <div className="container ">
         <div className="sectionTitle text-center primaryText mb-4">
-          <h2>Latest Projects</h2>
+          <h2>Highlighted Projects</h2>
         </div>
         <div className="projectsCards">
           <Projects projects={latestProjects} />
