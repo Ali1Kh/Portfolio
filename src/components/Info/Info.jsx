@@ -73,7 +73,7 @@ export default function Info() {
                   >
                     <i className="fa fa-diagram-project fs-4"></i>
                   </div>
-                  <h2>{counterOn && <CountUp start={0} end={projectsCount} />}</h2>
+                  <h2>+{counterOn && <CountUp start={0} end={projectsCount} />}</h2>
                   <small>Projects Completed</small>
                 </div>
               </div>
@@ -89,7 +89,7 @@ export default function Info() {
                   >
                     <i className="fa fa-code fs-4"></i>
                   </div>
-                  <h2> {counterOn && <CountUp start={0} end={350000} />}</h2>
+                  <h2> +{counterOn && <CountUp start={0} end={350000} />}</h2>
                   <small>Lines Of Codes</small>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export default function Info() {
                   >
                     <i className="fa fa-hourglass-half fs-4"></i>
                   </div>
-                  <h2>{counterOn && <CountUp start={0} end={hours} />}</h2>
+                  <h2>+{counterOn && <CountUp start={0} end={hours} />}</h2>
                   <small>Coding Hours</small>
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default function Info() {
                   >
                     <i className="fa fa-award fs-4"></i>
                   </div>
-                  <h2>{counterOn && <CountUp start={0} end={22} />}</h2>
+                  <h2>+{counterOn && <CountUp start={0} end={22} />}</h2>
                   <small>Awards</small>
                 </div>
               </div>
