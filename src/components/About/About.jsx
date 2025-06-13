@@ -254,7 +254,7 @@ export default function About() {
         <div className="pdfView h-100 w-100">
           <PDFViewer pdfUrl={"/cv.pdf"} />
         </div>
-      </div>
+      </div> 
     </>
   );
 }
