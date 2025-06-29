@@ -26,15 +26,14 @@ export default function ResumeTimeLine() {
     },
     {
       startYear: "2024",
-      endYear: "2026",
+      endYear: "2025",
       title: "Full Stack Web Developer (Remote)",
       logo: require("../../imgs/companies/mc.jpg"),
       company: "MediCapital Group",
       description:
         "Working remotely on multiple projects, handling full stack development from frontend to backend using modern technologies like React, Node.js, and MongoDB..",
-      progress: Math.round(
-        ((new Date().getFullYear() - 2024) / (2026 - 2024)) * 100
-      ),
+    progress: 100,
+      completed: true,
     },
     {
       startYear: "2024",
