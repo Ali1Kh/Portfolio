@@ -16,8 +16,8 @@ export default function ResumeTimeLine() {
     {
       startYear: "2023",
       endYear: "2024",
-        startMonth:"May",
-      endMonth:"April",
+      startMonth: "May",
+      endMonth: "April",
       title: "Full Stack Development - Route Academy",
       logo: require("../../imgs/certificatedFrom/route.jpg"),
       company: "Route Academy",
@@ -29,16 +29,43 @@ export default function ResumeTimeLine() {
     {
       startYear: "2024",
       endYear: "2025",
-      startMonth:"January",
-      endMonth:"July",
+      startMonth: "January",
+      endMonth: "July",
       title: "Full Stack Web Developer (Remote)",
       logo: require("../../imgs/companies/mc.jpg"),
       company: "MediCapital Group",
       description:
         "Working remotely on multiple projects, handling full stack development from frontend to backend using modern technologies like React, Node.js, and MongoDB..",
-    progress: 100,
+      progress: 100,
       completed: true,
     },
+
+    // {
+    //   startYear: "2025",
+    //   endYear: "2025",
+    //   startMonth: "July",
+    //   endMonth: "August",
+    //   title: "UI/UX Design Internship",
+    //   logo: require("../../imgs/companies/nti.png"),
+    //   company: "NTI – National Telecommunication Institute",
+    //   description:
+    //     "Completed a UI/UX design internship covering the full design process from user research to wireframing and prototyping. Worked with tools like Figma to create user interfaces.",
+    //   progress: 100,
+    //   completed: true,
+    // },
+    // {
+    //   startYear: "2025",
+    //   endYear: "2025",
+    //   startMonth: "June",
+    //   endMonth: "July",
+    //   title: "Web Development using React.js Internship",
+    //   logo: require("../../imgs/companies/iti.png"),
+    //   company: "ITI - Information Technology Institute",
+    //   description:
+    //     "Joined an summer training program focused on building modern web applications using React.js. Gained experience with components, state management, and API integration.",
+    //   progress: 100,
+    //   completed: true,
+    // },
     {
       startYear: "2024",
       endYear: "2028",
@@ -125,9 +152,11 @@ export default function ResumeTimeLine() {
                     </div>
                   </div>
                   <span className="opacity-75">
-                   {item.startMonth ? item.startMonth + " " : "" } {item.startYear} -{" "}
-                    {item.endYear < new Date().getFullYear()  || item.completed
-                      ? (item.endMonth ? item.endMonth + " " : "" ) + item.endYear
+                    {item.startMonth ? item.startMonth + " " : ""}{" "}
+                    {item.startYear} -{" "}
+                    {item.endYear < new Date().getFullYear() || item.completed
+                      ? (item.endMonth ? item.endMonth + " " : "") +
+                        item.endYear
                       : "Present"}
                   </span>
                 </div>
