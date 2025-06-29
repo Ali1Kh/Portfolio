@@ -122,7 +122,7 @@ export default function ResumeTimeLine() {
                   </div>
                   <span className="opacity-75">
                     {item.startYear} -{" "}
-                    {item.endYear < new Date().getFullYear()
+                    {item.endYear < new Date().getFullYear()  || item.completed
                       ? item.endYear
                       : "Present"}
                   </span>
