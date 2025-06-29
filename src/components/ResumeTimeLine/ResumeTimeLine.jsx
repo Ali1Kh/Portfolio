@@ -16,6 +16,8 @@ export default function ResumeTimeLine() {
     {
       startYear: "2023",
       endYear: "2024",
+        startMonth:"May",
+      endMonth:"April",
       title: "Full Stack Development - Route Academy",
       logo: require("../../imgs/certificatedFrom/route.jpg"),
       company: "Route Academy",
@@ -27,6 +29,8 @@ export default function ResumeTimeLine() {
     {
       startYear: "2024",
       endYear: "2025",
+      startMonth:"January",
+      endMonth:"July",
       title: "Full Stack Web Developer (Remote)",
       logo: require("../../imgs/companies/mc.jpg"),
       company: "MediCapital Group",
@@ -121,9 +125,9 @@ export default function ResumeTimeLine() {
                     </div>
                   </div>
                   <span className="opacity-75">
-                    {item.startYear} -{" "}
+                   {item.startMonth ? item.startMonth + " " : "" } {item.startYear} -{" "}
                     {item.endYear < new Date().getFullYear()  || item.completed
-                      ? item.endYear
+                      ? (item.endMonth ? item.endMonth + " " : "" ) + item.endYear
                       : "Present"}
                   </span>
                 </div>
