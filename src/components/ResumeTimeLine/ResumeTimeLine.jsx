@@ -69,7 +69,7 @@ export default function ResumeTimeLine() {
       logo: require("../../imgs/companies/nti.png"),
       company: "NTI – National Telecommunication Institute",
       description:
-        "Completed a UI/UX design internship covering the full design process from user research to wireframing and prototyping. Worked with tools like Figma to create user interfaces.",
+        "UI/UX design internship covering the full design process from user research to wireframing and prototyping. Worked with tools like Figma to create user interfaces.",
       progress:
         new Date().getMonth() + 1 <= 7 && new Date().getFullYear() == 2025
           ? Math.floor((new Date().getDate() / 24) * 100)
@@ -86,7 +86,7 @@ export default function ResumeTimeLine() {
       logo: require("../../imgs/companies/iti.png"),
       company: "ITI - Information Technology Institute",
       description:
-        "Joined an summer training program focused on building modern web applications using React.js. Gained experience with components, state management, and API integration.",
+        "Summer training program focused on building modern web applications using React.js. Gained experience with components, state management, and API integration.",
       progress:
         new Date().getMonth() + 1 <= 7 && new Date().getFullYear() == 2025
           ? Math.floor((new Date().getDate() / 15) * 100)
