@@ -43,9 +43,9 @@ export default function Hero() {
                       </h1>
                     </div>
                     <div className="title">
-                      <h1 style={{ fontSize: "40px" }} className="">
+                      <h2 style={{ fontSize: "40px" }} className="">
                         Full Stack Developer
-                      </h1>
+                      </h2>
                     </div>
 
                     {/* <div className="summary mb-3" style={{ maxWidth: "700px" }}>
