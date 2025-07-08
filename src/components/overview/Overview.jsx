@@ -28,7 +28,7 @@ export default function Overview() {
         />
       </Helmet>
       <Hero />
-      {/* <About /> */}
+      <About />
       <ResumeTimeLine />
       <Skills />
       <LatestProjects />

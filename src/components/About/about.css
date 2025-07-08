@@ -1,0 +1,26 @@
+.headTitleInner {
+  position: relative;
+  margin-left: 55px;
+}
+
+.headTitleInner::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  left: -42px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--mainColor);
+}
+
+.headTitleInner:not(.headTitleInner.last)::after {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: -45px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50vh;
+  background-color: var(--mainColor);
+}
