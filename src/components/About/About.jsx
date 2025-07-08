@@ -42,7 +42,7 @@ export default function About() {
         {/* <div className="sectionTitle text-center primaryText">
           <h2>About Me</h2>
         </div> */}
-        <div className="row">
+        <div className="row gy-4  flex-column-reverse flex-md-row">
           <div className="col-md-6">
             <div className="headTitles">
               <div className="headTitlesInner d-flex flex-column gap-4">
@@ -84,11 +84,11 @@ export default function About() {
             <div className="info d-flex justify-content-evenly">
               {infoItems.map((info, idx) => (
                 <div className="infoItem d-flex flex-column align-items-center">
-                  <div className="infoNum d-flex justify-content-center align-items-center gap-2">
+                  <div className="infoNum text-center d-flex justify-content-center align-items-center gap-2">
                     <span className="fw-bold fs-3">{info.num || info.percent}</span>{" "}
                     <i className={`fa fa-${info.num ? "plus" : "percent"} primaryText fs-4`}></i>
                   </div>
-                  <div className="infoTitle">
+                  <div className="infoTitle text-center">
                     <span className="fw-semibold opacity-75">
                       {info.title}
                     </span>
