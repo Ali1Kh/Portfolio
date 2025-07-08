@@ -5,11 +5,12 @@ import Info from "../Info/Info";
 import Services from "../Services/Services";
 import CertificatedIn from "../certificatedIn/CertificatedIn";
 import LatestProjects from "../LatestProjects/LatestProjects";
-import About from "../About/About";
+import Hero from "../Hero/Hero";
 import ContactOverView from "../contact/ContactOverView";
 import ResumeTimeLine from "../ResumeTimeLine/ResumeTimeLine";
 import Skills from "../Skills/Skills";
 import Analytics from "../Analytics/Analytics";
+import About from "../About/About";
 
 export default function Overview() {
   return (
@@ -26,7 +27,8 @@ export default function Overview() {
           content="A Full Stack Web Developer building seamless web experiences with proficiency in the MERN stack. Proficient in front-end technologies like HTML, CSS, JavaScript, React.js, and back-end development with Node.js, Express.js and MongoDB. Passionate about creating user friendly and visually appealing and functional web applications."
         />
       </Helmet>
-      <About />
+      <Hero />
+      {/* <About /> */}
       <ResumeTimeLine />
       <Skills />
       <LatestProjects />

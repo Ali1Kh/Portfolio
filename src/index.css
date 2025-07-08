@@ -6,6 +6,9 @@
   /* --mainColor: rgb(255, 162, 115); */
 }
 
+.mainBgColor{
+  background-color: var(--mainColor) !important;
+}
 .primaryBg {
   background-color: #181918 !important;
 }

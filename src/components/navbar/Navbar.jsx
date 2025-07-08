@@ -1,20 +1,43 @@
 import React, { useEffect } from "react";
 import "./navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import $ from "jquery";
 export default function Navbar() {
+  let [active, setActive] = React.useState("/");
+  let links = [
+    {
+      name: "Overview",
+      link: "/",
+    },
+    {
+      name: "Projects",
+      link: "/projects",
+    },
+    {
+      name: "Certificates",
+      link: "/certificates",
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+    },
+  ];
+
+  let location = useLocation();
+
   useEffect(() => {
-    $(".nav-link").click((e) => {
-      $(".nav-link.active").removeClass("active");
-      $(e.target).addClass("active");
-    });
-  });
+    setActive(location.pathname);
+  }, [location]);
 
   return (
     <>
       <nav className="navbar navbar-expand-lg position-fixed start-0 end-0 z-2 ">
-        <div className="container rounded-4 px-3 py-2 border shadow  animate__animated   animate__bounceInDown animate__fast" >
-          <Link to={"/"} style={{cursor:"grabbing",userSelect:"none"}} className="navbar-brand fs-4 d-flex align-items-center gap-2 text-white">
+        <div className="container rounded-4 px-3 py-2 border shadow  animate__animated   animate__bounceInDown animate__fast">
+          <Link
+            to={"/"}
+            style={{ cursor: "grabbing", userSelect: "none" }}
+            className="navbar-brand fs-4 d-flex align-items-center gap-2 text-white"
+          >
             <img
               src={require("../../imgs/fav.png")}
               alt="Logo"
@@ -32,65 +55,25 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-         <i className="fa-solid fa-bars text-white"></i>
+            <i className="fa-solid fa-bars text-white"></i>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link
-                  className="nav-link active"
-                  data-category=""
-                  role="button"
-                  aria-current="page"
-                  to={"/overview"}
-                >
-                  Overview
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  id="projectsNavItem"
-                  role="button"
-                  aria-current="page"
-                  to={"/projects"}
-                >
-                  Projects
-                </Link>
-              </li>
-              {/* <li className="nav-item">
-                <Link
-                  className="nav-link"
-
-                  role="button"
-                  aria-current="page"
-                  to={"/Resume"}
-                >
-                  Resume
-                </Link>
-              </li> */}
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-
-                  role="button"
-                  aria-current="page"
-                  to={"/certificates"}
-                >
-                  Certificates
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-
-                  role="button"
-                  aria-current="page"
-                  to={"/contact"}
-                >
-                  Contact
-                </Link>
-              </li>
+              {links.map((link) => (
+                <li className="nav-item">
+                  <Link
+                    className={`nav-link ${
+                      active === link.link ? "active" : ""
+                    }`}
+                    data-category=""
+                    role="button"
+                    aria-current="page"
+                    to={link.link}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

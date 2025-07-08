@@ -53,7 +53,7 @@ export default function Projects({ projects }) {
       $(".nav-link.active").removeClass("active");
       $("#projectsNavItem").addClass("active");
     }
-  });
+  },[]);
 
   function applinkClicked(e) {
     e.stopPropagation();

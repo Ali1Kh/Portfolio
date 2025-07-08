@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import axios from "axios";
 import toast from "react-hot-toast";
-export default function Contact() {
+export default function Contact({ hiring }) {
   let initValues = {
     name: "",
     email: "",
@@ -66,6 +66,24 @@ export default function Contact() {
       });
     }
   }
+
+  useEffect(() => {
+    if (hiring == "true") {
+      formik.setFieldValue("subject", "Hire Request");
+      formik.setFieldValue(
+        "text",
+        `Hi Ali,
+
+I came across your portfolio and I’m interested in working with you.
+
+Please let me know if you're available.
+
+Best regards,  
+${formik.values.name || "An interested client"}
+`
+      );
+    }
+  }, [hiring, formik.values.name]);
 
   return (
     <>
@@ -203,7 +221,7 @@ export default function Contact() {
                       ? "form-control py-2 border-danger is-invalid"
                       : "form-control py-2"
                   }
-                  rows={"7"}
+                  rows={"8"}
                   placeholder="Message"
                   style={{ maxHeight: "250px" }}
                 />

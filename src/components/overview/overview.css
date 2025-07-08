@@ -5,6 +5,7 @@ button.contactBtn {
 .sectionFooter button:hover,
 .contactBtn:hover {
   background-color: var(--mainColor) !important;
+  border-color: transparent !important;
 }
 
 .serviceIcon {
