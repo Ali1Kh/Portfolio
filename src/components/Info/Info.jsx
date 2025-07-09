@@ -28,7 +28,6 @@ export default function Info() {
     }
   };
 
-
   const getHours = async () => {
     try {
       const { data } = await axios.get(
@@ -41,9 +40,27 @@ export default function Info() {
   };
 
   useEffect(() => {
-    getHours(); 
+    getHours();
     getProjectsCount();
   }, []);
+
+  let infoItmes = [
+    {
+      title: "Projects Completed",
+      num: projectsCount,
+      icon: "diagram-project",
+    },
+    {
+      title: "Coding Hours",
+      num: hours,
+      icon: "hourglass-half",
+    },
+    {
+      title: "Awards",
+      num: 25,
+      icon: "award",
+    },
+  ];
 
   return (
     <section className="info secBg my-5 mt-3">
@@ -58,79 +75,26 @@ export default function Info() {
         >
           <div className="info">
             <div className="row justify-content-center gy-4">
-              <div className="col-md-3">
-                <div
-                  title="Github Repositories"
-                  className="infoItem d-flex align-items-center flex-column cursorGrab"
-                >
-                  <div
-                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      backgroundColor: "var(--mainColor)",
-                    }}
-                  >
-                    <i className="fa fa-diagram-project fs-4"></i>
+              {infoItmes.map((item) => (
+                <div className="col-md-3">
+                  <div className="infoItem text-center d-flex justify-content-center align-items-center flex-column cursorPointer">
+                    <div
+                      className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        backgroundColor: "var(--mainColor)",
+                      }}
+                    >
+                      <i className="fa fa-diagram-project fs-4"></i>
+                    </div>
+                    <h2 className="w-100 text-center">
+                      +{counterOn && <CountUp start={0} end={item.num} />}
+                    </h2>
+                    <small className="w-100 text-center">{item.title}</small>
                   </div>
-                  <h2>+{counterOn && <CountUp start={0} end={projectsCount} />}</h2>
-                  <small>Projects Completed</small>
                 </div>
-              </div>
-              <div className="col-md-3 d-none">
-                <div className="infoItem d-flex align-items-center flex-column cursorGrab">
-                  <div
-                    className="infoIcon  mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      backgroundColor: "var(--mainColor)",
-                    }}
-                  >
-                    <i className="fa fa-code fs-4"></i>
-                  </div>
-                  <h2> +{counterOn && <CountUp start={0} end={350000} />}</h2>
-                  <small>Lines Of Codes</small>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div
-                  title="Calculated By Wakatime"
-                  className="infoItem d-flex align-items-center flex-column cursorGrab"
-                >
-                  <div
-                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      backgroundColor: "var(--mainColor)",
-                    }}
-                  >
-                    <i className="fa fa-hourglass-half fs-4"></i>
-                  </div>
-                  <h2>+{counterOn && <CountUp start={0} end={hours} />}</h2>
-                  <small>Coding Hours</small>
-                </div>
-              </div>
-              <div className="col-md-3">
-                <div
-                  title="Take A Look At Certificates"
-                  className="infoItem d-flex align-items-center flex-column cursorGrab"
-                >
-                  <div
-                    className="infoIcon mb-3 rounded-circle  text-white d-flex justify-content-center align-items-center"
-                    style={{
-                      width: "50px",
-                      height: "50px",
-                      backgroundColor: "var(--mainColor)",
-                    }}
-                  >
-                    <i className="fa fa-award fs-4"></i>
-                  </div>
-                  <h2>+{counterOn && <CountUp start={0} end={22} />}</h2>
-                  <small>Awards</small>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </ScrollTrigger>
