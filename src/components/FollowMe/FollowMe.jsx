@@ -1,12 +1,20 @@
 import "./followMe.css";
-import React from "react";
+import React, { useEffect } from "react";
 import $ from "jquery";
 export default function FollowMe() {
   let itemHeight = 140;
+  useEffect(() => {
+    document.getElementById("audio").volume = 0.3;
+  }, []);
   function dragEnd() {
     document.documentElement.style.setProperty("--socialTop", `18px`);
     $(".socialmedia").addClass("ownAnimate");
+    playSound();
   }
+  function playSound() {
+    document.getElementById("audio").play();
+  }
+
   return (
     <div className="socialmedia my-2 animate__animated animate__flipInX animate__fast">
       <p
@@ -55,6 +63,16 @@ export default function FollowMe() {
         >
           <i className="fa-brands fs-5 fa-x-twitter"></i>
         </a>
+      </div>
+      <div className="d-none">
+        <audio
+          src="/audios/sound.mp3"
+          id="audio"
+          style={{
+            display: "none",
+          }}
+          defaultValue={0}
+        ></audio>
       </div>
     </div>
   );
