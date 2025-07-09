@@ -25,7 +25,7 @@ export default function Hero() {
   }
   return (
     <>
-      <section className="about w-100 overflow-hidden d-flex justify-content-center align-items-center mb-md-5 py-md-5 mt-0 pt-0">
+      <section className="about w-100 position-relative overflow-hidden d-flex justify-content-center align-items-center mb-md-5 py-md-5 mt-0 pt-0">
         <div className="container px-5 pb-md-5">
           <div className="aboutInner d-flex  gap-5 justify-content-center  align-items-center">
             <div className="overview w-100 mt-5">
@@ -59,7 +59,10 @@ export default function Hero() {
                   </div> */}
 
                     <div class="sectionFooter d-flex align-items-center gap-4 my-4 ">
-                      <Link to="/contact?hiring=true" class="btn mainBgColor text-white">
+                      <Link
+                        to="/contact?hiring=true"
+                        class="btn mainBgColor text-white"
+                      >
                         Hire Me
                       </Link>
                       <button
@@ -284,6 +287,19 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="scrollDown">
+          <div className="downArrow">
+            <div className="arrowItem">
+              <div className="angleDown"></div>
+            </div>
+            <div className="arrowItem">
+              <div className="angleDown"></div>
+            </div>
+            <div className="arrowItem">
+              <div className="angleDown"></div>
             </div>
           </div>
         </div>
