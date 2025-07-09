@@ -32,6 +32,7 @@
 .scrollDown {
   position: absolute;
   bottom: 60px;
+  background-color: red;
 }
 
 .downArrow {

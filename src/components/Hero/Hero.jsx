@@ -291,7 +291,10 @@ export default function Hero() {
           </div>
         </div>
         <div className="scrollDown">
-          <div className="downArrow">
+          <div
+            onClick={() => window.scrollTo(0, window.innerHeight - 100)}
+            className="downArrow cursorPointer"
+          >
             <div className="arrowItem">
               <div className="angleDown"></div>
             </div>
