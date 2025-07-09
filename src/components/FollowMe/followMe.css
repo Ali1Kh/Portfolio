@@ -8,7 +8,7 @@
   top: var(--socialTop);
   right: 15px;
   z-index: 55;
-  border: 1px solid white;
+  border: 1px solid #ffffffc4;
   border-radius: 15px;
 }
 .socialmedia::before {

@@ -32,7 +32,7 @@ export default function Navbar() {
   return (
     <>
       <nav className="navbar navbar-expand-lg position-fixed start-0 end-0 z-2 ">
-        <div className="container rounded-4 px-3 py-2 border shadow  animate__animated   animate__bounceInDown animate__fast">
+        <div className="container rounded-4 px-3 py-2 shadow  animate__animated   animate__bounceInDown animate__fast">
           <Link
             to={"/"}
             style={{ cursor: "grabbing", userSelect: "none" }}
