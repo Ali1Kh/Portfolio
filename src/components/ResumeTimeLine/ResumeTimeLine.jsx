@@ -72,7 +72,7 @@ export default function ResumeTimeLine() {
         "UI/UX design internship covering the full design process from user research to wireframing and prototyping. Worked with tools like Figma to create user interfaces.",
       progress:
         new Date().getMonth() + 1 <= 7 && new Date().getFullYear() == 2025
-          ? Math.floor((new Date().getDate() / 24) * 100)
+          ? Math.floor((new Date().getDate() / 25) * 100)
           : 100,
       completed:
         new Date().getMonth() + 1 > 7 && new Date().getFullYear() == 2025,
@@ -89,7 +89,7 @@ export default function ResumeTimeLine() {
         "Summer training program focused on building modern web applications using React.js. Gained experience with components, state management, and API integration.",
       progress:
         new Date().getMonth() + 1 <= 7 && new Date().getFullYear() == 2025
-          ? Math.floor((new Date().getDate() / 15) * 100)
+          ? Math.floor((new Date().getDate() / 18) * 100)
           : 100,
       completed:
         new Date().getMonth() + 1 > 7 && new Date().getFullYear() == 2025,
