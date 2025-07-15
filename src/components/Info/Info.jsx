@@ -86,7 +86,7 @@ export default function Info() {
                         backgroundColor: "var(--mainColor)",
                       }}
                     >
-                      <i className="fa fa-diagram-project fs-4"></i>
+                      <i className={`fa fa-${item.icon} fs-4`}></i>
                     </div>
                     <h2 className="w-100 text-center">
                       +{counterOn && <CountUp start={0} end={item.num} />}
