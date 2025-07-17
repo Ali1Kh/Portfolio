@@ -57,11 +57,11 @@ export default function FollowMe() {
           <i className="fa fs-5 fa-brands fa-github"></i>
         </a>
         <a
-          href="https://twitter.com/aly1kh"
+          href="https://www.behance.net/ali1kh"
           target="_blank"
           className="text-white"
         >
-          <i className="fa-brands fs-5 fa-x-twitter"></i>
+          <i className="fa-brands fs-5 fa-behance"></i>
         </a>
       </div>
       <div className="d-none">
