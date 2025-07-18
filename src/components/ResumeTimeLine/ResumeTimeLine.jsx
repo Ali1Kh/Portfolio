@@ -59,7 +59,21 @@ export default function ResumeTimeLine() {
       progress: 100,
       completed: true,
     },
-
+    {
+      startYear: "2025",
+      endYear: "2025",
+      startMonth: "June",
+      endMonth: "July",
+      title: "Web Development using React.js Internship",
+      logo: require("../../imgs/companies/iti.png"),
+      company: "ITI - Information Technology Institute",
+      description:
+        "Summer training program focused on building modern web applications using React.js. Gained experience with components, state management, and API integration.",
+      progress:
+         100,
+      completed:
+       true,
+    },
     {
       startYear: "2025",
       endYear: "2025",
@@ -77,21 +91,7 @@ export default function ResumeTimeLine() {
       completed:
         new Date().getMonth() + 1 > 7 && new Date().getFullYear() == 2025,
     },
-    {
-      startYear: "2025",
-      endYear: "2025",
-      startMonth: "June",
-      endMonth: "July",
-      title: "Web Development using React.js Internship",
-      logo: require("../../imgs/companies/iti.png"),
-      company: "ITI - Information Technology Institute",
-      description:
-        "Summer training program focused on building modern web applications using React.js. Gained experience with components, state management, and API integration.",
-      progress:
-         100,
-      completed:
-       true,
-    },
+
   ];
   let limit = 4;
   let [isLimited, setIsLimited] = React.useState(true);
