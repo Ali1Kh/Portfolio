@@ -88,11 +88,9 @@ export default function ResumeTimeLine() {
       description:
         "Summer training program focused on building modern web applications using React.js. Gained experience with components, state management, and API integration.",
       progress:
-        new Date().getMonth() + 1 <= 7 && new Date().getFullYear() == 2025
-          ? Math.floor((new Date().getDate() / 18) * 100)
-          : 100,
+         100,
       completed:
-        new Date().getMonth() + 1 > 7 && new Date().getFullYear() == 2025,
+       true,
     },
   ];
   let limit = 4;
