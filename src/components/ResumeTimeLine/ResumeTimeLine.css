@@ -23,6 +23,7 @@
 
 .lastLimitedItem {
   filter: blur(3px);
+  user-select:none;
   max-height: 70px;
 }
 
