@@ -73,12 +73,7 @@ export default function About() {
               <h2 className="fw-semibold">About Me</h2>
             </div>
             <div className="summary mb-3" style={{ maxWidth: "700px" }}>
-              I'm Full Stack Web Developer building seamless web experiences
-              with proficiency in the MERN stack. Proficient in front-end
-              technologies like HTML, CSS, JavaScript, React.js, and back-end
-              development with Node.js, Express.js and MongoDB. Passionate about
-              creating user friendly and visually appealing and functional web
-              applications.
+              I'm a passionate Full Stack Web Developer specializing in building seamless and responsive web applications using the MERN stack. I have strong expertise in frontend technologies such as HTML, CSS, JavaScript, and React.js, as well as backend development with Node.js, Express.js, and MongoDB. In addition to web development, I also have experience in UI/UX design, desktop application development, and embedded systems.
               <b> Available for remote and freelance work.</b>
             </div>
             <div className="info d-flex justify-content-evenly">
