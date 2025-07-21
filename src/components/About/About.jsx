@@ -32,7 +32,7 @@ export default function About() {
     },
     {
       title: "Year Of Experience",
-      num: 5,
+      num: 3,
     },
   ];
 
