@@ -84,12 +84,14 @@ export default function ResumeTimeLine() {
       company: "NTI – National Telecommunication Institute",
       description:
         "UI/UX design internship covering the full design process from user research to wireframing and prototyping. Worked with tools like Figma to create user interfaces.",
-      progress:
-        new Date().getMonth() + 1 <= 7 && new Date().getFullYear() == 2025
-          ? Math.floor((new Date().getDate() / 24) * 100)
-          : 100,
-      completed:
-        new Date().getMonth() + 1 > 7 && new Date().getFullYear() == 2025 && Math.floor((new Date().getDate() / 24) * 100) >= 100 ,
+    progress: 100,
+      completed: true,
+      // progress:
+      //   new Date().getMonth() + 1 <= 7 && new Date().getFullYear() == 2025
+      //     ? Math.floor((new Date().getDate() / 24) * 100)
+      //     : 100,
+      // completed:
+      //   new Date().getMonth() + 1 > 7 && new Date().getFullYear() == 2025 && Math.floor((new Date().getDate() / 24) * 100) >= 100 ,
     },
 
   ];
