@@ -19,19 +19,18 @@
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
 .lg-react-element > * {
+  --imgCols: 2;
   flex-shrink: 0;
   width: 100%;
-  max-width: 50%;
+  max-width: calc(100% / var(--imgCols));
   margin-inline: auto;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   margin-top: var(--bs-gutter-y);
 }
 
-
-
 @media screen and (width < 992px) {
-    .lg-react-element > * {
-        max-width: 100% !important;
-    }
+  .lg-react-element > * {
+    --imgCols: 1;
+  }
 }

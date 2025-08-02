@@ -10,6 +10,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import $ from "jquery";
 export default function ProjectDetails() {
   const onInit = () => {};
   const { slug } = useParams();
@@ -24,6 +25,46 @@ export default function ProjectDetails() {
     }
   }
   let projectDetails = data?.data.results;
+
+  function handleResize(imgType) {
+    const imgContainers = document.querySelectorAll(".lg-react-element > *");
+    if (window.innerWidth < 992) {
+      if (imgType === "mobile") {
+        imgContainers.forEach((imgContainer) => {
+          imgContainer.style.setProperty("--imgCols", "2");
+        });
+      } else {
+        imgContainers.forEach((imgContainer) => {
+          imgContainer.style.setProperty("--imgCols", "1");
+        });
+      }
+    } else {
+      if (imgType === "mobile") {
+        imgContainers.forEach((imgContainer) => {
+          imgContainer.style.setProperty("--imgCols", "5");
+        });
+      } else {
+        imgContainers.forEach((imgContainer) => {
+          imgContainer.style.setProperty("--imgCols", "2");
+        });
+      }
+    }
+  }
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = projectDetails?.images[0]?.secure_url;
+    img.onload = () => {
+      if (img.height > img.width) {
+        handleResize("mobile");
+        window.addEventListener("resize", () => handleResize("mobile"));
+      } else {
+        handleResize("desktop");
+        window.addEventListener("resize", () => handleResize("desktop"));
+      }
+    };
+  }, [projectDetails]);
+
   return (
     <>
       <Helmet>
