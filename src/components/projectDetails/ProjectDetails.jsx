@@ -26,7 +26,8 @@ export default function ProjectDetails() {
   }
   let projectDetails = data?.data.results;
 
-  function handleResize(imgType) {
+  function handleResize() {
+    let imgType = projectDetails?.screenType;
     const imgContainers = document.querySelectorAll(".lg-react-element > *");
     if (window.innerWidth < 992) {
       if (imgType === "mobile") {
@@ -43,6 +44,10 @@ export default function ProjectDetails() {
         imgContainers.forEach((imgContainer) => {
           imgContainer.style.setProperty("--imgCols", "5");
         });
+      } else if (imgType === "showcase") {
+        imgContainers.forEach((imgContainer) => {
+          imgContainer.style.setProperty("--imgCols", "1");
+        });
       } else {
         imgContainers.forEach((imgContainer) => {
           imgContainer.style.setProperty("--imgCols", "2");
@@ -52,17 +57,8 @@ export default function ProjectDetails() {
   }
 
   useEffect(() => {
-    const img = new Image();
-    img.src = projectDetails?.images[0]?.secure_url;
-    img.onload = () => {
-      if (img.height > img.width) {
-        handleResize("mobile");
-        window.addEventListener("resize", () => handleResize("mobile"));
-      } else {
-        handleResize("desktop");
-        window.addEventListener("resize", () => handleResize("desktop"));
-      }
-    };
+    handleResize();
+    window.addEventListener("resize", () => handleResize());
   }, [projectDetails]);
 
   return (
