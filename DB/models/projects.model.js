@@ -15,6 +15,7 @@ const projectSchema = new Schema(
     logo: { secure_url: String, public_id: String },
     images: [{ secure_url: String, public_id: String, imageTitle: String }],
     type: String,
+    screenType: { type: String, default: "desktop" },
     priority: { type: Number, default: 0 },
     watchers: { type: Number, default: 0 },
   },

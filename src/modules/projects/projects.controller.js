@@ -55,6 +55,7 @@ export const addProject = async (req, res, next) => {
     technologies,
     type,
     shortDescreption,
+    screenType,
   } = req.body;
   technologies.map((tech) => {
     tech.slug = slugify(tech.name).toLowerCase();
@@ -93,6 +94,7 @@ export const addProject = async (req, res, next) => {
     technologies,
     shortDescreption,
     type,
+    screenType,
     images: coverImagesArr,
     logo: {
       secure_url: logoUpload?.secure_url,
