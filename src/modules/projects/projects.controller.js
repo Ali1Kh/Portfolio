@@ -26,7 +26,7 @@ export const getProjects = async (req, res, next) => {
   let projects = await Projects.find(query)
     .select("-images -watchers")
     .limit(req.query.limit)
-    .sort({ createdAt: -1 });
+    .sort({ priority: 1 });
   return res.json({ success: true, count: projects.length, results: projects });
 };
 export const getProjectDetails = async (req, res, next) => {
