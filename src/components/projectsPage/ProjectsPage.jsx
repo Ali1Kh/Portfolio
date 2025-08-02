@@ -9,15 +9,36 @@ import PropTypes from "prop-types";
 import { projectsContext } from "../context/projectsContext";
 import $ from "jquery";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectsPage() {
+  let tabs = ["all", "fullstack", "frontend", "backend", "ui-ux"];
+
+  let searchKeyWords = ["JavaScript", "React", "Nodejs", "Figma"];
   const [tab, setTab] = React.useState(0);
 
   let [searchHidden, setSearchHidden] = React.useState(true);
 
   let { projects, getProjects } = useContext(projectsContext);
+  let navigate = useNavigate();
+  const queryParams = new URLSearchParams(window.location.search);
+  const tabParams = queryParams.get("type");
 
-  const handleTabChange = (event, newValue) => {
+  useEffect(() => {
+    if (tabParams) {
+      if (tabs.indexOf(tabParams) >= 0) {
+        handleTabChange(tabs.indexOf(tabParams));
+      } else {
+        handleTabChange(0);
+        queryParams.delete("type");
+        window.history.pushState({}, "", window.location.pathname);
+      }
+    } else {
+      handleTabChange(0);
+    }
+  }, []);
+
+  const handleTabChange = (newValue) => {
     if (newValue == 0) {
       getProjects();
     } else if (newValue == 1) {
@@ -28,26 +49,31 @@ export default function ProjectsPage() {
       getProjects({ type: "backend" });
     } else if (newValue == 4) {
       getProjects({ type: "ui-ux" });
+    } else if (newValue == 5) {
     } else {
       getProjects();
     }
-    if (newValue != 4) {
+    if (newValue != 5) {
       setSearchHidden(true);
     }
     setTab(newValue);
+    if (newValue != 5) {
+      queryParams.set("type", tabs[newValue]);
+      window.history.pushState({}, "", `?type=${tabs[newValue]}`);
+    } else {
+      queryParams.delete("type");
+      window.history.pushState({}, "", window.location.pathname);
+    }
   };
-  useEffect(() => {
-    getProjects();
-  }, []);
 
   const handleInputChanged = (e) => {
-    handleTabChange(null, 4);
+    handleTabChange(5);
     if (e.target.value != "") {
       setSearchHidden(false);
       getProjects({ search: e.target.value });
     } else {
       setSearchHidden(true);
-      handleTabChange(null, 0);
+      handleTabChange(0);
     }
   };
 
@@ -100,40 +126,24 @@ export default function ProjectsPage() {
               </div>
             </div>
             <div className="recommended px-3 py-2 d-flex gap-2">
-              <div
-                onClick={() => {
-                  $("#searchInput").val("JavaScript");
-                  handleInputChanged({ target: { value: "JavaScript" } });
-                }}
-                className="recItem fs-7 rounded-4 py-1 px-3 borderGrey"
-              >
-                JavaScript
-              </div>
-              <div
-                onClick={() => {
-                  $("#searchInput").val("React");
-                  handleInputChanged({ target: { value: "React" } });
-                }}
-                className="recItem fs-7 rounded-4 py-1 px-3 borderGrey"
-              >
-                React
-              </div>
-              <div
-                onClick={() => {
-                  $("#searchInput").val("Nodejs");
-                  handleInputChanged({ target: { value: "Nodejs" } });
-                }}
-                className="recItem fs-7 rounded-4 py-1 px-3 borderGrey"
-              >
-                Node.Js
-              </div>
+              {searchKeyWords.map((word) => (
+                <div
+                  onClick={() => {
+                    $("#searchInput").val(word);
+                    handleInputChanged({ target: { value: word } });
+                  }}
+                  className="recItem fs-7 rounded-4 py-1 px-3 borderGrey"
+                >
+                  {word}
+                </div>
+              ))}
             </div>
           </div>
           <div className="navandtabs mb-2 p-2 ps-5">
             <Box sx={{ width: "100%" }}>
               <Tabs
                 value={tab}
-                onChange={handleTabChange}
+                onChange={(e, value) => handleTabChange(value)}
                 variant="scrollable"
                 scrollButtons
                 allowScrollButtonsMobile
@@ -160,6 +170,9 @@ export default function ProjectsPage() {
             <Projects projects={projects} />
           </CustomTabPanel>
           <CustomTabPanel value={tab} index={4}>
+            <Projects projects={projects} />
+          </CustomTabPanel>
+          <CustomTabPanel value={tab} index={5}>
             <Projects projects={projects} />
           </CustomTabPanel>
         </div>

@@ -26,7 +26,7 @@ export default function Navbar() {
   let location = useLocation();
 
   useEffect(() => {
-    setActive(location.pathname);
+    setActive(window.location.pathname);
   }, [location]);
 
   return (
@@ -61,6 +61,7 @@ export default function Navbar() {
             <ul className="navbar-nav ms-auto">
               {links.map((link) => (
                 <li className="nav-item">
+                  {console.log(active , link.link )}
                   <Link
                     className={`nav-link ${
                       active === link.link ? "active" : ""
