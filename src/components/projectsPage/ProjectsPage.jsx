@@ -27,6 +27,7 @@ export default function ProjectsPage() {
     } else if (newValue == 3) {
       getProjects({ type: "backend" });
     } else if (newValue == 4) {
+      getProjects({ type: "ui-ux" });
     } else {
       getProjects();
     }
@@ -141,6 +142,7 @@ export default function ProjectsPage() {
                 <Tab label={"Full Stack"} />
                 <Tab label={"Frontend"} />
                 <Tab label={"Backend"} />
+                <Tab label={"UI/UX"} />
                 <Tab label={"Search"} hidden={searchHidden} />
               </Tabs>
             </Box>
