@@ -26,7 +26,7 @@ export const getProjects = async (req, res, next) => {
   let projects = await Projects.find(query)
     .select("-images -watchers")
     .limit(req.query.limit)
-    .sort({ priority: 1 });
+    .sort({ priority: -1 });
   return res.json({ success: true, count: projects.length, results: projects });
 };
 export const getProjectDetails = async (req, res, next) => {
@@ -79,6 +79,8 @@ export const addProject = async (req, res, next) => {
     }
   }
 
+  let lastProject = await Projects.findOne().sort({ priority: -1 });
+
   let project = await Projects.create({
     name,
     slug: slugify(name).toLowerCase(),
@@ -96,6 +98,7 @@ export const addProject = async (req, res, next) => {
       secure_url: logoUpload?.secure_url,
       public_id: logoUpload?.public_id,
     },
+    priority: lastProject ? lastProject.priority + 10 : 0,
   });
   return res.json({
     success: true,
