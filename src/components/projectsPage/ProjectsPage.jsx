@@ -57,7 +57,7 @@ export default function ProjectsPage() {
       setSearchHidden(true);
     }
     setTab(newValue);
-    if (newValue != 5) {
+    if (newValue != 5 && newValue != 0) {
       queryParams.set("type", tabs[newValue]);
       window.history.pushState({}, "", `?type=${tabs[newValue]}`);
     } else {

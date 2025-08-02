@@ -61,7 +61,6 @@ export default function Navbar() {
             <ul className="navbar-nav ms-auto">
               {links.map((link) => (
                 <li className="nav-item">
-                  {console.log(active , link.link )}
                   <Link
                     className={`nav-link ${
                       active === link.link ? "active" : ""
