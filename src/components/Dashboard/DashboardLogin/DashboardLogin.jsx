@@ -21,8 +21,7 @@ export default function DashboardLogin() {
         return;
       }
       let { data } = await axios.post(
-        // `https://ali1kh.onrender.com/admin/login`,
-        `http://localhost:9999/admin/login`,
+        `https://ali1kh.onrender.com/admin/login`,
         body
       );
       if (data.success) {
@@ -74,7 +73,11 @@ export default function DashboardLogin() {
             className="form-control"
             placeholder="Password"
           />
-          <button id="loginAdminBtn" onClick={login} className="btn mainBgColor text-white">
+          <button
+            id="loginAdminBtn"
+            onClick={login}
+            className="btn mainBgColor text-white"
+          >
             Login
           </button>
         </div>
