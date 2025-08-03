@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import "./layout.css";
 import FollowMe from "../FollowMe/FollowMe";
@@ -33,6 +33,7 @@ export default function Layout() {
       <Outlet />
       <FollowMe />
       <Footer />
+      <ScrollRestoration />
     </>
   );
 }

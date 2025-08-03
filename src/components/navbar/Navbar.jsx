@@ -10,6 +10,10 @@ export default function Navbar() {
       link: "/",
     },
     {
+      name: "Resume",
+      link: "/resume",
+    },
+    {
       name: "Projects",
       link: "/projects",
     },
@@ -36,7 +40,7 @@ export default function Navbar() {
           <Link
             to={"/"}
             style={{ cursor: "grabbing", userSelect: "none" }}
-            className="navbar-brand fs-4 d-flex align-items-center gap-2 text-white"
+            className="navbar-brand fs-4 d-flex align-items-center gap-2 me-4 text-white"
           >
             <img
               src={require("../../imgs/fav.png")}

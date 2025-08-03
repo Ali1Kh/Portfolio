@@ -46,6 +46,10 @@ const router = createBrowserRouter([
         element: <Certificates />,
       },
       {
+        path: "/resume",
+        element: <Resume />,
+      },
+      {
         path: "/contact",
         element: <ContactPage />,
       },
