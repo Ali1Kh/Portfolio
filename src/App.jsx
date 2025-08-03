@@ -12,7 +12,10 @@ import toast, { Toaster } from "react-hot-toast";
 import ProjectsProvider from "./components/context/projectsContext";
 import { useEffect } from "react";
 import axios from "axios";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import Dashboard from "./components/Dashboard/Dashboard";
+import DashboardLogin from "./components/Dashboard/DashboardLogin/DashboardLogin";
+import AdminPanelRoute from "./routes/AdminPanelRoute";
 
 const router = createBrowserRouter([
   {
@@ -53,21 +56,34 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <ContactPage />,
       },
+
       {
         path: "*",
         element: <h1>Page Not Found</h1>,
       },
     ],
   },
+  {
+    path: "/dashboard/",
+    element: (
+      <AdminPanelRoute>
+        <Dashboard />
+      </AdminPanelRoute>
+    ),
+  },
+  {
+    path: "/dashboard/dashboardLogin",
+    element: <DashboardLogin />,
+  },
 ]);
 
 function App() {
-  async function visitor(){
+  async function visitor() {
     await axios.get("https://ali1kh.onrender.com/visit");
   }
-  useEffect(()=>{
+  useEffect(() => {
     visitor();
-  })
+  });
   const client = new QueryClient();
   return (
     <QueryClientProvider client={client}>

@@ -22,6 +22,7 @@
     "formik": "^2.4.5",
     "install": "^0.13.0",
     "jquery": "^3.7.1",
+    "jwt-decode": "^4.0.0",
     "lightbox.js-react": "^0.9.8",
     "lightgallery": "^2.7.2",
     "npm": "^10.2.5",
@@ -44,7 +45,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=2010 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
