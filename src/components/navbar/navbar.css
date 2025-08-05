@@ -40,11 +40,15 @@
   transition: color 1s;
 }
 
-@media screen and (width <= 400px) {
+@media screen and (width <= 992px) {
   .navbar .container {
-    width: 90% !important;
+    width: 40% !important;
+  }
+  .socialmedia {
+    display: none;
   }
 }
+
 
 @media screen and (width <= 560px) {
   .navbar .container {
@@ -52,12 +56,9 @@
   }
 }
 
-@media screen and (width < 992px) {
+@media screen and (width <= 400px) {
   .navbar .container {
-    width: 40% !important;
-  }
-  .socialmedia {
-    display: none;
+    width: 90% !important;
   }
 }
 /*
