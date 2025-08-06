@@ -46,6 +46,15 @@ export default function Timeline({ isLimited, type }) {
               (1000 * 60 * 60 * 24))) *
             100
       ),
+      completed:
+        Math.round(
+          100 -
+            ((new Date("2028-06-01") - new Date()) /
+              (1000 * 60 * 60 * 24) /
+              ((new Date("2028-06-01") - new Date("2024-10-01")) /
+                (1000 * 60 * 60 * 24))) *
+              100
+        ) >= 100,
       type: "education",
     },
     {
@@ -89,12 +98,35 @@ export default function Timeline({ isLimited, type }) {
       progress: 100,
       completed: true,
       type: "experience",
-      // progress:
-      //   new Date().getMonth() + 1 <= 7 && new Date().getFullYear() == 2025
-      //     ? Math.floor((new Date().getDate() / 24) * 100)
-      //     : 100,
-      // completed:
-      //   new Date().getMonth() + 1 > 7 && new Date().getFullYear() == 2025 && Math.floor((new Date().getDate() / 24) * 100) >= 100 ,
+    },
+    {
+      startYear: "2025",
+      endYear: "2025",
+      startMonth: "August",
+      endMonth: "November",
+      title: "Frontend & UI/UX Internship",
+      logo: require("../../imgs/companies/zagsystem.png"),
+      company: "ZagSystems",
+      description:
+        "Frontend and UI/UX internship covering frontend development and user interface design. Worked with tools like React.js and Figma to create user interfaces.",
+      type: "experience",
+      progress: Math.round(
+        100 -
+          ((new Date("2025-11-01") - new Date()) /
+            (1000 * 60 * 60 * 24) /
+            ((new Date("2025-11-01") - new Date("2025-08-06")) /
+              (1000 * 60 * 60 * 24))) *
+            100
+      ),
+      completed:
+        Math.round(
+          100 -
+            ((new Date("2025-11-01") - new Date()) /
+              (1000 * 60 * 60 * 24) /
+              ((new Date("2025-11-01") - new Date("2025-08-06")) /
+                (1000 * 60 * 60 * 24))) *
+              100
+        ) >= 100,
     },
   ];
   timelineItems.reverse();

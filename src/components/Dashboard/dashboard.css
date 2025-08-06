@@ -23,7 +23,7 @@
 .panelSection[data-selected="true"] {
   border-color: var(--mainColor);
   color: var(--mainColor);
-  background-color: rgba(147, 188, 47, 0.05);
+  background-color: #dd6f080e;
 }
 
 .panelSection:has(.nestedSection[data-selected="true"]) {
