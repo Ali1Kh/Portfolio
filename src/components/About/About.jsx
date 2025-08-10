@@ -32,7 +32,7 @@ export default function About() {
     },
     {
       title: "Year Of Experience",
-      num: 3,
+      num: new Date().getFullYear() - 2022,
     },
   ];
 
