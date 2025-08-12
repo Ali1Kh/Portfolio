@@ -79,7 +79,7 @@ const router = createBrowserRouter([
 
 function App() {
   async function visitor() {
-    await axios.get("https://ali1kh.onrender.com/visit");
+    await axios.get("https://api.ali1kh.com/visit");
   }
   useEffect(() => {
     visitor();

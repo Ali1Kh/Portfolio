@@ -21,7 +21,7 @@ export default function DashboardLogin() {
         return;
       }
       let { data } = await axios.post(
-        `https://ali1kh.onrender.com/admin/login`,
+        `https://api.ali1kh.com/admin/login`,
         body
       );
       if (data.success) {

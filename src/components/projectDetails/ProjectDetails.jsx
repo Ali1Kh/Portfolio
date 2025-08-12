@@ -19,7 +19,7 @@ export default function ProjectDetails() {
   });
   function getProjectDetails() {
     try {
-      return axios.get(`https://ali1kh.onrender.com/projects/${slug}`);
+      return axios.get(`https://api.ali1kh.com/projects/${slug}`);
     } catch (ex) {
       console.log(ex);
     }

@@ -10,7 +10,7 @@ export default function ProjectsProvider({ children }) {
   async function getProjects(filter) {
     try {
       let { data } = await axios.get(
-        `https://ali1kh.onrender.com/projects?${
+        `https://api.ali1kh.com/projects?${
           filter?.search ? "search=" + filter?.search : ""
         }&${filter?.type ? "type=" + filter?.type : ""}&${
           filter?.limit ? "limit=" + filter?.limit : ""

@@ -31,7 +31,7 @@ export default function Info() {
   const getHours = async () => {
     try {
       const { data } = await axios.get(
-        "https://ali1kh.onrender.com/wakatime/getHours"
+        "https://api.ali1kh.com/wakatime/getHours"
       );
       setHours(data.data.decimal);
     } catch (error) {

@@ -40,10 +40,7 @@ export default function Contact({ hiring }) {
 
   async function sendContactMail(values) {
     try {
-      let { data } = await axios.post(
-        `https://ali1kh.onrender.com/mails`,
-        values
-      );
+      let { data } = await axios.post(`https://api.ali1kh.com/mails`, values);
       if (data.success) {
         toast.success(data.message, {
           duration: 4000,
