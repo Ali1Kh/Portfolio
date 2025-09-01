@@ -25,14 +25,9 @@ export default function CertificatedIn() {
       name: "Oracle Academy",
       img: require("../../imgs/certificatedFrom/oracle.png"),
     },
-
     {
       name: "Route Academy",
       img: require("../../imgs/certificatedFrom/route.jpg"),
-    },
-    {
-      name: "Mica Egypt",
-      img: require("../../imgs/certificatedFrom/mica.jpg"),
     },
     {
       name: "Information Technology Institute (ITI)",
@@ -69,6 +64,10 @@ export default function CertificatedIn() {
     {
       name: "freeCodeCamp",
       img: require("../../imgs/certificatedFrom/freecodecamp.jpeg"),
+    },
+    {
+      name: "Mica Egypt",
+      img: require("../../imgs/certificatedFrom/mica.jpg"),
     },
     {
       name: "SoloLearn",
