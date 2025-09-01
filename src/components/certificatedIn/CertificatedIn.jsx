@@ -76,7 +76,7 @@ export default function CertificatedIn() {
     },
   ];
   return (
-    <section className="certificates secBg my-5 mt-3">
+    <section className="certificates secBg my-5 mt-3  overflow-hidden">
       <div className="container py-5">
         <div className="sectionTitle text-center primaryText mb-5 my-3">
           <h2>Certificated In</h2>
