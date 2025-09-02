@@ -24,7 +24,7 @@ export default function Visitors() {
     } catch (error) {}
     setLoading(false);
   };
-
+ 
   return (
     <div className="container pb-5">
       {loading ? (
