@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
+import Bowser from "bowser";
 
 export default function Visitors() {
   const [visitors, setVisitors] = useState([]);
@@ -24,7 +25,7 @@ export default function Visitors() {
     } catch (error) {}
     setLoading(false);
   };
- 
+
   return (
     <div className="container pb-5">
       {loading ? (
@@ -80,16 +81,16 @@ export default function Visitors() {
                       {visitor.city}/ {visitor.region} / {visitor.country}
                     </td>
                     <td>{visitor.loc}</td>
-                    <td
-                      title={visitor.device}
-                      style={{
-                        maxWidth: "100px",
-                        overflow: "hidden",
-                        whiteSpace: "nowrap",
-                        textOverflow: "ellipsis",
-                      }}
-                    >
-                      {visitor.device}
+                    <td title={visitor.device}>
+                      {visitor.device
+                        ? Bowser.parse(visitor.device).browser.name +
+                          (Bowser.parse(visitor.device).os.name
+                            ? "/" + Bowser.parse(visitor.device).os.name
+                            : "") +
+                          (Bowser.parse(visitor.device).platform.vendor
+                            ? "/" + Bowser.parse(visitor.device).platform.vendor
+                            : "")
+                        : "Unknown"}
                     </td>
                     <td>
                       {new Date(visitor.updatedAt).toLocaleDateString("en-eg", {
