@@ -5,6 +5,7 @@ import projectsRouter from "./src/modules/projects/projects.router.js";
 import certificatesRouter from "./src/modules/certificates/certificates.router.js";
 import mailsRouter from "./src/modules/mails/mails.router.js";
 import adminRouter from "./src/modules/admin/admin.router.js";
+import visitorsRouter from "./src/modules/visitors/visitors.router.js";
 import cors from "cors";
 import axios from "axios";
 import { asyncHandler } from "./src/utils/asyncHandler.js";
@@ -19,6 +20,7 @@ app.use("/projects", projectsRouter);
 app.use("/certificates", certificatesRouter);
 app.use("/mails", mailsRouter);
 app.use("/admin", adminRouter);
+app.use("/visitors", visitorsRouter);
 app.all("/uptime", (req, res) => {
   console.log("Up Time Requested");
   res.status(200).send("success");
