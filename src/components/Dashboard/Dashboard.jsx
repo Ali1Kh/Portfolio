@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import "./dashboard.css";
 import $ from "jquery";
 import { jwtDecode } from "jwt-decode";
+import ManageCertificates from "./Certificates/ManageCertificates/ManageCertificates";
+import AddCertificate from "./Certificates/AddCertificate/AddCertificate";
 
 export default function Dashboard() {
   let [isSuperAdmin, setIsSuperAdmin] = React.useState(false);
@@ -254,7 +256,7 @@ export default function Dashboard() {
           >
             <i className="fa fa-chevron-right"></i>
           </div>
-          <div className="logout cursorPointer mt-auto mb-2">
+          <div className="logout cursorPointer mt-auto mb-4">
             <div
               onClick={() => {
                 localStorage.removeItem("adminPanel");
@@ -289,8 +291,14 @@ export default function Dashboard() {
             <div className="sectionRender ">
               {selectedSection.key == "overview" ? (
                 "Soon"
-              ) : selectedSection.key == "mainCategories" ? (
-                <>xx</>
+              ) : selectedSection.key == "allCertificates" ? (
+                <>
+                  <ManageCertificates />
+                </>
+              ) : selectedSection.key == "addCertificate" ? (
+                <>
+                  <AddCertificate />
+                </>
               ) : (
                 ""
               )}
