@@ -4,8 +4,11 @@ import $ from "jquery";
 import { jwtDecode } from "jwt-decode";
 import ManageCertificates from "./Certificates/ManageCertificates/ManageCertificates";
 import AddCertificate from "./Certificates/AddCertificate/AddCertificate";
+import Visitors from "./Visitors/Visitors";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  let navigate = useNavigate();
   let [isSuperAdmin, setIsSuperAdmin] = React.useState(false);
   useEffect(() => {
     let token = localStorage.getItem("adminPanel");
@@ -66,7 +69,7 @@ export default function Dashboard() {
       ],
       icon: "file",
     },
-    { title: "Visitors", key: "members", icon: "users" },
+    { title: "Visitors", key: "visitors", icon: "users" },
   ];
 
   let [selectedSection, setSelectedSection] = React.useState(
@@ -127,7 +130,7 @@ export default function Dashboard() {
           }}
           className="panelSideBar border-end position-fixed d-flex flex-column align-items-center"
         >
-          <div className="panelLogo mt-3">
+          <div onClick={() => navigate("/")} className="panelLogo mt-3 cursor-pointer">
             <img
               src={require("../../imgs/fav.png")}
               alt="Logo"
@@ -298,6 +301,10 @@ export default function Dashboard() {
               ) : selectedSection.key == "addCertificate" ? (
                 <>
                   <AddCertificate />
+                </>
+              ) : selectedSection.key == "visitors" ? (
+                <>
+                  <Visitors />
                 </>
               ) : (
                 ""
