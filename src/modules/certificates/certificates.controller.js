@@ -24,3 +24,16 @@ export const getCertificates = async (req, res, next) => {
   let certificates = await Certificates.find().sort({ createdAt: -1 });
   return res.json({ success: true, results: certificates });
 };
+
+export const deleteCertificate = async (req, res, next) => {
+  let { id } = req.params;
+  if (!id) return next(new Error("Invalied Certificate ID"));
+  let certificate = await Certificates.findById(id);
+  if (!certificate) return next(new Error("Invalied Certificate ID"));
+  await cloudinary.uploader.destroy(certificate.images.public_id);
+  await Certificates.deleteOne({ _id: id });
+  return res.json({
+    success: true,
+    message: "Certificate Deleted Successfully",
+  });
+};
