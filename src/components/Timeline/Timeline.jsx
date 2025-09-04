@@ -210,7 +210,7 @@ export default function Timeline({ isLimited, type }) {
                           height: "55px",
                           objectFit: "contain",
                         }}
-                        className="rounded-1"
+                        className="rounded-2"
                         src={item.logo}
                         alt=""
                       />

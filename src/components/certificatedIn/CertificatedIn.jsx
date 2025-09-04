@@ -7,7 +7,7 @@ export default function CertificatedIn() {
   const companiesSlider = {
     dots: false,
     infinite: true,
-    slidesToShow: 6,
+    slidesToShow: 7,
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
@@ -83,7 +83,7 @@ export default function CertificatedIn() {
         <div className="companies gap-4 mb-3 d-flex flex-column justify-content-center align-items-center">
           <div
             className="slidesContainer text-center"
-            style={{ width: "520px" }}
+            style={{ width: "700px" }}
           >
             <Slider {...companiesSlider}>
               {companies.map((company, index) => (
