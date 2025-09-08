@@ -38,6 +38,7 @@ export default function ManageCertificates() {
               <div className="card shadow-sm h-100">
                 <img
                   className="card-img-top h-100"
+                  style={{maxHeight:"325px"}}
                   src={certificate.images.secure_url}
                   alt={certificate.name}
                 />
