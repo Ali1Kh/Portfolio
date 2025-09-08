@@ -29,7 +29,7 @@ export default function Certificates() {
                   key={idx}
                   className="col-md-4 mx-auto m cursorPointer"
                 >
-                  <div className="cetificateItem rounded-2  overflow-hidden h-100">
+                  <div className="cetificateItem rounded-2 overflow-hidden h-100" style={{maxHeight:"325px"}}>
                     <img
                       src={certificate.images.secure_url}
                       title={certificate.name + ", " + certificate.company}
