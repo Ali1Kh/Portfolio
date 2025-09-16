@@ -42,7 +42,14 @@ export default function Visitors() {
     if (visitors.length == 0) return;
     localStorage.setItem(
       "seenVisitors",
-      JSON.stringify(visitors.map((v) => v._id))
+      JSON.stringify(
+        visitors.map((v) => {
+          return {
+            id: v._id,
+            count: v.count,
+          };
+        })
+      )
     );
   }, [visitors]);
 
@@ -109,10 +116,15 @@ export default function Visitors() {
                         backgroundColor: "transparent",
                       }}
                     >
-                      {seenVisitors?.includes(visitor._id) ? (
-                        ""
+                      {seenVisitors?.map((v) => v.id).includes(visitor._id) ? (
+                        seenVisitors?.find((v) => v.id === visitor._id).count ==
+                        visitor.count ? (
+                          ""
+                        ) : (
+                          <div className="badge bg-success w-100">New</div>
+                        )
                       ) : (
-                        <div className="badge bg-success w-100">New</div>
+                        ""
                       )}
                     </td>
                     <td>{visitor.ip}</td>
