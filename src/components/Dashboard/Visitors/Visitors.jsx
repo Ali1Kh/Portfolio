@@ -9,6 +9,9 @@ export default function Visitors() {
   let [count, setCount] = useState(0);
   let [loading, setLoading] = useState(false);
   const [myIp, setIP] = useState("");
+  let [seenVisitors, setSeenVisitors] = useState(
+    JSON.parse(localStorage.getItem("seenVisitors")) || []
+  );
 
   useEffect(() => {
     getMyIp();
@@ -34,6 +37,14 @@ export default function Visitors() {
     } catch (error) {}
     setLoading(false);
   };
+
+  useEffect(() => {
+    if (visitors.length == 0) return;
+    localStorage.setItem(
+      "seenVisitors",
+      JSON.stringify(visitors.map((v) => v._id))
+    );
+  }, [visitors]);
 
   return (
     <div className="container pb-5">
@@ -74,6 +85,11 @@ export default function Visitors() {
             <Table size="sm" variant="dark" responsive striped bordered hover>
               <thead>
                 <tr>
+                  <th
+                    style={{
+                      backgroundColor: "transparent",
+                    }}
+                  ></th>
                   <th>IP</th>
                   <th>Region</th>
                   <th>Location</th>
@@ -88,6 +104,17 @@ export default function Visitors() {
                     className={`${myIp === visitor.ip && "d-none"}`}
                     key={visitor._id}
                   >
+                    <td
+                      style={{
+                        backgroundColor: "transparent",
+                      }}
+                    >
+                      {seenVisitors?.includes(visitor._id) ? (
+                        ""
+                      ) : (
+                        <div className="badge bg-success w-100">New</div>
+                      )}
+                    </td>
                     <td>{visitor.ip}</td>
                     <td>
                       {visitor.city}/ {visitor.region} / {visitor.country}
