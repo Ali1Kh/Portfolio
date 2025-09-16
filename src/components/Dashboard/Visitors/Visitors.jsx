@@ -2,16 +2,25 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Table } from "react-bootstrap";
 import Bowser from "bowser";
+import dayjs from "dayjs";
 
 export default function Visitors() {
   const [visitors, setVisitors] = useState([]);
   let [count, setCount] = useState(0);
   let [loading, setLoading] = useState(false);
+  const [myIp, setIP] = useState("");
 
   useEffect(() => {
+    getMyIp();
     fetchVisitors();
   }, []);
 
+  const getMyIp = async () => {
+    try {
+      const res = await axios.get("https://api.ipify.org/?format=json");
+      setIP(res.data.ip);
+    } catch (error) {}
+  };
   const fetchVisitors = async () => {
     setLoading(true);
     try {
@@ -75,7 +84,10 @@ export default function Visitors() {
               </thead>
               <tbody>
                 {visitors.map((visitor) => (
-                  <tr key={visitor._id}>
+                  <tr
+                    className={`${myIp === visitor.ip && "d-none"}`}
+                    key={visitor._id}
+                  >
                     <td>{visitor.ip}</td>
                     <td>
                       {visitor.city}/ {visitor.region} / {visitor.country}
@@ -93,13 +105,7 @@ export default function Visitors() {
                         : "Unknown"}
                     </td>
                     <td>
-                      {new Date(visitor.updatedAt).toLocaleDateString("en-eg", {
-                        day: "2-digit",
-                        month: "short",
-                        year: "2-digit",
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
+                      {dayjs(visitor.updatedAt).format("DD-MMM-YYYY, hh:mm A")}
                     </td>
                     <td>{visitor.count}</td>
                   </tr>
