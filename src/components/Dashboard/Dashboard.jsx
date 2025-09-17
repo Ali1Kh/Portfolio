@@ -6,6 +6,7 @@ import ManageCertificates from "./Certificates/ManageCertificates/ManageCertific
 import AddCertificate from "./Certificates/AddCertificate/AddCertificate";
 import Visitors from "./Visitors/Visitors";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export default function Dashboard() {
   let navigate = useNavigate();
@@ -120,6 +121,9 @@ export default function Dashboard() {
 
   return (
     <div dir="ltr">
+      <Helmet>
+        <title>Ali1kh Dashboard</title>
+      </Helmet>
       <div className="d-flex gap-0 g-0 mx-0">
         {/* Panel SideBar */}
         <div
@@ -130,7 +134,10 @@ export default function Dashboard() {
           }}
           className="panelSideBar border-end position-fixed d-flex flex-column align-items-center"
         >
-          <div onClick={() => navigate("/")} className="panelLogo mt-3 cursor-pointer">
+          <div
+            onClick={() => navigate("/")}
+            className="panelLogo mt-3 cursor-pointer"
+          >
             <img
               src={require("../../imgs/fav.png")}
               alt="Logo"
