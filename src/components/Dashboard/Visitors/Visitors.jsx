@@ -39,18 +39,19 @@ export default function Visitors() {
   };
 
   useEffect(() => {
-    if (visitors.length == 0) return;
-    localStorage.setItem(
-      "seenVisitors",
-      JSON.stringify(
-        visitors.map((v) => {
-          return {
-            id: v._id,
-            count: v.count,
-          };
-        })
-      )
-    );
+    if (visitors.length != 0) {
+      localStorage.setItem(
+        "seenVisitors",
+        JSON.stringify(
+          visitors.map((v) => {
+            return {
+              id: v._id,
+              count: v.count,
+            };
+          })
+        )
+      );
+    }
   }, [visitors]);
 
   return (
@@ -124,7 +125,7 @@ export default function Visitors() {
                           <div className="badge bg-success w-100">New</div>
                         )
                       ) : (
-                        ""
+                        <div className="badge bg-success w-100">New</div>
                       )}
                     </td>
                     <td>{visitor.ip}</td>
