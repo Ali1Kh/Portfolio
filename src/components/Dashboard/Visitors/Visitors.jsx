@@ -6,7 +6,7 @@ import dayjs from "dayjs";
 import { useQuery } from "react-query";
 
 export default function Visitors() {
-  useQuery("visitors", fetchVisitors);
+  let { isLoading } = useQuery("visitors", fetchVisitors);
   const [visitors, setVisitors] = useState([]);
   let [count, setCount] = useState(0);
   let [loading, setLoading] = useState(false);
@@ -26,9 +26,7 @@ export default function Visitors() {
     } catch (error) {}
   };
   async function fetchVisitors() {
-    if (visitors.length === 0) {
-      setLoading(true);
-    }
+    setLoading(true);
     try {
       const { data } = await axios.get("https://api.ali1kh.com/visitors", {
         headers: {
@@ -59,7 +57,7 @@ export default function Visitors() {
 
   return (
     <div className="container pb-5">
-      {loading ? (
+      {isLoading ? (
         <>
           <div
             style={{
@@ -83,7 +81,13 @@ export default function Visitors() {
               className="btn mainBgColor text-white ms-auto"
               onClick={fetchVisitors}
             >
-              <i className="fa fa-refresh me-1"></i>
+              {loading ? (
+                <>
+                  <span className="spinner-border spinner-border-sm me-1"></span>
+                </>
+              ) : (
+                <i className="fa fa-refresh me-1"></i>
+              )}
               Refresh
             </button>
           </div>
