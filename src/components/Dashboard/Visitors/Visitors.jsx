@@ -3,8 +3,10 @@ import axios from "axios";
 import { Table } from "react-bootstrap";
 import Bowser from "bowser";
 import dayjs from "dayjs";
+import { useQuery } from "react-query";
 
 export default function Visitors() {
+  useQuery("visitors", fetchVisitors);
   const [visitors, setVisitors] = useState([]);
   let [count, setCount] = useState(0);
   let [loading, setLoading] = useState(false);
@@ -15,7 +17,6 @@ export default function Visitors() {
 
   useEffect(() => {
     getMyIp();
-    fetchVisitors();
   }, []);
 
   const getMyIp = async () => {
@@ -24,8 +25,10 @@ export default function Visitors() {
       setIP(res.data.ip);
     } catch (error) {}
   };
-  const fetchVisitors = async () => {
-    setLoading(true);
+  async function fetchVisitors() {
+    if (visitors.length === 0) {
+      setLoading(true);
+    }
     try {
       const { data } = await axios.get("https://api.ali1kh.com/visitors", {
         headers: {
@@ -36,7 +39,7 @@ export default function Visitors() {
       setCount(data.count);
     } catch (error) {}
     setLoading(false);
-  };
+  }
 
   useEffect(() => {
     if (visitors.length != 0) {
