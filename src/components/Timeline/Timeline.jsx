@@ -112,18 +112,25 @@ export default function Timeline({ isLimited, type }) {
       type: "experience",
       progress: Math.round(
         100 -
-          ((new Date("2025-11-01") - new Date()) /
+          ((new Date("2025-10-10") - new Date()) /
             (1000 * 60 * 60 * 24) /
-            ((new Date("2025-11-01") - new Date("2025-08-06")) /
+            ((new Date("2025-10-10") - new Date("2025-08-06")) /
+              (1000 * 60 * 60 * 24))) *
+            100
+      ) >= 100 ? 100 : Math.round(
+        100 -
+          ((new Date("2025-10-10") - new Date()) /
+            (1000 * 60 * 60 * 24) /
+            ((new Date("2025-10-10") - new Date("2025-08-06")) /
               (1000 * 60 * 60 * 24))) *
             100
       ),
       completed:
         Math.round(
           100 -
-            ((new Date("2025-11-01") - new Date()) /
+            ((new Date("2025-10-10") - new Date()) /
               (1000 * 60 * 60 * 24) /
-              ((new Date("2025-11-01") - new Date("2025-08-06")) /
+              ((new Date("2025-10-10") - new Date("2025-08-06")) /
                 (1000 * 60 * 60 * 24))) *
               100
         ) >= 100,
