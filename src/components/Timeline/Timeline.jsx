@@ -103,7 +103,7 @@ export default function Timeline({ isLimited, type }) {
       startYear: "2025",
       endYear: "2025",
       startMonth: "August",
-      endMonth: "November",
+      endMonth: "October",
       title: "Frontend & UI/UX Internship",
       logo: require("../../imgs/companies/zagsystem.png"),
       company: "ZagSystems",

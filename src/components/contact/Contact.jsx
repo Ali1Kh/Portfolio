@@ -95,7 +95,7 @@ ${formik.values.name || "An interested client"}
                 <div className="infoItem d-flex align-items-center">
                   <i className="primaryText cursorPointer fa-solid fa-envelope me-3"></i>
                   <a
-                    href="mailto:info@ali1kh.com"
+                    href="mailto:alielsaadany94@gmail.com"
                     className="cursorPointer text-decoration-none mutedText"
                   >
                     alielsaadany94@gmail.com
