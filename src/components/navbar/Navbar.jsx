@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import "./navbar.css";
 import { Link, useLocation } from "react-router-dom";
 import $ from "jquery";
+import favLogo from "../../imgs/fav.png";
+
 export default function Navbar() {
   let [active, setActive] = React.useState("/");
   let links = [
@@ -43,7 +45,7 @@ export default function Navbar() {
             className="navbar-brand fs-4 d-flex align-items-center gap-2 me-4 text-white"
           >
             <img
-              src={require("../../imgs/fav.png")}
+              src={favLogo}
               alt="Logo"
               width="32"
               className="d-inline-block align-text-top me-s2 m-0 p-0 "
@@ -64,7 +66,7 @@ export default function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               {links.map((link) => (
-                <li className="nav-item">
+                <li className="nav-item" key={link.name}>
                   <Link
                     className={`nav-link ${
                       active === link.link ? "active" : ""

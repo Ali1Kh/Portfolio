@@ -3,6 +3,21 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from "react-router-dom";
+import microsoftLogo from "../../imgs/certificatedFrom/microsoft.png";
+import oracleLogo from "../../imgs/certificatedFrom/oracle.png";
+import routeLogo from "../../imgs/certificatedFrom/route.jpg";
+import itiLogo from "../../imgs/companies/iti.png";
+import ntiLogo from "../../imgs/companies/nti.png";
+import itidaLogo from "../../imgs/certificatedFrom/itida.png";
+import sprintsLogo from "../../imgs/certificatedFrom/sprints.png";
+import innovegyptLogo from "../../imgs/certificatedFrom/innovegypt.png";
+import tiecLogo from "../../imgs/certificatedFrom/tiec.png";
+import nvidiaLogo from "../../imgs/certificatedFrom/nvidia.png";
+import hackerrankLogo from "../../imgs/certificatedFrom/hackerrank.png";
+import freecodecampLogo from "../../imgs/certificatedFrom/freecodecamp.jpeg";
+import micaLogo from "../../imgs/certificatedFrom/mica.jpg";
+import soloLearnLogo from "../../imgs/certificatedFrom/sololearn.jpg";
+
 export default function CertificatedIn() {
   const companiesSlider = {
     dots: false,
@@ -19,59 +34,59 @@ export default function CertificatedIn() {
   let companies = [
     {
       name: "Microsoft",
-      img: require("../../imgs/certificatedFrom/microsoft.png"),
+      img: microsoftLogo,
     },
     {
       name: "Oracle Academy",
-      img: require("../../imgs/certificatedFrom/oracle.png"),
+      img: oracleLogo,
     },
     {
       name: "Route Academy",
-      img: require("../../imgs/certificatedFrom/route.jpg"),
+      img: routeLogo,
     },
     {
       name: "Information Technology Institute (ITI)",
-      img: require("../../imgs/companies/iti.png"),
+      img: itiLogo,
     },
     {
       name: "National telecommunicarion institute",
-      img: require("../../imgs/companies/nti.png"),
+      img: ntiLogo,
     },
     {
       name: "Information Technology Industry Development Agency (ITIDA)",
-      img: require("../../imgs/certificatedFrom/itida.png"),
+      img: itidaLogo,
     },
     {
       name: "Sprints",
-      img: require("../../imgs/certificatedFrom/sprints.png"),
+      img: sprintsLogo,
     },
     {
       name: "Innovegypt",
-      img: require("../../imgs/certificatedFrom/innovegypt.png"),
+      img: innovegyptLogo,
     },
     {
       name: "Technology Innovation & Entrepreneurship Center (TIEC)",
-      img: require("../../imgs/certificatedFrom/tiec.png"),
+      img: tiecLogo,
     },
     {
       name: "NVIDIA",
-      img: require("../../imgs/certificatedFrom/nvidia.png"),
+      img: nvidiaLogo,
     },
     {
       name: "HackerRank",
-      img: require("../../imgs/certificatedFrom/hackerrank.png"),
+      img: hackerrankLogo,
     },
     {
       name: "freeCodeCamp",
-      img: require("../../imgs/certificatedFrom/freecodecamp.jpeg"),
+      img: freecodecampLogo,
     },
     {
       name: "Mica Egypt",
-      img: require("../../imgs/certificatedFrom/mica.jpg"),
+      img: micaLogo,
     },
     {
       name: "SoloLearn",
-      img: require("../../imgs/certificatedFrom/sololearn.jpg"),
+      img: soloLearnLogo,
     },
   ];
   return (

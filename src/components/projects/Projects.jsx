@@ -3,6 +3,27 @@ import VanillaTilt from "vanilla-tilt";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../projectsPage/projects.css";
 import $ from "jquery";
+import noDataImage from "../../imgs/no-data.png";
+import reactIcon from "../../imgs/tech/react.png";
+import javascriptIcon from "../../imgs/tech/javascript.png";
+import nextjsIcon from "../../imgs/tech/nextjs.png";
+import reduxIcon from "../../imgs/tech/redux.png";
+import jqueryIcon from "../../imgs/tech/jquery.png";
+import bootstrapIcon from "../../imgs/tech/bootstrap.png";
+import htmlIcon from "../../imgs/tech/html.png";
+import cssIcon from "../../imgs/tech/css.png";
+import sassIcon from "../../imgs/tech/sass.png";
+import nodejsIcon from "../../imgs/tech/nodejs.png";
+import typescriptIcon from "../../imgs/tech/typescript.png";
+import expressIcon from "../../imgs/tech/express.png";
+import mongoIcon from "../../imgs/tech/mongo.png";
+import mysqlIcon from "../../imgs/tech/mysql.png";
+import nestIcon from "../../imgs/tech/nest.png";
+import socketIcon from "../../imgs/tech/socket.png";
+import graphqlIcon from "../../imgs/tech/graphql.png";
+import dockerIcon from "../../imgs/tech/docker.png";
+import javaIcon from "../../imgs/tech/java.png";
+import plsqlIcon from "../../imgs/tech/plsql.png";
 
 function Tilt(props) {
   const { options, ...rest } = props;
@@ -18,6 +39,30 @@ const options = {
   perspective: 3000, // Transform perspective, the lower the more extreme the tilt gets.
   scale: 1, // 2 = 200%, 1.5 = 150%, etc..
 };
+
+const techIcons = {
+  react: reactIcon,
+  javascript: javascriptIcon,
+  nextjs: nextjsIcon,
+  redux: reduxIcon,
+  jquery: jqueryIcon,
+  bootstrap: bootstrapIcon,
+  html: htmlIcon,
+  css: cssIcon,
+  sass: sassIcon,
+  nodejs: nodejsIcon,
+  typescript: typescriptIcon,
+  express: expressIcon,
+  mongo: mongoIcon,
+  mysql: mysqlIcon,
+  nest: nestIcon,
+  socket: socketIcon,
+  graphql: graphqlIcon,
+  docker: dockerIcon,
+  java: javaIcon,
+  plsql: plsqlIcon,
+};
+
 export default function Projects({ projects }) {
   function convertDate(date) {
     let dateObj = new Date(date);
@@ -53,7 +98,7 @@ export default function Projects({ projects }) {
       $(".nav-link.active").removeClass("active");
       $("#projectsNavItem").addClass("active");
     }
-  },[]);
+  }, []);
 
   function applinkClicked(e) {
     e.stopPropagation();
@@ -66,12 +111,7 @@ export default function Projects({ projects }) {
           {projects ? (
             projects.length <= 0 ? (
               <div className="d-flex gap-3 flex-column align-items-center justify-content-center">
-                <img
-                  width={120}
-                  src={require("../../imgs/no-data.png")}
-                  alt=""
-                  srcset=""
-                />
+                <img width={120} src={noDataImage} alt="" srcset="" />
                 <h6>No Projects Found !</h6>
               </div>
             ) : (
@@ -96,7 +136,8 @@ export default function Projects({ projects }) {
                         />
                       </div>
                       <div className="cardTitle d-flex align-items-center justify-content-between borderBottomGrey mb-3 pb-3">
-                        <div className="projName"
+                        <div
+                          className="projName"
                           style={{
                             overflow: "hidden",
                             whiteSpace: "nowrap",
@@ -106,17 +147,16 @@ export default function Projects({ projects }) {
                         >
                           <h4>{project.name}</h4>
                         </div>
-                        {project.link && 
-                        <div
-                          onClick={(e) => applinkClicked(e)}
-                          className="projLink"
-                        >
-                          <Link to={project.link} target="_blank">
-                            <i className="fa fa-link text-white borderGrey rounded-4 fs-7 p-2"></i>
-                          </Link>
-                        </div>
-                        }
-
+                        {project.link && (
+                          <div
+                            onClick={(e) => applinkClicked(e)}
+                            className="projLink"
+                          >
+                            <Link to={project.link} target="_blank">
+                              <i className="fa fa-link text-white borderGrey rounded-4 fs-7 p-2"></i>
+                            </Link>
+                          </div>
+                        )}
                       </div>
                       <div className="cardInfo h-100 d-flex flex-column  borderBottomGrey mb-3 pb-3">
                         <div className="projInfo d-flex justify-content-between align-items-center mb-3">
@@ -128,7 +168,8 @@ export default function Projects({ projects }) {
                               style={{
                                 whiteSpace: "nowrap",
                               }}
-                              className="fs-7 borderGrey rounded-4 px-2 py-1">
+                              className="fs-7 borderGrey rounded-4 px-2 py-1"
+                            >
                               {convertDate(project.date)}
                             </span>
                           </div>
@@ -141,7 +182,8 @@ export default function Projects({ projects }) {
                             WebkitLineClamp: "3",
                             WebkitBoxOrient: "vertical",
                           }}
-                          className="projDescreption text-grey fs-7 mb-3 my-auto">
+                          className="projDescreption text-grey fs-7 mb-3 my-auto"
+                        >
                           {project.shortDescreption}
                         </div>
                         <div className="projDate mt-auto">
@@ -162,7 +204,7 @@ export default function Projects({ projects }) {
                             >
                               <img
                                 className="w-100 rounded-1"
-                                src={require(`../../imgs/tech/${tech.slug}.png`)}
+                                src={techIcons[tech.slug]}
                                 alt=""
                               />
                             </div>

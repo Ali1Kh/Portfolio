@@ -1,4 +1,5 @@
 import React from "react";
+import rwdIcon from "../../imgs/icons/rwd.png";
 
 export default function Services() {
   let services = [
@@ -9,7 +10,7 @@ export default function Services() {
         "Full featured websites that turn ideas into real working solutions.",
     },
     {
-      imageIcon: require("../../imgs/icons/rwd.png"),
+      imageIcon: rwdIcon,
       tile: "Responsive Web Design",
       description: "Fully responsive websites designed to work on any device.",
     },
@@ -27,14 +28,12 @@ export default function Services() {
     {
       icon: "microchip",
       tile: "Embedded Systems",
-      description:
-        "Smart embedded hardware solutions for real world systems.",
+      description: "Smart embedded hardware solutions for real world systems.",
     },
     {
       icon: "desktop",
       tile: "Desktop Application Development",
-      description:
-        "Custom desktop applications that run smoothly and offline.",
+      description: "Custom desktop applications that run smoothly and offline.",
     },
   ];
   return (

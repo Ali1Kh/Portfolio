@@ -6,6 +6,27 @@ import "slick-carousel/slick/slick-theme.css";
 import $ from "jquery";
 import "./hero.css";
 import { Link } from "react-router-dom";
+import reactLogo from "../../imgs/tech/react.png";
+import nodejsLogo from "../../imgs/tech/nodejs.png";
+import expressLogo from "../../imgs/tech/express.png";
+import mongoLogo from "../../imgs/tech/mongo.png";
+import nestLogo from "../../imgs/tech/nest.png";
+import graphqlLogo from "../../imgs/tech/graphql.png";
+import socketLogo from "../../imgs/tech/socket.png";
+import dockerLogo from "../../imgs/tech/docker.png";
+import nextjsLogo from "../../imgs/tech/nextjs.png";
+import reduxLogo from "../../imgs/tech/redux.png";
+import javascriptLogo from "../../imgs/tech/javascript.png";
+import typescriptLogo from "../../imgs/tech/typescript.png";
+import htmlLogo from "../../imgs/tech/html.png";
+import cssLogo from "../../imgs/tech/css.png";
+import sassLogo from "../../imgs/tech/sass.png";
+import bootstrapLogo from "../../imgs/tech/bootstrap.png";
+import jqueryLogo from "../../imgs/tech/jquery.png";
+import javaLogo from "../../imgs/tech/java.png";
+import plsqlLogo from "../../imgs/tech/plsql.png";
+import mysqlLogo from "../../imgs/tech/mysql.png";
+
 export default function Hero() {
   const techSlider = {
     dots: false,
@@ -115,7 +136,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/react.png")}
+                                    src={reactLogo}
                                     alt="React"
                                   />
                                   <h6 className="">React</h6>
@@ -123,7 +144,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/nodejs.png")}
+                                    src={nodejsLogo}
                                     alt="Nodejs"
                                   />
                                   <h6 className="">Node.js</h6>
@@ -131,7 +152,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/express.png")}
+                                    src={expressLogo}
                                     alt="Express.js"
                                   />
                                   <h6 className="">Express.js</h6>
@@ -139,7 +160,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent rounded-1"
-                                    src={require("../../imgs/tech/mongo.png")}
+                                    src={mongoLogo}
                                     alt="Mongo"
                                   />
                                   <h6 className="">MongoDB</h6>
@@ -147,7 +168,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent rounded-1"
-                                    src={require("../../imgs/tech/nest.png")}
+                                    src={nestLogo}
                                     alt="Mongo"
                                   />
                                   <h6 className="">NestJs</h6>
@@ -156,7 +177,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent rounded-1"
-                                    src={require("../../imgs/tech/graphql.png")}
+                                    src={graphqlLogo}
                                     alt="GraphQL
                               "
                                   />
@@ -165,7 +186,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent rounded-1"
-                                    src={require("../../imgs/tech/socket.png")}
+                                    src={socketLogo}
                                     alt="Socket"
                                   />
                                   <h6 className="">Socket IO</h6>
@@ -173,7 +194,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent rounded-1"
-                                    src={require("../../imgs/tech/docker.png")}
+                                    src={dockerLogo}
                                     alt="Docker"
                                   />
                                   <h6 className="mt-auto">Docker</h6>
@@ -181,7 +202,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/nextjs.png")}
+                                    src={nextjsLogo}
                                     alt="NextJS"
                                   />
                                   <h6 className="">Next.JS</h6>
@@ -189,7 +210,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/redux.png")}
+                                    src={reduxLogo}
                                     alt="Redux"
                                   />
                                   <h6 className="">Redux</h6>
@@ -197,7 +218,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/javascript.png")}
+                                    src={javascriptLogo}
                                     alt="JavaScript"
                                   />
                                   <h6>JavaScript</h6>
@@ -205,7 +226,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/typescript.png")}
+                                    src={typescriptLogo}
                                     alt="TypeScript"
                                   />
                                   <h6 className="">TypeScript</h6>
@@ -213,7 +234,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/html.png")}
+                                    src={htmlLogo}
                                     alt="html"
                                   />
                                   <h6 className="">HTML</h6>
@@ -221,7 +242,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/css.png")}
+                                    src={cssLogo}
                                     alt="css"
                                   />
                                   <h6 className="">CSS</h6>
@@ -229,7 +250,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/sass.png")}
+                                    src={sassLogo}
                                     alt="sass"
                                   />
                                   <h6 className="">Sass</h6>
@@ -237,7 +258,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/bootstrap.png")}
+                                    src={bootstrapLogo}
                                     alt="bootstrap"
                                   />
                                   <h6 className="">BootStrap</h6>
@@ -245,7 +266,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/jquery.png")}
+                                    src={jqueryLogo}
                                     alt="jquery"
                                   />
                                   <h6 className="">JQuery</h6>
@@ -253,7 +274,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/java.png")}
+                                    src={javaLogo}
                                     alt="java"
                                   />
                                   <h6 className="">JAVA</h6>
@@ -261,7 +282,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/plsql.png")}
+                                    src={plsqlLogo}
                                     alt="plsql"
                                   />
                                   <h6 className="small">Oracle Pl/SQL</h6>
@@ -269,7 +290,7 @@ export default function Hero() {
                                 <div className="p-2 cursorGrab">
                                   <img
                                     className="w-100 mb-2 bg-transparent"
-                                    src={require("../../imgs/tech/mysql.png")}
+                                    src={mysqlLogo}
                                     alt="jquery"
                                   />
                                   <h6 className="">My SQL</h6>

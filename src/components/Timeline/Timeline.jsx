@@ -1,4 +1,11 @@
 import React, { useEffect } from "react";
+import micaLogo from "../../imgs/certificatedFrom/mica.jpg";
+import routeLogo from "../../imgs/certificatedFrom/route.jpg";
+import nctuLogo from "../../imgs/companies/nctu.png";
+import mcLogo from "../../imgs/companies/mc.jpg";
+import itiLogo from "../../imgs/companies/iti.png";
+import ntiLogo from "../../imgs/companies/nti.png";
+import zagsystemsLogo from "../../imgs/companies/zagsystem.png";
 
 export default function Timeline({ isLimited, type }) {
   const timelineItems = [
@@ -6,7 +13,7 @@ export default function Timeline({ isLimited, type }) {
       startYear: "2021",
       endYear: "2024",
       title: "Diploma in Computer Programming",
-      logo: require("../../imgs/certificatedFrom/mica.jpg"),
+      logo: micaLogo,
       company: "Misr International Computer & Ai Academy",
       description:
         "Completed a three year diploma in Computer Programming during high school, acquiring practical experience in Java, database management, and Oracle systems.",
@@ -20,7 +27,7 @@ export default function Timeline({ isLimited, type }) {
       startMonth: "May",
       endMonth: "April",
       title: "Full Stack Development - Route Academy",
-      logo: require("../../imgs/certificatedFrom/route.jpg"),
+      logo: routeLogo,
       company: "Route Academy",
       description:
         "Completed a one year course covering full stack web development, from basics to advanced applications.",
@@ -32,7 +39,7 @@ export default function Timeline({ isLimited, type }) {
       startYear: "2024",
       endYear: "2028",
       title: "Bachelor's Degree in Information Technology",
-      logo: require("../../imgs/companies/nctu.png"),
+      logo: nctuLogo,
       company: "New Cairo Technological University",
       description:
         "Studying Information Technology with a focus on practical skills and real world applications. Gaining experience in various IT fields.",
@@ -44,7 +51,7 @@ export default function Timeline({ isLimited, type }) {
             (1000 * 60 * 60 * 24) /
             ((new Date("2028-06-01") - new Date("2024-10-01")) /
               (1000 * 60 * 60 * 24))) *
-            100
+            100,
       ),
       completed:
         Math.round(
@@ -53,7 +60,7 @@ export default function Timeline({ isLimited, type }) {
               (1000 * 60 * 60 * 24) /
               ((new Date("2028-06-01") - new Date("2024-10-01")) /
                 (1000 * 60 * 60 * 24))) *
-              100
+              100,
         ) >= 100,
       type: "education",
     },
@@ -63,7 +70,7 @@ export default function Timeline({ isLimited, type }) {
       startMonth: "January",
       endMonth: "July",
       title: "Full Stack Web Developer (Remote)",
-      logo: require("../../imgs/companies/mc.jpg"),
+      logo: mcLogo,
       company: "MediCapital Group",
       description:
         "Working remotely on multiple projects, handling full stack development from frontend to backend using modern technologies like React, Node.js, and MongoDB..",
@@ -77,7 +84,7 @@ export default function Timeline({ isLimited, type }) {
       startMonth: "June",
       endMonth: "July",
       title: "Web Development using React.js Internship",
-      logo: require("../../imgs/companies/iti.png"),
+      logo: itiLogo,
       company: "ITI - Information Technology Institute",
       description:
         "Summer training program focused on building modern web applications using React.js. Gained experience with components, state management, and API integration.",
@@ -91,7 +98,7 @@ export default function Timeline({ isLimited, type }) {
       startMonth: "July",
       endMonth: "August",
       title: "UI/UX Design Internship",
-      logo: require("../../imgs/companies/nti.png"),
+      logo: ntiLogo,
       company: "NTI – National Telecommunication Institute",
       description:
         "UI/UX design internship covering the full design process from user research to wireframing and prototyping. Worked with tools like Figma to create user interfaces.",
@@ -105,26 +112,29 @@ export default function Timeline({ isLimited, type }) {
       startMonth: "August",
       endMonth: "October",
       title: "Frontend & UI/UX Internship",
-      logo: require("../../imgs/companies/zagsystem.png"),
+      logo: zagsystemsLogo,
       company: "ZagSystems",
       description:
         "Frontend and UI/UX internship covering frontend development and user interface design. Worked with tools like React.js and Figma to create user interfaces.",
       type: "experience",
-      progress: Math.round(
-        100 -
-          ((new Date("2025-10-10") - new Date()) /
-            (1000 * 60 * 60 * 24) /
-            ((new Date("2025-10-10") - new Date("2025-08-06")) /
-              (1000 * 60 * 60 * 24))) *
-            100
-      ) >= 100 ? 100 : Math.round(
-        100 -
-          ((new Date("2025-10-10") - new Date()) /
-            (1000 * 60 * 60 * 24) /
-            ((new Date("2025-10-10") - new Date("2025-08-06")) /
-              (1000 * 60 * 60 * 24))) *
-            100
-      ),
+      progress:
+        Math.round(
+          100 -
+            ((new Date("2025-10-10") - new Date()) /
+              (1000 * 60 * 60 * 24) /
+              ((new Date("2025-10-10") - new Date("2025-08-06")) /
+                (1000 * 60 * 60 * 24))) *
+              100,
+        ) >= 100
+          ? 100
+          : Math.round(
+              100 -
+                ((new Date("2025-10-10") - new Date()) /
+                  (1000 * 60 * 60 * 24) /
+                  ((new Date("2025-10-10") - new Date("2025-08-06")) /
+                    (1000 * 60 * 60 * 24))) *
+                  100,
+            ),
       completed:
         Math.round(
           100 -
@@ -132,7 +142,7 @@ export default function Timeline({ isLimited, type }) {
               (1000 * 60 * 60 * 24) /
               ((new Date("2025-10-10") - new Date("2025-08-06")) /
                 (1000 * 60 * 60 * 24))) *
-              100
+              100,
         ) >= 100,
     },
   ];

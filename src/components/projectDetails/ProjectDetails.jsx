@@ -11,7 +11,51 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import $ from "jquery";
+import reactIcon from "../../imgs/tech/react.png";
+import javascriptIcon from "../../imgs/tech/javascript.png";
+import nextjsIcon from "../../imgs/tech/nextjs.png";
+import reduxIcon from "../../imgs/tech/redux.png";
+import jqueryIcon from "../../imgs/tech/jquery.png";
+import bootstrapIcon from "../../imgs/tech/bootstrap.png";
+import htmlIcon from "../../imgs/tech/html.png";
+import cssIcon from "../../imgs/tech/css.png";
+import sassIcon from "../../imgs/tech/sass.png";
+import nodejsIcon from "../../imgs/tech/nodejs.png";
+import typescriptIcon from "../../imgs/tech/typescript.png";
+import expressIcon from "../../imgs/tech/express.png";
+import mongoIcon from "../../imgs/tech/mongo.png";
+import mysqlIcon from "../../imgs/tech/mysql.png";
+import nestIcon from "../../imgs/tech/nest.png";
+import socketIcon from "../../imgs/tech/socket.png";
+import graphqlIcon from "../../imgs/tech/graphql.png";
+import dockerIcon from "../../imgs/tech/docker.png";
+import javaIcon from "../../imgs/tech/java.png";
+import plsqlIcon from "../../imgs/tech/plsql.png";
+
 export default function ProjectDetails() {
+  const techIcons = {
+    react: reactIcon,
+    javascript: javascriptIcon,
+    nextjs: nextjsIcon,
+    redux: reduxIcon,
+    jquery: jqueryIcon,
+    bootstrap: bootstrapIcon,
+    html: htmlIcon,
+    css: cssIcon,
+    sass: sassIcon,
+    nodejs: nodejsIcon,
+    typescript: typescriptIcon,
+    express: expressIcon,
+    mongo: mongoIcon,
+    mysql: mysqlIcon,
+    nest: nestIcon,
+    socket: socketIcon,
+    graphql: graphqlIcon,
+    docker: dockerIcon,
+    java: javaIcon,
+    plsql: plsqlIcon,
+  };
+
   const onInit = () => {};
   const { slug } = useParams();
   let { data, isLoading } = useQuery("projectDetails", getProjectDetails, {
@@ -140,7 +184,7 @@ export default function ProjectDetails() {
                           {
                             <img
                               className="w-100 mb-0"
-                              src={require(`../../imgs/tech/${tech.slug}.png`)}
+                              src={techIcons[tech.slug]}
                               alt=""
                             />
                           }

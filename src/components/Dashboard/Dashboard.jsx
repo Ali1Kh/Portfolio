@@ -7,6 +7,7 @@ import AddCertificate from "./Certificates/AddCertificate/AddCertificate";
 import Visitors from "./Visitors/Visitors";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import favLogo from "../../imgs/fav.png";
 
 export default function Dashboard() {
   let navigate = useNavigate();
@@ -74,7 +75,7 @@ export default function Dashboard() {
   ];
 
   let [selectedSection, setSelectedSection] = React.useState(
-    sections[0].nested[0]
+    sections[0].nested[0],
   );
 
   const handleSelectSection = (section) => {
@@ -84,7 +85,7 @@ export default function Dashboard() {
     window.history.replaceState(
       {},
       "",
-      `${window.location.pathname}?${params.toString()}`
+      `${window.location.pathname}?${params.toString()}`,
     );
   };
 
@@ -93,11 +94,11 @@ export default function Dashboard() {
     $(`#${id}`).toggle("show");
     $(`#${id}`).attr(
       "data-show",
-      $(`#${id}`).attr("data-show") == "true" ? "false" : "true"
+      $(`#${id}`).attr("data-show") == "true" ? "false" : "true",
     );
     $(`#${section.key}Arrow`).css(
       "transform",
-      `rotate(${$(`#${id}`).attr("data-show") == "true" ? 180 : 0}deg)`
+      `rotate(${$(`#${id}`).attr("data-show") == "true" ? 180 : 0}deg)`,
     );
   };
 
@@ -112,7 +113,7 @@ export default function Dashboard() {
           section?.nested?.map((nested) => nested.key).includes(selected)
         ) {
           setSelectedSection(
-            section?.nested?.find((nested) => nested.key === selected)
+            section?.nested?.find((nested) => nested.key === selected),
           );
         }
       });
@@ -139,7 +140,7 @@ export default function Dashboard() {
             className="panelLogo mt-3 cursor-pointer"
           >
             <img
-              src={require("../../imgs/fav.png")}
+              src={favLogo}
               alt="Logo"
               width="60"
               className="d-inline-block align-text-top me-s2 m-0 p-0 "

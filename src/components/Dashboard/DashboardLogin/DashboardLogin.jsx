@@ -3,6 +3,7 @@ import $ from "jquery";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import favLogo from "../../../imgs/fav.png";
 
 export default function DashboardLogin() {
   let navigate = useNavigate();
@@ -22,7 +23,7 @@ export default function DashboardLogin() {
       }
       let { data } = await axios.post(
         `https://api.ali1kh.com/admin/login`,
-        body
+        body,
       );
       if (data.success) {
         localStorage.setItem("adminPanel", data.token);
@@ -42,7 +43,7 @@ export default function DashboardLogin() {
     <div className="container">
       <div className="d-flex flex-column justify-content-center align-items-center py-3">
         <img
-          src={require("../../../imgs/fav.png")}
+          src={favLogo}
           alt="Logo"
           width="150"
           className="d-inline-block align-text-top me-s2 m-0 p-0 mb-5"

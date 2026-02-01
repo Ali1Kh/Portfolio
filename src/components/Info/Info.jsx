@@ -16,11 +16,11 @@ export default function Info() {
         "https://api.github.com/user/repos?per_page=50&visibility=all",
         {
           headers: {
-            Authorization: process.env.REACT_APP_git_token,
+            Authorization: process.env.VITE_git_token,
             Accept: "application/vnd.github.v3+json",
             "X-GitHub-Api-Version": "2022-11-28",
           },
-        }
+        },
       );
       setProjectsCount(data.length);
     } catch (error) {
@@ -31,7 +31,7 @@ export default function Info() {
   const getHours = async () => {
     try {
       const { data } = await axios.get(
-        "https://api.ali1kh.com/wakatime/getHours"
+        "https://api.ali1kh.com/wakatime/getHours",
       );
       setHours(data.data.decimal);
     } catch (error) {
