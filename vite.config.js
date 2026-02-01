@@ -8,6 +8,6 @@ export default defineConfig({
     port: 2010,
   },
   build: {
-    outDir: "build",
+    outDir: "dist",
   },
 });
