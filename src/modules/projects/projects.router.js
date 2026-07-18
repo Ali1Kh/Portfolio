@@ -1,10 +1,12 @@
 import { asyncHandler } from "../../utils/asyncHandler.js";
 import { uploadFiles } from "../../utils/multer.js";
+import { isAuthorized } from "../../middlewares/authorization.middleware.js";
 import * as projectsController from "./projects.controller.js";
 import { Router } from "express";
 const router = Router();
 
 router.post("/",
+  isAuthorized(),
     uploadFiles().fields([{ name: "logo" },{ name: "coverImages" }]),
     asyncHandler(projectsController.addProject));
 
